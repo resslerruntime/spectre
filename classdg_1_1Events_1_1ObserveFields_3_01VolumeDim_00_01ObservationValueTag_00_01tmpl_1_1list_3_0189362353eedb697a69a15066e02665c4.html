@@ -1,0 +1,345 @@
+<!-- HTML header for doxygen 1.8.10-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="SXS Collaboration">
+    <meta name="generator" content="Doxygen 1.8.17"/>
+    <style>
+        /*!
+         * IE10 viewport hack for Surface/desktop Windows 8 bug
+         * Copyright 2014-2015 Twitter, Inc.
+         * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+         */
+        @-webkit-viewport { width: device-width; }
+        @-moz-viewport    { width: device-width; }
+        @-ms-viewport     { width: device-width; }
+        @-o-viewport      { width: device-width; }
+        @viewport         { width: device-width; }
+      </style>
+  <title>SpECTRE: dg::Events::ObserveFields&lt; VolumeDim, ObservationValueTag, tmpl::list&lt; Tensors... &gt;, tmpl::list&lt; AnalyticSolutionTensors... &gt;, EventRegistrars, tmpl::list&lt; NonSolutionTensors... &gt; &gt; Class Template Reference</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="./MathJax.js"></script>
+  <link href="octicons.css" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="popper.min.js"></script>
+  <script type="text/javascript" src="bootstrap.min.js"></script>
+  <script type="text/javascript" src="spectre.js"></script>
+  </head>
+  <body>
+  <div id="top" class="navbar-fixed-top"><!-- do not remove this div, it is closed by doxygen! -->
+  <!-- BEGIN TITLEAREA -->
+  <div id="titlearea">
+  <script type="text/javascript">
+  var searchBox = new SearchBox("searchBox", "search",false,'Search');
+  </script>
+  <div id="main-nav">
+    <ul class="sm sm-dox" id="main-menu">
+      <li>
+      <a href="index.html">
+      SpECTRE &#160;
+        <span id="projectnumber">v2021.04.06</span>
+      </a>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-book"></i><span>Documentation</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 135px;">
+            <a href="index.html">
+            <i class="octicon octicon-book"></i><span>Introduction</span></a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="versioning_and_releases.html">
+              <i class="octicon octicon-versions"></i><span>Releases</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="installation.html">
+              <i class="octicon octicon-desktop-download"></i><span>Installation</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="tutorials.html">
+              <i class="octicon octicon-mortar-board"></i><span>User Tutorials</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="dev_guide.html">
+              <i class="octicon octicon-gist-secret"></i><span>Dev Guide</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="code_of_conduct.html">
+              <i class="octicon octicon-comment-discussion"></i><span>Code of Conduct</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="contributing_to_spectre.html">
+              <i class="octicon octicon-git-pull-request"></i><span>Contributing Guide</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-code"></i>
+              <span>Code Reference</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 130px;">
+            <a href="modules.html">
+              <i class="octicon octicon-code"></i>
+              <span>Topics</span>
+            </a>
+          </li>
+          <li style="min-width: 130px;">
+            <a href="namespaces.html">
+              <i class="octicon octicon-gist"></i>
+              <span>Namespaces</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="files.html">
+          <i class="octicon octicon-file-directory"></i><span>Files</span>
+        </a>
+      </li>
+      <li>
+        <a href="citelist.html">
+          <i class="octicon octicon-file-text"></i><span>Bibliography</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/sxs-collaboration/spectre" target="_blank">
+          <i class="octicon octicon-mark-github"></i><span>View on GitHub</span>
+        </a>
+      </li>
+      <!--The Search <li> is added by doxygen later-->
+    </ul>
+  </div><!-- main-nav -->
+  </div><!-- titlearea -->
+  <!-- window showing the filter options -->
+  <div id="MSearchSelectWindow"  style="position: fixed;"
+       onmouseover="return searchBox.OnSearchSelectShow()"
+       onmouseout="return searchBox.OnSearchSelectHide()"
+       onkeydown="return searchBox.OnSearchSelectKey(event)">
+  </div>
+  <!-- iframe showing the search results (closed by default) -->
+  <div id="MSearchResultsWindow"  style="position: fixed;">
+  <iframe src="javascript:void(0)" frameborder="0"
+          name="MSearchResults" id="MSearchResults">
+  </iframe>
+  </div>
+<!-- Generated by Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacedg.html">dg</a></li><li class="navelem"><b>Events</b></li><li class="navelem"><a class="el" href="classdg_1_1Events_1_1ObserveFields_3_01VolumeDim_00_01ObservationValueTag_00_01tmpl_1_1list_3_0189362353eedb697a69a15066e02665c4.html">ObserveFields&lt; VolumeDim, ObservationValueTag, tmpl::list&lt; Tensors... &gt;, tmpl::list&lt; AnalyticSolutionTensors... &gt;, EventRegistrars, tmpl::list&lt; NonSolutionTensors... &gt; &gt;</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="classdg_1_1Events_1_1ObserveFields_3_01VolumeDim_00_01ObservationValueTag_00_01tmpl_1_1list_3_01e60a64f4c3cb38249a072d1c02c8a3a9.html">List of all members</a>  </div>
+  <div class="headertitle">
+<div class="title">dg::Events::ObserveFields&lt; VolumeDim, ObservationValueTag, tmpl::list&lt; Tensors... &gt;, tmpl::list&lt; AnalyticSolutionTensors... &gt;, EventRegistrars, tmpl::list&lt; NonSolutionTensors... &gt; &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__DiscontinuousGalerkinGroup.html">Discontinuous Galerkin</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Observe volume tensor fields.  
+ <a href="classdg_1_1Events_1_1ObserveFields_3_01VolumeDim_00_01ObservationValueTag_00_01tmpl_1_1list_3_0189362353eedb697a69a15066e02665c4.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="ObserveFields_8hpp_source.html">ObserveFields.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdg_1_1Events_1_1ObserveFields_3_01VolumeDim_00_01ObservationValueTag_00_01tmpl_1_1list_3_0963e764fdd9e3b8e83b42960eaface35.html">InterpolateToMesh</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdg_1_1Events_1_1ObserveFields_3_01VolumeDim_00_01ObservationValueTag_00_01tmpl_1_1list_3_0db587b855c158931de7c87c161ff5f0e.html">SubfileName</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The name of the subfile inside the HDF5 file.  <a href="structdg_1_1Events_1_1ObserveFields_3_01VolumeDim_00_01ObservationValueTag_00_01tmpl_1_1list_3_0db587b855c158931de7c87c161ff5f0e.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdg_1_1Events_1_1ObserveFields_3_01VolumeDim_00_01ObservationValueTag_00_01tmpl_1_1list_3_04ffbc504fd10350fcb745676a1a25649.html">VariablesToObserve</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a09a6d26e7162a7d3a1fe48530ea6f6b1"><td class="memItemLeft" align="right" valign="top"><a id="a09a6d26e7162a7d3a1fe48530ea6f6b1"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>options</b> = tmpl::list&lt; SubfileName, VariablesToObserve, InterpolateToMesh &gt;</td></tr>
+<tr class="separator:a09a6d26e7162a7d3a1fe48530ea6f6b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5acf201e54ffb20cbf994db6d9391a3a"><td class="memItemLeft" align="right" valign="top"><a id="a5acf201e54ffb20cbf994db6d9391a3a"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>argument_tags</b> = tmpl::flatten&lt; tmpl::list&lt; ObservationValueTag, <a class="el" href="structdomain_1_1Tags_1_1Mesh.html">domain::Tags::Mesh</a>&lt; VolumeDim &gt;, <a class="el" href="structdomain_1_1Tags_1_1Coordinates.html">coordinates_tag</a>, AnalyticSolutionTensors..., NonSolutionTensors..., tmpl::conditional_t&lt;(sizeof...(AnalyticSolutionTensors) &gt; 0), ::<a class="el" href="structTags_1_1AnalyticSolutionsBase.html">Tags::AnalyticSolutionsBase</a>, tmpl::list&lt;&gt; &gt;&gt; &gt;</td></tr>
+<tr class="separator:a5acf201e54ffb20cbf994db6d9391a3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28a2761458b1a9a9f1aed791b999fb6b"><td class="memItemLeft" align="right" valign="top"><a id="a28a2761458b1a9a9f1aed791b999fb6b"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>observation_registration_tags</b> = tmpl::list&lt;&gt;</td></tr>
+<tr class="separator:a28a2761458b1a9a9f1aed791b999fb6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classEvent"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classEvent')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classEvent.html">Event&lt; EventRegistrars &gt;</a></td></tr>
+<tr class="memitem:ae50e19d52ab6a6ce9e4907ecb8e42f39 inherit pub_types_classEvent"><td class="memItemLeft" align="right" valign="top"><a id="ae50e19d52ab6a6ce9e4907ecb8e42f39"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>default_events</b> = tmpl::list&lt; <a class="el" href="classEvents_1_1Completion.html">Events::Completion</a>&lt; EventRegistrars &gt; &gt;</td></tr>
+<tr class="separator:ae50e19d52ab6a6ce9e4907ecb8e42f39 inherit pub_types_classEvent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a663e2f3e312f20f485cdec226a76b70a inherit pub_types_classEvent"><td class="memItemLeft" align="right" valign="top"><a id="a663e2f3e312f20f485cdec226a76b70a"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>creatable_classes</b> = tmpl::append&lt; default_events, <a class="el" href="namespaceRegistration.html#abfd9ae1266be994041d2cfaa4199eed2">Registration::registrants</a>&lt; EventRegistrars &gt; &gt;</td></tr>
+<tr class="separator:a663e2f3e312f20f485cdec226a76b70a inherit pub_types_classEvent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a233127ac11dd7fb027ecc90c4a18ec86"><td class="memItemLeft" align="right" valign="top"><a id="a233127ac11dd7fb027ecc90c4a18ec86"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ObserveFields</b> (const <a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> &amp;subfile_name, const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> &gt; &amp;variables_to_observe, <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="el" href="classMesh.html">Mesh</a>&lt; VolumeDim &gt;&gt; interpolation_mesh={}, const <a class="el" href="structOptions_1_1Context.html">Options::Context</a> &amp;context={})</td></tr>
+<tr class="separator:a233127ac11dd7fb027ecc90c4a18ec86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3c14bb7e9910bf1ea28f28a53bcaead"><td class="memTemplParams" colspan="2"><a id="ad3c14bb7e9910bf1ea28f28a53bcaead"></a>
+template&lt;typename OptionalAnalyticSolutions , typename Metavariables , typename ParallelComponent &gt; </td></tr>
+<tr class="memitem:ad3c14bb7e9910bf1ea28f28a53bcaead"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (const typename ObservationValueTag::type &amp;observation_value, const <a class="el" href="classMesh.html">Mesh</a>&lt; VolumeDim &gt; &amp;mesh, const tnsr::I&lt; <a class="el" href="classDataVector.html">DataVector</a>, VolumeDim, <a class="el" href="structFrame_1_1Inertial.html">Frame::Inertial</a> &gt; &amp;inertial_coordinates, const typename AnalyticSolutionTensors::type &amp;... analytic_solution_tensors, const typename NonSolutionTensors::type &amp;... non_solution_tensors, const OptionalAnalyticSolutions &amp;optional_analytic_solutions, <a class="el" href="classParallel_1_1GlobalCache.html">Parallel::GlobalCache</a>&lt; Metavariables &gt; &amp;cache, const <a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt; &amp;array_index, const ParallelComponent *const component) const noexcept</td></tr>
+<tr class="separator:ad3c14bb7e9910bf1ea28f28a53bcaead"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a577c9e94f797a65e8b438908ff7aa2"><td class="memTemplParams" colspan="2"><a id="a9a577c9e94f797a65e8b438908ff7aa2"></a>
+template&lt;typename Metavariables , typename ParallelComponent &gt; </td></tr>
+<tr class="memitem:a9a577c9e94f797a65e8b438908ff7aa2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator()</b> (const typename ObservationValueTag::type &amp;observation_value, const <a class="el" href="classMesh.html">Mesh</a>&lt; VolumeDim &gt; &amp;mesh, const tnsr::I&lt; <a class="el" href="classDataVector.html">DataVector</a>, VolumeDim, <a class="el" href="structFrame_1_1Inertial.html">Frame::Inertial</a> &gt; &amp;inertial_coordinates, const typename NonSolutionTensors::type &amp;... non_solution_tensors, <a class="el" href="classParallel_1_1GlobalCache.html">Parallel::GlobalCache</a>&lt; Metavariables &gt; &amp;cache, const <a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt; &amp;array_index, const ParallelComponent *const component) const noexcept</td></tr>
+<tr class="separator:a9a577c9e94f797a65e8b438908ff7aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a812dce85e83aca068292593d3a33d8"><td class="memItemLeft" align="right" valign="top"><a id="a4a812dce85e83aca068292593d3a33d8"></a>
+<a class="elRef" href="http://en.cppreference.com/w/cpp/utility/pair.html">std::pair</a>&lt; <a class="el" href="group__ObserversGroup.html#ga9601b9f188609201444e989ee8825b45">observers::TypeOfObservation</a>, <a class="el" href="classobservers_1_1ObservationKey.html">observers::ObservationKey</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_observation_type_and_key_for_registration</b> () const noexcept</td></tr>
+<tr class="separator:a4a812dce85e83aca068292593d3a33d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a93d036f60bee195d35d564f9ce1622"><td class="memItemLeft" align="right" valign="top"><a id="a9a93d036f60bee195d35d564f9ce1622"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdg_1_1Events_1_1ObserveFields_3_01VolumeDim_00_01ObservationValueTag_00_01tmpl_1_1list_3_0189362353eedb697a69a15066e02665c4.html#a9a93d036f60bee195d35d564f9ce1622">needs_evolved_variables</a> () const noexcept override</td></tr>
+<tr class="memdesc:a9a93d036f60bee195d35d564f9ce1622"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the event uses anything depending on the evolved_variables. If this returns false, anything depending on the evolved variables may have an incorrect value when the event is run. <br /></td></tr>
+<tr class="separator:a9a93d036f60bee195d35d564f9ce1622"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b580d0b686e47435a508bd28bfadebd"><td class="memItemLeft" align="right" valign="top"><a id="a7b580d0b686e47435a508bd28bfadebd"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>pup</b> (PUP::er &amp;p) noexcept override</td></tr>
+<tr class="separator:a7b580d0b686e47435a508bd28bfadebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classEvent"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classEvent')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classEvent.html">Event&lt; EventRegistrars &gt;</a></td></tr>
+<tr class="memitem:a779994b8d67ad996d7d52c28cf936f61 inherit pub_methods_classEvent"><td class="memItemLeft" align="right" valign="top"><a id="a779994b8d67ad996d7d52c28cf936f61"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>WRAPPED_PUPable_abstract</b> (<a class="el" href="classEvent.html">Event</a>)</td></tr>
+<tr class="separator:a779994b8d67ad996d7d52c28cf936f61 inherit pub_methods_classEvent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57e348cec5b93fd00f360c941cb6c265 inherit pub_methods_classEvent"><td class="memTemplParams" colspan="2"><a id="a57e348cec5b93fd00f360c941cb6c265"></a>
+template&lt;typename DbTags , typename Metavariables , typename ArrayIndex , typename ComponentPointer &gt; </td></tr>
+<tr class="memitem:a57e348cec5b93fd00f360c941cb6c265 inherit pub_methods_classEvent"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>run</b> (const db::DataBox&lt; DbTags &gt; &amp;box, <a class="el" href="classParallel_1_1GlobalCache.html">Parallel::GlobalCache</a>&lt; Metavariables &gt; &amp;cache, const ArrayIndex &amp;array_index, const ComponentPointer) const noexcept</td></tr>
+<tr class="separator:a57e348cec5b93fd00f360c941cb6c265 inherit pub_methods_classEvent"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ad32682caeace32dfd404b45f3e52ebb8"><td class="memTemplParams" colspan="2"><a id="ad32682caeace32dfd404b45f3e52ebb8"></a>
+template&lt;typename OptionalAnalyticSolutions , typename Metavariables , typename ParallelComponent &gt; </td></tr>
+<tr class="memitem:ad32682caeace32dfd404b45f3e52ebb8"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>call_operator_impl</b> (const <a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> &amp;subfile_path, const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/unordered_set.html">std::unordered_set</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/string/basic_string.html">std::string</a> &gt; &amp;variables_to_observe, const <a class="elRef" href="http://en.cppreference.com/w/cpp/utility/optional.html">std::optional</a>&lt; <a class="el" href="classMesh.html">Mesh</a>&lt; VolumeDim &gt;&gt; &amp;interpolation_mesh, const typename ObservationValueTag::type &amp;observation_value, const <a class="el" href="classMesh.html">Mesh</a>&lt; VolumeDim &gt; &amp;mesh, const tnsr::I&lt; <a class="el" href="classDataVector.html">DataVector</a>, VolumeDim, <a class="el" href="structFrame_1_1Inertial.html">Frame::Inertial</a> &gt; &amp;inertial_coordinates, const typename AnalyticSolutionTensors::type &amp;... analytic_solution_tensors, const typename NonSolutionTensors::type &amp;... non_solution_tensors, const OptionalAnalyticSolutions &amp;optional_analytic_solutions, <a class="el" href="classParallel_1_1GlobalCache.html">Parallel::GlobalCache</a>&lt; Metavariables &gt; &amp;cache, const <a class="el" href="classElementId.html">ElementId</a>&lt; VolumeDim &gt; &amp;array_index, const ParallelComponent *const) noexcept</td></tr>
+<tr class="separator:ad32682caeace32dfd404b45f3e52ebb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a12e30d5857e4026a960ebd464a849489"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="namespaceOptions.html#aa61c7f41f21afa7646811456f673be89">Options::String</a>&#160;</td><td class="memItemRight" valign="bottom"><b>help</b></td></tr>
+<tr class="separator:a12e30d5857e4026a960ebd464a849489"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;size_t VolumeDim, typename ObservationValueTag, typename... Tensors, typename... AnalyticSolutionTensors, typename EventRegistrars, typename... NonSolutionTensors&gt;<br />
+class dg::Events::ObserveFields&lt; VolumeDim, ObservationValueTag, tmpl::list&lt; Tensors... &gt;, tmpl::list&lt; AnalyticSolutionTensors... &gt;, EventRegistrars, tmpl::list&lt; NonSolutionTensors... &gt; &gt;</h3>
+
+<p>Observe volume tensor fields. </p>
+<p>A class that writes volume quantities to an <a class="el" href="namespaceh5.html" title="Contains functions and classes for manipulating HDF5 files.">h5</a> file during the simulation. The observed quantitites are:</p><ul>
+<li><code>InertialCoordinates</code></li>
+<li>Tensors listed in <code>Tensors</code> template parameter</li>
+<li><code>Error(*)</code> = errors in <code>AnalyticSolutionTensors</code> = \(\text{value} - \text{analytic solution}\)</li>
+</ul>
+<p>The user may specify an <code>interpolation_mesh</code> to which the data is interpolated. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a12e30d5857e4026a960ebd464a849489"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12e30d5857e4026a960ebd464a849489">&#9670;&nbsp;</a></span>help</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t VolumeDim, typename ObservationValueTag , typename... Tensors, typename... AnalyticSolutionTensors, typename EventRegistrars , typename... NonSolutionTensors&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="namespaceOptions.html#aa61c7f41f21afa7646811456f673be89">Options::String</a> <a class="el" href="classdg_1_1Events_1_1ObserveFields.html">dg::Events::ObserveFields</a>&lt; VolumeDim, ObservationValueTag, tmpl::list&lt; Tensors... &gt;, tmpl::list&lt; AnalyticSolutionTensors... &gt;, EventRegistrars, tmpl::list&lt; NonSolutionTensors... &gt; &gt;::help</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">      <span class="stringliteral">&quot;Observe volume tensor fields.\n&quot;</span></div>
+<div class="line">      <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line">      <span class="stringliteral">&quot;Writes volume quantities:\n&quot;</span></div>
+<div class="line">      <span class="stringliteral">&quot; * InertialCoordinates\n&quot;</span></div>
+<div class="line">      <span class="stringliteral">&quot; * Tensors listed in Tensors template parameter\n&quot;</span></div>
+<div class="line">      <span class="stringliteral">&quot; * Error(*) = errors in AnalyticSolutionTensors\n&quot;</span></div>
+<div class="line">      <span class="stringliteral">&quot;            = value - analytic solution\n&quot;</span></div>
+<div class="line">      <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line">      <span class="stringliteral">&quot;Warning: Currently, only one volume observation event can be\n&quot;</span></div>
+<div class="line">      <span class="stringliteral">&quot;triggered at a given time.  Causing multiple events to run at once\n&quot;</span></div>
+<div class="line">      <span class="stringliteral">&quot;will produce unpredictable results.&quot;</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/ParallelAlgorithms/Events/<a class="el" href="ObserveFields_8hpp_source.html">ObserveFields.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.10-->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+&copy; Copyright 2017 - 2021
+<a href="https://black-holes.org">SXS Collaboration</a>,
+<a href="LICENSE.txt" target="_blank">
+<span class="hidden-xs">Distributed under the</span>
+MIT License</a>
+</small></address>
+</body>
+</html>

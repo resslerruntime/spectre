@@ -1,0 +1,945 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>LCOV - c355bfa4a244dc87b853b2b8b42f62d7c9cf7faa - Evolution/DiscontinuousGalerkin/Actions/ComputeTimeDerivative.hpp</title>
+  <link rel="stylesheet" type="text/css" href="../../../gcov.css">
+</head>
+
+<body>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="title"> SpECTRE Documentation Coverage Report</td></tr>
+    <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+
+    <tr>
+      <td width="100%">
+        <table cellpadding=1 border=0 width="100%">
+          <tr>
+            <td width="10%" class="headerItem">Current view:</td>
+            <td width="35%" class="headerValue"><a href="../../../index.html">top level</a> - <a href="index.html">Evolution/DiscontinuousGalerkin/Actions</a> - ComputeTimeDerivative.hpp</td>
+            <td width="5%"></td>
+            <td width="15%"></td>
+            <td width="10%" class="headerCovTableHead">Hit</td>
+            <td width="10%" class="headerCovTableHead">Total</td>
+            <td width="15%" class="headerCovTableHead">Coverage</td>
+          </tr>
+          <tr>
+             <td class="headerItem">Commit:</td>
+             <td class="headerValue"><a target="_blank" href="https://github.com/sxs-collaboration/spectre/commit/c355bfa4a244dc87b853b2b8b42f62d7c9cf7faa">c355bfa4a244dc87b853b2b8b42f62d7c9cf7faa</a></td>
+            <td></td>
+            <td class="headerItem">Lines:</td>
+            <td class="headerCovTableEntry">1</td>
+            <td class="headerCovTableEntry">14</td>
+            <td class="headerCovTableEntryLo">7.1 %</td>
+          </tr>
+          <tr>
+            <td class="headerItem">Date:</td>
+            <td class="headerValue">2021-04-10 15:26:31</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="headerItem">Legend:</td>
+            <td class="headerValueLeg">            Lines:
+            <span class="coverLegendCov">hit</span>
+            <span class="coverLegendNoCov">not hit</span>
+</td>
+            <td></td>
+          </tr>
+          <tr><td><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+  </table>
+
+  <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+      <td><br></td>
+    </tr>
+    <tr>
+      <td>
+<pre class="sourceHeading">          Line data    Source code</pre>
+<pre class="source">
+<a name="1"><span class="lineNum">       1 </span><span class="lineNoCov">          0 : // Distributed under the MIT License.</span></a>
+<a name="2"><span class="lineNum">       2 </span>            : // See LICENSE.txt for details.</a>
+<a name="3"><span class="lineNum">       3 </span>            : </a>
+<a name="4"><span class="lineNum">       4 </span>            : #pragma once</a>
+<a name="5"><span class="lineNum">       5 </span>            : </a>
+<a name="6"><span class="lineNum">       6 </span>            : #include &lt;optional&gt;</a>
+<a name="7"><span class="lineNum">       7 </span>            : #include &lt;tuple&gt;</a>
+<a name="8"><span class="lineNum">       8 </span>            : #include &lt;type_traits&gt;</a>
+<a name="9"><span class="lineNum">       9 </span>            : #include &lt;unordered_set&gt;</a>
+<a name="10"><span class="lineNum">      10 </span>            : #include &lt;utility&gt;</a>
+<a name="11"><span class="lineNum">      11 </span>            : #include &lt;vector&gt;</a>
+<a name="12"><span class="lineNum">      12 </span>            : </a>
+<a name="13"><span class="lineNum">      13 </span>            : #include &quot;DataStructures/DataBox/DataBox.hpp&quot;</a>
+<a name="14"><span class="lineNum">      14 </span>            : #include &quot;DataStructures/DataBox/PrefixHelpers.hpp&quot;</a>
+<a name="15"><span class="lineNum">      15 </span>            : #include &quot;DataStructures/DataBox/Prefixes.hpp&quot;</a>
+<a name="16"><span class="lineNum">      16 </span>            : #include &quot;DataStructures/DataVector.hpp&quot;</a>
+<a name="17"><span class="lineNum">      17 </span>            : #include &quot;DataStructures/Tensor/Tensor.hpp&quot;</a>
+<a name="18"><span class="lineNum">      18 </span>            : #include &quot;DataStructures/Variables.hpp&quot;</a>
+<a name="19"><span class="lineNum">      19 </span>            : #include &quot;DataStructures/VariablesTag.hpp&quot;</a>
+<a name="20"><span class="lineNum">      20 </span>            : #include &quot;Domain/CoordinateMaps/Tags.hpp&quot;</a>
+<a name="21"><span class="lineNum">      21 </span>            : #include &quot;Domain/InterfaceHelpers.hpp&quot;</a>
+<a name="22"><span class="lineNum">      22 </span>            : #include &quot;Domain/Structure/Direction.hpp&quot;</a>
+<a name="23"><span class="lineNum">      23 </span>            : #include &quot;Domain/Structure/OrientationMapHelpers.hpp&quot;</a>
+<a name="24"><span class="lineNum">      24 </span>            : #include &quot;Domain/Tags.hpp&quot;</a>
+<a name="25"><span class="lineNum">      25 </span>            : #include &quot;Domain/TagsTimeDependent.hpp&quot;</a>
+<a name="26"><span class="lineNum">      26 </span>            : #include &quot;Evolution/BoundaryCorrectionTags.hpp&quot;</a>
+<a name="27"><span class="lineNum">      27 </span>            : #include &quot;Evolution/DiscontinuousGalerkin/Actions/BoundaryConditionsImpl.hpp&quot;</a>
+<a name="28"><span class="lineNum">      28 </span>            : #include &quot;Evolution/DiscontinuousGalerkin/Actions/ComputeTimeDerivativeHelpers.hpp&quot;</a>
+<a name="29"><span class="lineNum">      29 </span>            : #include &quot;Evolution/DiscontinuousGalerkin/Actions/InternalMortarDataImpl.hpp&quot;</a>
+<a name="30"><span class="lineNum">      30 </span>            : #include &quot;Evolution/DiscontinuousGalerkin/Actions/NormalCovectorAndMagnitude.hpp&quot;</a>
+<a name="31"><span class="lineNum">      31 </span>            : #include &quot;Evolution/DiscontinuousGalerkin/Actions/PackageDataImpl.hpp&quot;</a>
+<a name="32"><span class="lineNum">      32 </span>            : #include &quot;Evolution/DiscontinuousGalerkin/Actions/VolumeTermsImpl.hpp&quot;</a>
+<a name="33"><span class="lineNum">      33 </span>            : #include &quot;Evolution/DiscontinuousGalerkin/InboxTags.hpp&quot;</a>
+<a name="34"><span class="lineNum">      34 </span>            : #include &quot;Evolution/DiscontinuousGalerkin/MortarData.hpp&quot;</a>
+<a name="35"><span class="lineNum">      35 </span>            : #include &quot;Evolution/DiscontinuousGalerkin/MortarTags.hpp&quot;</a>
+<a name="36"><span class="lineNum">      36 </span>            : #include &quot;Evolution/DiscontinuousGalerkin/NormalVectorTags.hpp&quot;</a>
+<a name="37"><span class="lineNum">      37 </span>            : #include &quot;NumericalAlgorithms/DiscontinuousGalerkin/Formulation.hpp&quot;</a>
+<a name="38"><span class="lineNum">      38 </span>            : #include &quot;NumericalAlgorithms/DiscontinuousGalerkin/MortarHelpers.hpp&quot;</a>
+<a name="39"><span class="lineNum">      39 </span>            : #include &quot;NumericalAlgorithms/DiscontinuousGalerkin/Tags.hpp&quot;</a>
+<a name="40"><span class="lineNum">      40 </span>            : #include &quot;NumericalAlgorithms/DiscontinuousGalerkin/Tags/Formulation.hpp&quot;</a>
+<a name="41"><span class="lineNum">      41 </span>            : #include &quot;NumericalAlgorithms/LinearOperators/PartialDerivatives.hpp&quot;</a>
+<a name="42"><span class="lineNum">      42 </span>            : #include &quot;NumericalAlgorithms/Spectral/Mesh.hpp&quot;</a>
+<a name="43"><span class="lineNum">      43 </span>            : #include &quot;NumericalAlgorithms/Spectral/Projection.hpp&quot;</a>
+<a name="44"><span class="lineNum">      44 </span>            : #include &quot;Parallel/GlobalCache.hpp&quot;</a>
+<a name="45"><span class="lineNum">      45 </span>            : #include &quot;ParallelAlgorithms/DiscontinuousGalerkin/FluxCommunication.hpp&quot;</a>
+<a name="46"><span class="lineNum">      46 </span>            : #include &quot;Time/Actions/SelfStartActions.hpp&quot;</a>
+<a name="47"><span class="lineNum">      47 </span>            : #include &quot;Time/Tags.hpp&quot;</a>
+<a name="48"><span class="lineNum">      48 </span>            : #include &quot;Time/TakeStep.hpp&quot;</a>
+<a name="49"><span class="lineNum">      49 </span>            : #include &quot;Utilities/Algorithm.hpp&quot;</a>
+<a name="50"><span class="lineNum">      50 </span>            : #include &quot;Utilities/Gsl.hpp&quot;</a>
+<a name="51"><span class="lineNum">      51 </span>            : #include &quot;Utilities/TMPL.hpp&quot;</a>
+<a name="52"><span class="lineNum">      52 </span>            : </a>
+<a name="53"><span class="lineNum">      53 </span>            : /// \cond</a>
+<a name="54"><span class="lineNum">      54 </span>            : namespace tuples {</a>
+<a name="55"><span class="lineNum">      55 </span>            : template &lt;typename...&gt;</a>
+<a name="56"><span class="lineNum">      56 </span>            : class TaggedTuple;</a>
+<a name="57"><span class="lineNum">      57 </span>            : }  // namespace tuples</a>
+<a name="58"><span class="lineNum">      58 </span>            : /// \endcond</a>
+<a name="59"><span class="lineNum">      59 </span>            : </a>
+<a name="60"><span class="lineNum">      60 </span>            : namespace evolution::dg::Actions {</a>
+<a name="61"><span class="lineNum">      61 </span>            : /*!</a>
+<a name="62"><span class="lineNum">      62 </span>            :  * \brief Computes the time derivative for a DG time step.</a>
+<a name="63"><span class="lineNum">      63 </span>            :  *</a>
+<a name="64"><span class="lineNum">      64 </span>            :  * Computes the volume fluxes, the divergence of the fluxes and all additional</a>
+<a name="65"><span class="lineNum">      65 </span>            :  * interior contributions to the time derivatives (both nonconservative products</a>
+<a name="66"><span class="lineNum">      66 </span>            :  * and source terms). The internal mortar data is also computed.</a>
+<a name="67"><span class="lineNum">      67 </span>            :  *</a>
+<a name="68"><span class="lineNum">      68 </span>            :  * The general first-order hyperbolic evolution equation solved for conservative</a>
+<a name="69"><span class="lineNum">      69 </span>            :  * systems is:</a>
+<a name="70"><span class="lineNum">      70 </span>            :  *</a>
+<a name="71"><span class="lineNum">      71 </span>            :  * \f{align*}{</a>
+<a name="72"><span class="lineNum">      72 </span>            :  * \frac{\partial u_\alpha}{\partial \hat{t}}</a>
+<a name="73"><span class="lineNum">      73 </span>            :  *  + \partial_{i}</a>
+<a name="74"><span class="lineNum">      74 </span>            :  *   \left(F^i_\alpha - v^i_g u_\alpha\right)</a>
+<a name="75"><span class="lineNum">      75 </span>            :  *   = S_\alpha-u_\alpha\partial_i v^i_g,</a>
+<a name="76"><span class="lineNum">      76 </span>            :  * \f}</a>
+<a name="77"><span class="lineNum">      77 </span>            :  *</a>
+<a name="78"><span class="lineNum">      78 </span>            :  * where \f$F^i_{\alpha}\f$ are the fluxes when the mesh isn't moving,</a>
+<a name="79"><span class="lineNum">      79 </span>            :  * \f$v^i_g\f$ is the velocity of the mesh, \f$u_{\alpha}\f$ are the evolved</a>
+<a name="80"><span class="lineNum">      80 </span>            :  * variables, \f$S_{\alpha}\f$ are the source terms, and \f$\hat{t}\f$ is the</a>
+<a name="81"><span class="lineNum">      81 </span>            :  * time in the logical frame. For evolution equations that do not have any</a>
+<a name="82"><span class="lineNum">      82 </span>            :  * fluxes and only nonconservative products we evolve:</a>
+<a name="83"><span class="lineNum">      83 </span>            :  *</a>
+<a name="84"><span class="lineNum">      84 </span>            :  * \f{align*}{</a>
+<a name="85"><span class="lineNum">      85 </span>            :  * \frac{\partial u_\alpha}{\partial \hat{t}}</a>
+<a name="86"><span class="lineNum">      86 </span>            :  *   +\left(B^i_{\alpha\beta}-v^i_g \delta_{\alpha\beta}</a>
+<a name="87"><span class="lineNum">      87 </span>            :  *   \right)\partial_{i}u_\beta = S_\alpha.</a>
+<a name="88"><span class="lineNum">      88 </span>            :  * \f}</a>
+<a name="89"><span class="lineNum">      89 </span>            :  *</a>
+<a name="90"><span class="lineNum">      90 </span>            :  * Finally, for equations with both conservative terms and nonconservative</a>
+<a name="91"><span class="lineNum">      91 </span>            :  * products we use:</a>
+<a name="92"><span class="lineNum">      92 </span>            :  *</a>
+<a name="93"><span class="lineNum">      93 </span>            :  * \f{align*}{</a>
+<a name="94"><span class="lineNum">      94 </span>            :  * \frac{\partial u_\alpha}{\partial \hat{t}}</a>
+<a name="95"><span class="lineNum">      95 </span>            :  *   + \partial_{i}</a>
+<a name="96"><span class="lineNum">      96 </span>            :  *   \left(F^i_\alpha - v^i_g u_\alpha\right)</a>
+<a name="97"><span class="lineNum">      97 </span>            :  *   +B^i_{\alpha\beta}\partial_{i}u_\beta</a>
+<a name="98"><span class="lineNum">      98 </span>            :  *   = S_\alpha-u_\alpha\partial_i v^i_g,</a>
+<a name="99"><span class="lineNum">      99 </span>            :  * \f}</a>
+<a name="100"><span class="lineNum">     100 </span>            :  *</a>
+<a name="101"><span class="lineNum">     101 </span>            :  * where \f$B^i_{\alpha\beta}\f$ is the matrix for the nonconservative products.</a>
+<a name="102"><span class="lineNum">     102 </span>            :  *</a>
+<a name="103"><span class="lineNum">     103 </span>            :  * ### Volume Terms</a>
+<a name="104"><span class="lineNum">     104 </span>            :  *</a>
+<a name="105"><span class="lineNum">     105 </span>            :  * The mesh velocity is added to the flux automatically if the mesh is moving.</a>
+<a name="106"><span class="lineNum">     106 </span>            :  * That is,</a>
+<a name="107"><span class="lineNum">     107 </span>            :  *</a>
+<a name="108"><span class="lineNum">     108 </span>            :  * \f{align*}{</a>
+<a name="109"><span class="lineNum">     109 </span>            :  *  F^i_{\alpha}\to F^i_{\alpha}-v^i_{g} u_{\alpha}</a>
+<a name="110"><span class="lineNum">     110 </span>            :  * \f}</a>
+<a name="111"><span class="lineNum">     111 </span>            :  *</a>
+<a name="112"><span class="lineNum">     112 </span>            :  * The source terms are also altered automatically by adding:</a>
+<a name="113"><span class="lineNum">     113 </span>            :  *</a>
+<a name="114"><span class="lineNum">     114 </span>            :  * \f{align*}{</a>
+<a name="115"><span class="lineNum">     115 </span>            :  *  -u_\alpha \partial_i v^i_g,</a>
+<a name="116"><span class="lineNum">     116 </span>            :  * \f}</a>
+<a name="117"><span class="lineNum">     117 </span>            :  *</a>
+<a name="118"><span class="lineNum">     118 </span>            :  * For systems with equations that only contain nonconservative products, the</a>
+<a name="119"><span class="lineNum">     119 </span>            :  * following mesh velocity is automatically added to the time derivative:</a>
+<a name="120"><span class="lineNum">     120 </span>            :  *</a>
+<a name="121"><span class="lineNum">     121 </span>            :  * \f{align*}{</a>
+<a name="122"><span class="lineNum">     122 </span>            :  *  v^i_g \partial_i u_\alpha,</a>
+<a name="123"><span class="lineNum">     123 </span>            :  * \f}</a>
+<a name="124"><span class="lineNum">     124 </span>            :  *</a>
+<a name="125"><span class="lineNum">     125 </span>            :  * \note The term is always added in the `Frame::Inertial` frame, and the plus</a>
+<a name="126"><span class="lineNum">     126 </span>            :  * sign arises because we add it to the time derivative.</a>
+<a name="127"><span class="lineNum">     127 </span>            :  *</a>
+<a name="128"><span class="lineNum">     128 </span>            :  * Here are examples of the `TimeDerivative` struct used to compute the volume</a>
+<a name="129"><span class="lineNum">     129 </span>            :  * time derivative. This struct is what the type alias</a>
+<a name="130"><span class="lineNum">     130 </span>            :  * `System::compute_volume_time_derivative` points to. The time derivatives are</a>
+<a name="131"><span class="lineNum">     131 </span>            :  * as `gsl::not_null` first, then the temporary tags as `gsl::not_null`,</a>
+<a name="132"><span class="lineNum">     132 </span>            :  * followed by the `argument_tags`. These type aliases are given by</a>
+<a name="133"><span class="lineNum">     133 </span>            :  *</a>
+<a name="134"><span class="lineNum">     134 </span>            :  * \snippet ComputeTimeDerivativeImpl.tpp dt_ta</a>
+<a name="135"><span class="lineNum">     135 </span>            :  *</a>
+<a name="136"><span class="lineNum">     136 </span>            :  * for the examples. For a conservative system without primitives the `apply`</a>
+<a name="137"><span class="lineNum">     137 </span>            :  * function would look like</a>
+<a name="138"><span class="lineNum">     138 </span>            :  *</a>
+<a name="139"><span class="lineNum">     139 </span>            :  * \snippet ComputeTimeDerivativeImpl.tpp dt_con</a>
+<a name="140"><span class="lineNum">     140 </span>            :  *</a>
+<a name="141"><span class="lineNum">     141 </span>            :  * For a nonconservative system it would be</a>
+<a name="142"><span class="lineNum">     142 </span>            :  *</a>
+<a name="143"><span class="lineNum">     143 </span>            :  * \snippet ComputeTimeDerivativeImpl.tpp dt_nc</a>
+<a name="144"><span class="lineNum">     144 </span>            :  *</a>
+<a name="145"><span class="lineNum">     145 </span>            :  * And finally, for a mixed conservative-nonconservative system with primitive</a>
+<a name="146"><span class="lineNum">     146 </span>            :  * variables</a>
+<a name="147"><span class="lineNum">     147 </span>            :  *</a>
+<a name="148"><span class="lineNum">     148 </span>            :  * \snippet ComputeTimeDerivativeImpl.tpp dt_mp</a>
+<a name="149"><span class="lineNum">     149 </span>            :  *</a>
+<a name="150"><span class="lineNum">     150 </span>            :  * Uses:</a>
+<a name="151"><span class="lineNum">     151 </span>            :  * - System:</a>
+<a name="152"><span class="lineNum">     152 </span>            :  *   - `variables_tag`</a>
+<a name="153"><span class="lineNum">     153 </span>            :  *   - `flux_variables`</a>
+<a name="154"><span class="lineNum">     154 </span>            :  *   - `gradient_variables`</a>
+<a name="155"><span class="lineNum">     155 </span>            :  *   - `compute_volume_time_derivative_terms`</a>
+<a name="156"><span class="lineNum">     156 </span>            :  *</a>
+<a name="157"><span class="lineNum">     157 </span>            :  * - DataBox:</a>
+<a name="158"><span class="lineNum">     158 </span>            :  *   - Items in `system::compute_volume_time_derivative_terms::argument_tags`</a>
+<a name="159"><span class="lineNum">     159 </span>            :  *   - `domain::Tags::MeshVelocity&lt;Metavariables::volume_dim&gt;`</a>
+<a name="160"><span class="lineNum">     160 </span>            :  *   - `Metavariables::system::variables_tag`</a>
+<a name="161"><span class="lineNum">     161 </span>            :  *   - `Metavariables::system::flux_variables`</a>
+<a name="162"><span class="lineNum">     162 </span>            :  *   - `Metavariables::system::gradient_variables`</a>
+<a name="163"><span class="lineNum">     163 </span>            :  *   - `domain::Tags::DivMeshVelocity`</a>
+<a name="164"><span class="lineNum">     164 </span>            :  *   - `DirectionsTag`,</a>
+<a name="165"><span class="lineNum">     165 </span>            :  *   - Required interface items for `Metavariables::system::normal_dot_fluxes`</a>
+<a name="166"><span class="lineNum">     166 </span>            :  *</a>
+<a name="167"><span class="lineNum">     167 </span>            :  * DataBox changes:</a>
+<a name="168"><span class="lineNum">     168 </span>            :  * - Adds: nothing</a>
+<a name="169"><span class="lineNum">     169 </span>            :  * - Removes: nothing</a>
+<a name="170"><span class="lineNum">     170 </span>            :  * - Modifies:</a>
+<a name="171"><span class="lineNum">     171 </span>            :  *   - db::add_tag_prefix&lt;Tags::Flux, variables_tag,</a>
+<a name="172"><span class="lineNum">     172 </span>            :  *                        tmpl::size_t&lt;system::volume_dim&gt;, Frame::Inertial&gt;</a>
+<a name="173"><span class="lineNum">     173 </span>            :  *   - `Tags::dt&lt;system::variable_tags&gt;`</a>
+<a name="174"><span class="lineNum">     174 </span>            :  *   - Tags::Interface&lt;</a>
+<a name="175"><span class="lineNum">     175 </span>            :  *     DirectionsTag, db::add_tag_prefix&lt;Tags::NormalDotFlux, variables_tag&gt;&gt;</a>
+<a name="176"><span class="lineNum">     176 </span>            :  *   - `Tags::Mortars&lt;typename BoundaryScheme::mortar_data_tag, VolumeDim&gt;`</a>
+<a name="177"><span class="lineNum">     177 </span>            :  *</a>
+<a name="178"><span class="lineNum">     178 </span>            :  * ### Internal Boundary Terms</a>
+<a name="179"><span class="lineNum">     179 </span>            :  *</a>
+<a name="180"><span class="lineNum">     180 </span>            :  * Internal boundary terms are computed from the</a>
+<a name="181"><span class="lineNum">     181 </span>            :  * `System::boundary_correction_base` type alias. This type alias must point to</a>
+<a name="182"><span class="lineNum">     182 </span>            :  * a base class with `creatable_classes`. Each concrete boundary correction must</a>
+<a name="183"><span class="lineNum">     183 </span>            :  * specify:</a>
+<a name="184"><span class="lineNum">     184 </span>            :  *</a>
+<a name="185"><span class="lineNum">     185 </span>            :  * - type alias template `dg_package_field_tags`. These are what will be</a>
+<a name="186"><span class="lineNum">     186 </span>            :  *   returned by `gsl::not_null` from the `dg_package_data` member function.</a>
+<a name="187"><span class="lineNum">     187 </span>            :  *</a>
+<a name="188"><span class="lineNum">     188 </span>            :  * - type alias template `dg_package_temporary_tags`. These are temporary tags</a>
+<a name="189"><span class="lineNum">     189 </span>            :  *   that are projected to the face and then passed to the `dg_package_data`</a>
+<a name="190"><span class="lineNum">     190 </span>            :  *   function.</a>
+<a name="191"><span class="lineNum">     191 </span>            :  *</a>
+<a name="192"><span class="lineNum">     192 </span>            :  * - type alias template `dg_package_primitive_tags`. These are the primitive</a>
+<a name="193"><span class="lineNum">     193 </span>            :  *   variables (if any) that are projected to the face and then passed to</a>
+<a name="194"><span class="lineNum">     194 </span>            :  *   `dg_package_data`.</a>
+<a name="195"><span class="lineNum">     195 </span>            :  *</a>
+<a name="196"><span class="lineNum">     196 </span>            :  * - type alias template `dg_package_volume_tags`. These are tags that are not</a>
+<a name="197"><span class="lineNum">     197 </span>            :  *   projected to the interface and are retrieved directly from the `DataBox`.</a>
+<a name="198"><span class="lineNum">     198 </span>            :  *   The equation of state for hydrodynamics systems is an example of what would</a>
+<a name="199"><span class="lineNum">     199 </span>            :  *   be a &quot;volume tag&quot;.</a>
+<a name="200"><span class="lineNum">     200 </span>            :  *</a>
+<a name="201"><span class="lineNum">     201 </span>            :  * A `static constexpr bool need_normal_vector` must be specified. If `true`</a>
+<a name="202"><span class="lineNum">     202 </span>            :  * then the normal vector is computed from the normal covector. This is</a>
+<a name="203"><span class="lineNum">     203 </span>            :  * currently not implemented.</a>
+<a name="204"><span class="lineNum">     204 </span>            :  *</a>
+<a name="205"><span class="lineNum">     205 </span>            :  * The `dg_package_data` function takes as arguments `gsl::not_null` of the</a>
+<a name="206"><span class="lineNum">     206 </span>            :  * `dg_package_data_field_tags`, then the projected evolved variables, the</a>
+<a name="207"><span class="lineNum">     207 </span>            :  * projected fluxes, the projected temporaries, the projected primitives, the</a>
+<a name="208"><span class="lineNum">     208 </span>            :  * unit normal covector, mesh velocity, normal dotted into the mesh velocity,</a>
+<a name="209"><span class="lineNum">     209 </span>            :  * the `volume_tags`, and finally the `dg::Formulation`. The `dg_package_data`</a>
+<a name="210"><span class="lineNum">     210 </span>            :  * function must compute all ingredients for the boundary correction, including</a>
+<a name="211"><span class="lineNum">     211 </span>            :  * mesh-velocity-corrected characteristic speeds. However, the projected fluxes</a>
+<a name="212"><span class="lineNum">     212 </span>            :  * passed in are \f$F^i - u v^i_g\f$ (the mesh velocity term is already</a>
+<a name="213"><span class="lineNum">     213 </span>            :  * included). The `dg_package_data` function must also return a `double` that is</a>
+<a name="214"><span class="lineNum">     214 </span>            :  * the maximum absolute characteristic speed over the entire face. This will be</a>
+<a name="215"><span class="lineNum">     215 </span>            :  * used for checking that the time step doesn't violate the CFL condition.</a>
+<a name="216"><span class="lineNum">     216 </span>            :  *</a>
+<a name="217"><span class="lineNum">     217 </span>            :  * Here is an example of the type aliases and `bool`:</a>
+<a name="218"><span class="lineNum">     218 </span>            :  *</a>
+<a name="219"><span class="lineNum">     219 </span>            :  * \snippet ComputeTimeDerivativeImpl.tpp bt_ta</a>
+<a name="220"><span class="lineNum">     220 </span>            :  *</a>
+<a name="221"><span class="lineNum">     221 </span>            :  * The normal vector requirement is:</a>
+<a name="222"><span class="lineNum">     222 </span>            :  *</a>
+<a name="223"><span class="lineNum">     223 </span>            :  * \snippet ComputeTimeDerivativeImpl.tpp bt_nnv</a>
+<a name="224"><span class="lineNum">     224 </span>            :  *</a>
+<a name="225"><span class="lineNum">     225 </span>            :  * For a conservative system with primitive variables and using the `TimeStepId`</a>
+<a name="226"><span class="lineNum">     226 </span>            :  * as a volume tag the `dg_package_data` function looks like:</a>
+<a name="227"><span class="lineNum">     227 </span>            :  *</a>
+<a name="228"><span class="lineNum">     228 </span>            :  * \snippet ComputeTimeDerivativeImpl.tpp bt_cp</a>
+<a name="229"><span class="lineNum">     229 </span>            :  *</a>
+<a name="230"><span class="lineNum">     230 </span>            :  * For a mixed conservative-nonconservative system with primitive variables and</a>
+<a name="231"><span class="lineNum">     231 </span>            :  * using the `TimeStepId` as a volume tag the `dg_package_data` function looks</a>
+<a name="232"><span class="lineNum">     232 </span>            :  * like:</a>
+<a name="233"><span class="lineNum">     233 </span>            :  *</a>
+<a name="234"><span class="lineNum">     234 </span>            :  * \snippet ComputeTimeDerivativeImpl.tpp bt_mp</a>
+<a name="235"><span class="lineNum">     235 </span>            :  *</a>
+<a name="236"><span class="lineNum">     236 </span>            :  * Uses:</a>
+<a name="237"><span class="lineNum">     237 </span>            :  * - System:</a>
+<a name="238"><span class="lineNum">     238 </span>            :  *   - `boundary_correction`</a>
+<a name="239"><span class="lineNum">     239 </span>            :  *   - `variables_tag`</a>
+<a name="240"><span class="lineNum">     240 </span>            :  *   - `flux_variables`</a>
+<a name="241"><span class="lineNum">     241 </span>            :  *   - `gradients_tags`</a>
+<a name="242"><span class="lineNum">     242 </span>            :  *   - `compute_volume_time_derivative`</a>
+<a name="243"><span class="lineNum">     243 </span>            :  *   - `has_primitive_and_conservative_vars`</a>
+<a name="244"><span class="lineNum">     244 </span>            :  *   - `primitive_variables_tag` if system has primitive variables</a>
+<a name="245"><span class="lineNum">     245 </span>            :  *</a>
+<a name="246"><span class="lineNum">     246 </span>            :  * - DataBox:</a>
+<a name="247"><span class="lineNum">     247 </span>            :  *   - `domain::Tags::Element&lt;Dim&gt;`</a>
+<a name="248"><span class="lineNum">     248 </span>            :  *   - `domain::Tags::Mesh&lt;Dim&gt;`</a>
+<a name="249"><span class="lineNum">     249 </span>            :  *   - `evolution::dg::Tags::MortarMesh&lt;Dim&gt;`</a>
+<a name="250"><span class="lineNum">     250 </span>            :  *   - `evolution::dg::Tags::MortarSize&lt;Dim&gt;`</a>
+<a name="251"><span class="lineNum">     251 </span>            :  *   - `evolution::dg::Tags::MortarData&lt;Dim&gt;`</a>
+<a name="252"><span class="lineNum">     252 </span>            :  *   - `Tags::TimeStepId`</a>
+<a name="253"><span class="lineNum">     253 </span>            :  *   - \code{.cpp}</a>
+<a name="254"><span class="lineNum">     254 </span>            :  *      domain::Tags::Interface&lt;domain::Tags::InternalDirections&lt;Dim&gt;,</a>
+<a name="255"><span class="lineNum">     255 </span>            :  *                                       domain::Tags::Mesh&lt;Dim - 1&gt;&gt;</a>
+<a name="256"><span class="lineNum">     256 </span>            :  *     \endcode</a>
+<a name="257"><span class="lineNum">     257 </span>            :  *   - \code{.cpp}</a>
+<a name="258"><span class="lineNum">     258 </span>            :  *     domain::Tags::Interface&lt;</a>
+<a name="259"><span class="lineNum">     259 </span>            :  *         domain::Tags::InternalDirections&lt;Dim&gt;,</a>
+<a name="260"><span class="lineNum">     260 </span>            :  *         ::Tags::Normalized&lt;</a>
+<a name="261"><span class="lineNum">     261 </span>            :  *             domain::Tags::UnnormalizedFaceNormal&lt;Dim, Frame::Inertial&gt;&gt;&gt;</a>
+<a name="262"><span class="lineNum">     262 </span>            :  *     \endcode</a>
+<a name="263"><span class="lineNum">     263 </span>            :  *   - \code{.cpp}</a>
+<a name="264"><span class="lineNum">     264 </span>            :  *     domain::Tags::Interface&lt;</a>
+<a name="265"><span class="lineNum">     265 </span>            :  *              domain::Tags::InternalDirections&lt;Dim&gt;,</a>
+<a name="266"><span class="lineNum">     266 </span>            :  *              domain::Tags::MeshVelocity&lt;Dim, Frame::Inertial&gt;&gt;</a>
+<a name="267"><span class="lineNum">     267 </span>            :  *     \endcode</a>
+<a name="268"><span class="lineNum">     268 </span>            :  *   - `Metavariables::system::variables_tag`</a>
+<a name="269"><span class="lineNum">     269 </span>            :  *   - `Metavariables::system::flux_variables`</a>
+<a name="270"><span class="lineNum">     270 </span>            :  *   - `Metavariables::system::primitive_tags` if exists</a>
+<a name="271"><span class="lineNum">     271 </span>            :  *   - `system::boundary_correction_base::dg_package_data_volume_tags`</a>
+<a name="272"><span class="lineNum">     272 </span>            :  *</a>
+<a name="273"><span class="lineNum">     273 </span>            :  * DataBox changes:</a>
+<a name="274"><span class="lineNum">     274 </span>            :  * - Adds: nothing</a>
+<a name="275"><span class="lineNum">     275 </span>            :  * - Removes: nothing</a>
+<a name="276"><span class="lineNum">     276 </span>            :  * - Modifies:</a>
+<a name="277"><span class="lineNum">     277 </span>            :  *   - `evolution::dg::Tags::MortarData&lt;Dim&gt;`</a>
+<a name="278"><span class="lineNum">     278 </span>            :  */</a>
+<a name="279"><span class="lineNum">     279 </span>            : template &lt;typename Metavariables&gt;</a>
+<a name="280"><span class="lineNum">     280 </span><span class="lineCov">          1 : struct ComputeTimeDerivative {</span></a>
+<a name="281"><span class="lineNum">     281 </span>            :  private:</a>
+<a name="282"><span class="lineNum">     282 </span>            :   template &lt;typename LocalMetaVars, typename = std::void_t&lt;&gt;&gt;</a>
+<a name="283"><span class="lineNum">     283 </span><span class="lineNoCov">          0 :   struct GetFluxInboxTag {</span></a>
+<a name="284"><span class="lineNum">     284 </span><span class="lineNoCov">          0 :     using type = tmpl::list&lt;&gt;;</span></a>
+<a name="285"><span class="lineNum">     285 </span>            :   };</a>
+<a name="286"><span class="lineNum">     286 </span>            : </a>
+<a name="287"><span class="lineNum">     287 </span>            :   template &lt;typename LocalMetaVars&gt;</a>
+<a name="288"><span class="lineNum">     288 </span>            :   struct GetFluxInboxTag&lt;LocalMetaVars,</a>
+<a name="289"><span class="lineNum">     289 </span>            :                          std::void_t&lt;typename LocalMetaVars::boundary_scheme&gt;&gt; {</a>
+<a name="290"><span class="lineNum">     290 </span>            :     using type = tmpl::list&lt;</a>
+<a name="291"><span class="lineNum">     291 </span>            :         ::dg::FluxesInboxTag&lt;typename Metavariables::boundary_scheme&gt;&gt;;</a>
+<a name="292"><span class="lineNum">     292 </span>            :   };</a>
+<a name="293"><span class="lineNum">     293 </span>            : </a>
+<a name="294"><span class="lineNum">     294 </span>            :  public:</a>
+<a name="295"><span class="lineNum">     295 </span><span class="lineNoCov">          0 :   using inbox_tags = tmpl::append&lt;</span></a>
+<a name="296"><span class="lineNum">     296 </span>            :       typename GetFluxInboxTag&lt;Metavariables&gt;::type,</a>
+<a name="297"><span class="lineNum">     297 </span>            :       tmpl::list&lt;evolution::dg::Tags::BoundaryCorrectionAndGhostCellsInbox&lt;</a>
+<a name="298"><span class="lineNum">     298 </span>            :           Metavariables::volume_dim&gt;&gt;&gt;;</a>
+<a name="299"><span class="lineNum">     299 </span><span class="lineNoCov">          0 :   using const_global_cache_tags = tmpl::append&lt;</span></a>
+<a name="300"><span class="lineNum">     300 </span>            :       tmpl::conditional_t&lt;detail::has_boundary_correction_base_v&lt;</a>
+<a name="301"><span class="lineNum">     301 </span>            :                               typename Metavariables::system&gt;,</a>
+<a name="302"><span class="lineNum">     302 </span>            :                           tmpl::list&lt;::dg::Tags::Formulation,</a>
+<a name="303"><span class="lineNum">     303 </span>            :                                      evolution::Tags::BoundaryCorrection&lt;</a>
+<a name="304"><span class="lineNum">     304 </span>            :                                          typename Metavariables::system&gt;&gt;,</a>
+<a name="305"><span class="lineNum">     305 </span>            :                           tmpl::list&lt;::dg::Tags::Formulation&gt;&gt;,</a>
+<a name="306"><span class="lineNum">     306 </span>            :       tmpl::conditional_t&lt;</a>
+<a name="307"><span class="lineNum">     307 </span>            :           Metavariables::local_time_stepping,</a>
+<a name="308"><span class="lineNum">     308 </span>            :           tmpl::list&lt;</a>
+<a name="309"><span class="lineNum">     309 </span>            :               ::Tags::StepChoosers&lt;typename Metavariables::step_choosers&gt;,</a>
+<a name="310"><span class="lineNum">     310 </span>            :               ::Tags::StepController, ::Tags::TimeStepper&lt;LtsTimeStepper&gt;&gt;,</a>
+<a name="311"><span class="lineNum">     311 </span>            :           tmpl::list&lt;&gt;&gt;&gt;;</a>
+<a name="312"><span class="lineNum">     312 </span>            : </a>
+<a name="313"><span class="lineNum">     313 </span>            :   template &lt;typename DbTagsList, typename... InboxTags, typename ArrayIndex,</a>
+<a name="314"><span class="lineNum">     314 </span>            :             typename ActionList, typename ParallelComponent&gt;</a>
+<a name="315"><span class="lineNum">     315 </span><span class="lineNoCov">          0 :   static std::tuple&lt;db::DataBox&lt;DbTagsList&gt;&amp;&amp;&gt; apply(</span></a>
+<a name="316"><span class="lineNum">     316 </span>            :       db::DataBox&lt;DbTagsList&gt;&amp; box,</a>
+<a name="317"><span class="lineNum">     317 </span>            :       tuples::TaggedTuple&lt;InboxTags...&gt;&amp; /*inboxes*/,</a>
+<a name="318"><span class="lineNum">     318 </span>            :       Parallel::GlobalCache&lt;Metavariables&gt;&amp; cache,</a>
+<a name="319"><span class="lineNum">     319 </span>            :       const ArrayIndex&amp; /*array_index*/, ActionList /*meta*/,</a>
+<a name="320"><span class="lineNum">     320 </span>            :       const ParallelComponent* /*meta*/) noexcept;  // NOLINT const</a>
+<a name="321"><span class="lineNum">     321 </span>            : </a>
+<a name="322"><span class="lineNum">     322 </span>            :  private:</a>
+<a name="323"><span class="lineNum">     323 </span>            :   // The below functions will be removed once we've finished writing the new</a>
+<a name="324"><span class="lineNum">     324 </span>            :   // method of handling boundaries.</a>
+<a name="325"><span class="lineNum">     325 </span>            :   template &lt;typename... NormalDotFluxTags, typename... Args&gt;</a>
+<a name="326"><span class="lineNum">     326 </span><span class="lineNoCov">          0 :   static void apply_flux(</span></a>
+<a name="327"><span class="lineNum">     327 </span>            :       gsl::not_null&lt;Variables&lt;tmpl::list&lt;NormalDotFluxTags...&gt;&gt;*&gt; boundary_flux,</a>
+<a name="328"><span class="lineNum">     328 </span>            :       const Args&amp;... boundary_variables) noexcept {</a>
+<a name="329"><span class="lineNum">     329 </span>            :     Metavariables::system::normal_dot_fluxes::apply(</a>
+<a name="330"><span class="lineNum">     330 </span>            :         make_not_null(&amp;get&lt;NormalDotFluxTags&gt;(*boundary_flux))...,</a>
+<a name="331"><span class="lineNum">     331 </span>            :         boundary_variables...);</a>
+<a name="332"><span class="lineNum">     332 </span>            :   }</a>
+<a name="333"><span class="lineNum">     333 </span>            : </a>
+<a name="334"><span class="lineNum">     334 </span>            :   template &lt;typename DbTagsList&gt;</a>
+<a name="335"><span class="lineNum">     335 </span><span class="lineNoCov">          0 :   static void boundary_terms_nonconservative_products(</span></a>
+<a name="336"><span class="lineNum">     336 </span>            :       gsl::not_null&lt;db::DataBox&lt;DbTagsList&gt;*&gt; box) noexcept;</a>
+<a name="337"><span class="lineNum">     337 </span>            : </a>
+<a name="338"><span class="lineNum">     338 </span>            :   template &lt;size_t VolumeDim, typename BoundaryScheme, typename DbTagsList&gt;</a>
+<a name="339"><span class="lineNum">     339 </span><span class="lineNoCov">          0 :   static void fill_mortar_data_for_internal_boundaries(</span></a>
+<a name="340"><span class="lineNum">     340 </span>            :       gsl::not_null&lt;db::DataBox&lt;DbTagsList&gt;*&gt; box) noexcept;</a>
+<a name="341"><span class="lineNum">     341 </span>            : </a>
+<a name="342"><span class="lineNum">     342 </span>            :   template &lt;typename ParallelComponent, typename DbTagsList&gt;</a>
+<a name="343"><span class="lineNum">     343 </span><span class="lineNoCov">          0 :   static void send_data_for_fluxes(</span></a>
+<a name="344"><span class="lineNum">     344 </span>            :       gsl::not_null&lt;Parallel::GlobalCache&lt;Metavariables&gt;*&gt; cache,</a>
+<a name="345"><span class="lineNum">     345 </span>            :       gsl::not_null&lt;db::DataBox&lt;DbTagsList&gt;*&gt; box) noexcept;</a>
+<a name="346"><span class="lineNum">     346 </span>            : };</a>
+<a name="347"><span class="lineNum">     347 </span>            : </a>
+<a name="348"><span class="lineNum">     348 </span>            : template &lt;typename Metavariables&gt;</a>
+<a name="349"><span class="lineNum">     349 </span>            : template &lt;typename DbTagsList, typename... InboxTags, typename ArrayIndex,</a>
+<a name="350"><span class="lineNum">     350 </span>            :           typename ActionList, typename ParallelComponent&gt;</a>
+<a name="351"><span class="lineNum">     351 </span>            : std::tuple&lt;db::DataBox&lt;DbTagsList&gt;&amp;&amp;&gt;</a>
+<a name="352"><span class="lineNum">     352 </span>            : ComputeTimeDerivative&lt;Metavariables&gt;::apply(</a>
+<a name="353"><span class="lineNum">     353 </span>            :     db::DataBox&lt;DbTagsList&gt;&amp; box,</a>
+<a name="354"><span class="lineNum">     354 </span>            :     tuples::TaggedTuple&lt;InboxTags...&gt;&amp; /*inboxes*/,</a>
+<a name="355"><span class="lineNum">     355 </span>            :     Parallel::GlobalCache&lt;Metavariables&gt;&amp; cache,</a>
+<a name="356"><span class="lineNum">     356 </span>            :     const ArrayIndex&amp; /*array_index*/, ActionList /*meta*/,</a>
+<a name="357"><span class="lineNum">     357 </span>            :     const ParallelComponent* const /*meta*/) noexcept {  // NOLINT const</a>
+<a name="358"><span class="lineNum">     358 </span>            :   static constexpr size_t volume_dim = Metavariables::volume_dim;</a>
+<a name="359"><span class="lineNum">     359 </span>            :   using system = typename Metavariables::system;</a>
+<a name="360"><span class="lineNum">     360 </span>            :   using variables_tag = typename system::variables_tag;</a>
+<a name="361"><span class="lineNum">     361 </span>            :   using dt_variables_tag = db::add_tag_prefix&lt;::Tags::dt, variables_tag&gt;;</a>
+<a name="362"><span class="lineNum">     362 </span>            :   using partial_derivative_tags = typename system::gradient_variables;</a>
+<a name="363"><span class="lineNum">     363 </span>            :   using flux_variables = typename system::flux_variables;</a>
+<a name="364"><span class="lineNum">     364 </span>            :   using compute_volume_time_derivative_terms =</a>
+<a name="365"><span class="lineNum">     365 </span>            :       typename system::compute_volume_time_derivative_terms;</a>
+<a name="366"><span class="lineNum">     366 </span>            : </a>
+<a name="367"><span class="lineNum">     367 </span>            :   const Mesh&lt;volume_dim&gt;&amp; mesh = db::get&lt;::domain::Tags::Mesh&lt;volume_dim&gt;&gt;(box);</a>
+<a name="368"><span class="lineNum">     368 </span>            :   const ::dg::Formulation dg_formulation =</a>
+<a name="369"><span class="lineNum">     369 </span>            :       db::get&lt;::dg::Tags::Formulation&gt;(box);</a>
+<a name="370"><span class="lineNum">     370 </span>            :   ASSERT(alg::all_of(mesh.basis(),</a>
+<a name="371"><span class="lineNum">     371 </span>            :                      [&amp;mesh](const Spectral::Basis current_basis) noexcept {</a>
+<a name="372"><span class="lineNum">     372 </span>            :                        return current_basis == mesh.basis(0);</a>
+<a name="373"><span class="lineNum">     373 </span>            :                      }),</a>
+<a name="374"><span class="lineNum">     374 </span>            :          &quot;An isotropic basis must be used in the evolution code. While &quot;</a>
+<a name="375"><span class="lineNum">     375 </span>            :          &quot;theoretically this restriction could be lifted, the simplification &quot;</a>
+<a name="376"><span class="lineNum">     376 </span>            :          &quot;it offers are quite substantial. Relaxing this assumption is likely &quot;</a>
+<a name="377"><span class="lineNum">     377 </span>            :          &quot;to require quite a bit of careful code refactoring and debugging.&quot;);</a>
+<a name="378"><span class="lineNum">     378 </span>            :   ASSERT(alg::all_of(</a>
+<a name="379"><span class="lineNum">     379 </span>            :              mesh.quadrature(),</a>
+<a name="380"><span class="lineNum">     380 </span>            :              [&amp;mesh](const Spectral::Quadrature current_quadrature) noexcept {</a>
+<a name="381"><span class="lineNum">     381 </span>            :                return current_quadrature == mesh.quadrature(0);</a>
+<a name="382"><span class="lineNum">     382 </span>            :              }),</a>
+<a name="383"><span class="lineNum">     383 </span>            :          &quot;An isotropic quadrature must be used in the evolution code. While &quot;</a>
+<a name="384"><span class="lineNum">     384 </span>            :          &quot;theoretically this restriction could be lifted, the simplification &quot;</a>
+<a name="385"><span class="lineNum">     385 </span>            :          &quot;it offers are quite substantial. Relaxing this assumption is likely &quot;</a>
+<a name="386"><span class="lineNum">     386 </span>            :          &quot;to require quite a bit of careful code refactoring and debugging.&quot;);</a>
+<a name="387"><span class="lineNum">     387 </span>            : </a>
+<a name="388"><span class="lineNum">     388 </span>            :   // Allocate the Variables classes needed for the time derivative</a>
+<a name="389"><span class="lineNum">     389 </span>            :   // computation.</a>
+<a name="390"><span class="lineNum">     390 </span>            :   //</a>
+<a name="391"><span class="lineNum">     391 </span>            :   // This is factored out so that we will be able to do ADER-DG/CG where a</a>
+<a name="392"><span class="lineNum">     392 </span>            :   // spacetime polynomial is constructed by solving implicit equations in time</a>
+<a name="393"><span class="lineNum">     393 </span>            :   // using a Picard iteration. A high-order initial guess is needed to</a>
+<a name="394"><span class="lineNum">     394 </span>            :   // efficiently construct the ADER spacetime solution. This initial guess is</a>
+<a name="395"><span class="lineNum">     395 </span>            :   // obtained using continuous RK methods, and so we will want to reuse</a>
+<a name="396"><span class="lineNum">     396 </span>            :   // buffers. Thus, the volume_terms function returns by reference rather than</a>
+<a name="397"><span class="lineNum">     397 </span>            :   // by value.</a>
+<a name="398"><span class="lineNum">     398 </span>            :   Variables&lt;typename compute_volume_time_derivative_terms::temporary_tags&gt;</a>
+<a name="399"><span class="lineNum">     399 </span>            :       temporaries{mesh.number_of_grid_points()};</a>
+<a name="400"><span class="lineNum">     400 </span>            :   Variables&lt;db::wrap_tags_in&lt;::Tags::Flux, flux_variables,</a>
+<a name="401"><span class="lineNum">     401 </span>            :                              tmpl::size_t&lt;volume_dim&gt;, Frame::Inertial&gt;&gt;</a>
+<a name="402"><span class="lineNum">     402 </span>            :       volume_fluxes{mesh.number_of_grid_points()};</a>
+<a name="403"><span class="lineNum">     403 </span>            :   Variables&lt;db::wrap_tags_in&lt;::Tags::deriv, partial_derivative_tags,</a>
+<a name="404"><span class="lineNum">     404 </span>            :                              tmpl::size_t&lt;volume_dim&gt;, Frame::Inertial&gt;&gt;</a>
+<a name="405"><span class="lineNum">     405 </span>            :       partial_derivs{mesh.number_of_grid_points()};</a>
+<a name="406"><span class="lineNum">     406 </span>            : </a>
+<a name="407"><span class="lineNum">     407 </span>            :   const Scalar&lt;DataVector&gt;* det_inverse_jacobian = nullptr;</a>
+<a name="408"><span class="lineNum">     408 </span>            :   if constexpr (tmpl::size&lt;flux_variables&gt;::value != 0) {</a>
+<a name="409"><span class="lineNum">     409 </span>            :     if (dg_formulation == ::dg::Formulation::WeakInertial) {</a>
+<a name="410"><span class="lineNum">     410 </span>            :       det_inverse_jacobian = &amp;db::get&lt;</a>
+<a name="411"><span class="lineNum">     411 </span>            :           domain::Tags::DetInvJacobian&lt;Frame::Logical, Frame::Inertial&gt;&gt;(box);</a>
+<a name="412"><span class="lineNum">     412 </span>            :     }</a>
+<a name="413"><span class="lineNum">     413 </span>            :   }</a>
+<a name="414"><span class="lineNum">     414 </span>            :   db::mutate_apply&lt;</a>
+<a name="415"><span class="lineNum">     415 </span>            :       tmpl::list&lt;dt_variables_tag&gt;,</a>
+<a name="416"><span class="lineNum">     416 </span>            :       typename compute_volume_time_derivative_terms::argument_tags&gt;(</a>
+<a name="417"><span class="lineNum">     417 </span>            :       [&amp;dg_formulation, &amp;det_inverse_jacobian,</a>
+<a name="418"><span class="lineNum">     418 </span>            :        &amp;div_mesh_velocity = db::get&lt;::domain::Tags::DivMeshVelocity&gt;(box),</a>
+<a name="419"><span class="lineNum">     419 </span>            :        &amp;evolved_variables = db::get&lt;variables_tag&gt;(box),</a>
+<a name="420"><span class="lineNum">     420 </span>            :        &amp;inertial_coordinates =</a>
+<a name="421"><span class="lineNum">     421 </span>            :            db::get&lt;domain::Tags::Coordinates&lt;volume_dim, Frame::Inertial&gt;&gt;(box),</a>
+<a name="422"><span class="lineNum">     422 </span>            :        &amp;logical_to_inertial_inv_jacobian =</a>
+<a name="423"><span class="lineNum">     423 </span>            :            db::get&lt;::domain::Tags::InverseJacobian&lt;volume_dim, Frame::Logical,</a>
+<a name="424"><span class="lineNum">     424 </span>            :                                                    Frame::Inertial&gt;&gt;(box),</a>
+<a name="425"><span class="lineNum">     425 </span>            :        &amp;mesh,</a>
+<a name="426"><span class="lineNum">     426 </span>            :        &amp;mesh_velocity = db::get&lt;::domain::Tags::MeshVelocity&lt;volume_dim&gt;&gt;(box),</a>
+<a name="427"><span class="lineNum">     427 </span>            :        &amp;partial_derivs, &amp;temporaries, &amp;volume_fluxes](</a>
+<a name="428"><span class="lineNum">     428 </span>            :           const gsl::not_null&lt;Variables&lt;</a>
+<a name="429"><span class="lineNum">     429 </span>            :               db::wrap_tags_in&lt;::Tags::dt, typename variables_tag::tags_list&gt;&gt;*&gt;</a>
+<a name="430"><span class="lineNum">     430 </span>            :               dt_vars_ptr,</a>
+<a name="431"><span class="lineNum">     431 </span>            :           const auto&amp;... time_derivative_args) noexcept {</a>
+<a name="432"><span class="lineNum">     432 </span>            :         detail::volume_terms&lt;compute_volume_time_derivative_terms&gt;(</a>
+<a name="433"><span class="lineNum">     433 </span>            :             dt_vars_ptr, make_not_null(&amp;volume_fluxes),</a>
+<a name="434"><span class="lineNum">     434 </span>            :             make_not_null(&amp;partial_derivs), make_not_null(&amp;temporaries),</a>
+<a name="435"><span class="lineNum">     435 </span>            :             evolved_variables, dg_formulation, mesh, inertial_coordinates,</a>
+<a name="436"><span class="lineNum">     436 </span>            :             logical_to_inertial_inv_jacobian, det_inverse_jacobian,</a>
+<a name="437"><span class="lineNum">     437 </span>            :             mesh_velocity, div_mesh_velocity, time_derivative_args...);</a>
+<a name="438"><span class="lineNum">     438 </span>            :       },</a>
+<a name="439"><span class="lineNum">     439 </span>            :       make_not_null(&amp;box));</a>
+<a name="440"><span class="lineNum">     440 </span>            : </a>
+<a name="441"><span class="lineNum">     441 </span>            :   if constexpr (detail::has_boundary_correction_base_v&lt;system&gt;) {</a>
+<a name="442"><span class="lineNum">     442 </span>            :     const auto&amp; boundary_correction =</a>
+<a name="443"><span class="lineNum">     443 </span>            :         db::get&lt;evolution::Tags::BoundaryCorrection&lt;system&gt;&gt;(box);</a>
+<a name="444"><span class="lineNum">     444 </span>            :     using derived_boundary_corrections =</a>
+<a name="445"><span class="lineNum">     445 </span>            :         typename std::decay_t&lt;decltype(boundary_correction)&gt;::creatable_classes;</a>
+<a name="446"><span class="lineNum">     446 </span>            : </a>
+<a name="447"><span class="lineNum">     447 </span>            :     const Variables&lt;detail::get_primitive_vars_tags_from_system&lt;system&gt;&gt;*</a>
+<a name="448"><span class="lineNum">     448 </span>            :         primitive_vars{nullptr};</a>
+<a name="449"><span class="lineNum">     449 </span>            :     if constexpr (system::has_primitive_and_conservative_vars) {</a>
+<a name="450"><span class="lineNum">     450 </span>            :       primitive_vars = &amp;db::get&lt;typename system::primitive_variables_tag&gt;(box);</a>
+<a name="451"><span class="lineNum">     451 </span>            :     }</a>
+<a name="452"><span class="lineNum">     452 </span>            : </a>
+<a name="453"><span class="lineNum">     453 </span>            :     static_assert(</a>
+<a name="454"><span class="lineNum">     454 </span>            :         tmpl::all&lt;derived_boundary_corrections, std::is_final&lt;tmpl::_1&gt;&gt;::value,</a>
+<a name="455"><span class="lineNum">     455 </span>            :         &quot;All createable classes for boundary corrections must be marked &quot;</a>
+<a name="456"><span class="lineNum">     456 </span>            :         &quot;final.&quot;);</a>
+<a name="457"><span class="lineNum">     457 </span>            :     tmpl::for_each&lt;derived_boundary_corrections&gt;(</a>
+<a name="458"><span class="lineNum">     458 </span>            :         [&amp;boundary_correction, &amp;box, &amp;partial_derivs, &amp;primitive_vars,</a>
+<a name="459"><span class="lineNum">     459 </span>            :          &amp;temporaries, &amp;volume_fluxes](auto derived_correction_v) noexcept {</a>
+<a name="460"><span class="lineNum">     460 </span>            :           using DerivedCorrection =</a>
+<a name="461"><span class="lineNum">     461 </span>            :               tmpl::type_from&lt;decltype(derived_correction_v)&gt;;</a>
+<a name="462"><span class="lineNum">     462 </span>            :           if (typeid(boundary_correction) == typeid(DerivedCorrection)) {</a>
+<a name="463"><span class="lineNum">     463 </span>            :             // Compute internal boundary quantities on the mortar for sides</a>
+<a name="464"><span class="lineNum">     464 </span>            :             // of the element that have neighbors, i.e. they are not an</a>
+<a name="465"><span class="lineNum">     465 </span>            :             // external side.</a>
+<a name="466"><span class="lineNum">     466 </span>            :             // Note: this call mutates:</a>
+<a name="467"><span class="lineNum">     467 </span>            :             //  - evolution::dg::Tags::NormalCovectorAndMagnitude&lt;Dim&gt;,</a>
+<a name="468"><span class="lineNum">     468 </span>            :             //  - evolution::dg::Tags::MortarData&lt;Dim&gt;</a>
+<a name="469"><span class="lineNum">     469 </span>            :             detail::internal_mortar_data&lt;system, volume_dim&gt;(</a>
+<a name="470"><span class="lineNum">     470 </span>            :                 make_not_null(&amp;box),</a>
+<a name="471"><span class="lineNum">     471 </span>            :                 dynamic_cast&lt;const DerivedCorrection&amp;&gt;(boundary_correction),</a>
+<a name="472"><span class="lineNum">     472 </span>            :                 db::get&lt;variables_tag&gt;(box), volume_fluxes, temporaries,</a>
+<a name="473"><span class="lineNum">     473 </span>            :                 primitive_vars,</a>
+<a name="474"><span class="lineNum">     474 </span>            :                 typename DerivedCorrection::dg_package_data_volume_tags{});</a>
+<a name="475"><span class="lineNum">     475 </span>            : </a>
+<a name="476"><span class="lineNum">     476 </span>            :             if constexpr (detail::has_boundary_conditions_base_v&lt;system&gt;) {</a>
+<a name="477"><span class="lineNum">     477 </span>            :               detail::apply_boundary_conditions_on_all_external_faces&lt;</a>
+<a name="478"><span class="lineNum">     478 </span>            :                   system, volume_dim&gt;(</a>
+<a name="479"><span class="lineNum">     479 </span>            :                   make_not_null(&amp;box),</a>
+<a name="480"><span class="lineNum">     480 </span>            :                   dynamic_cast&lt;const DerivedCorrection&amp;&gt;(boundary_correction),</a>
+<a name="481"><span class="lineNum">     481 </span>            :                   temporaries, volume_fluxes, partial_derivs, primitive_vars);</a>
+<a name="482"><span class="lineNum">     482 </span>            :             } else {</a>
+<a name="483"><span class="lineNum">     483 </span>            :               (void)partial_derivs;</a>
+<a name="484"><span class="lineNum">     484 </span>            :             }</a>
+<a name="485"><span class="lineNum">     485 </span>            :           }</a>
+<a name="486"><span class="lineNum">     486 </span>            :         });</a>
+<a name="487"><span class="lineNum">     487 </span>            :   } else {</a>
+<a name="488"><span class="lineNum">     488 </span>            :     // The below if-else and fill_mortar_data_for_internal_boundaries are for</a>
+<a name="489"><span class="lineNum">     489 </span>            :     // compatibility with the current boundary schemes. Once the current</a>
+<a name="490"><span class="lineNum">     490 </span>            :     // boundary schemes are removed the code will be refactored to reflect that</a>
+<a name="491"><span class="lineNum">     491 </span>            :     // change.</a>
+<a name="492"><span class="lineNum">     492 </span>            :     if constexpr (not std::is_same_v&lt;tmpl::list&lt;&gt;, flux_variables&gt;) {</a>
+<a name="493"><span class="lineNum">     493 </span>            :       using flux_variables_tag = ::Tags::Variables&lt;flux_variables&gt;;</a>
+<a name="494"><span class="lineNum">     494 </span>            :       using fluxes_tag =</a>
+<a name="495"><span class="lineNum">     495 </span>            :           db::add_tag_prefix&lt;::Tags::Flux, flux_variables_tag,</a>
+<a name="496"><span class="lineNum">     496 </span>            :                              tmpl::size_t&lt;Metavariables::volume_dim&gt;,</a>
+<a name="497"><span class="lineNum">     497 </span>            :                              Frame::Inertial&gt;;</a>
+<a name="498"><span class="lineNum">     498 </span>            : </a>
+<a name="499"><span class="lineNum">     499 </span>            :       // We currently set the fluxes in the DataBox to interface with the</a>
+<a name="500"><span class="lineNum">     500 </span>            :       // boundary correction communication code.</a>
+<a name="501"><span class="lineNum">     501 </span>            :       db::mutate&lt;fluxes_tag&gt;(make_not_null(&amp;box),</a>
+<a name="502"><span class="lineNum">     502 </span>            :                              [&amp;volume_fluxes](const auto fluxes_ptr) noexcept {</a>
+<a name="503"><span class="lineNum">     503 </span>            :                                *fluxes_ptr = volume_fluxes;</a>
+<a name="504"><span class="lineNum">     504 </span>            :                              });</a>
+<a name="505"><span class="lineNum">     505 </span>            :     } else {</a>
+<a name="506"><span class="lineNum">     506 </span>            :       boundary_terms_nonconservative_products(make_not_null(&amp;box));</a>
+<a name="507"><span class="lineNum">     507 </span>            :     }</a>
+<a name="508"><span class="lineNum">     508 </span>            : </a>
+<a name="509"><span class="lineNum">     509 </span>            :     // Compute internal boundary quantities</a>
+<a name="510"><span class="lineNum">     510 </span>            :     fill_mortar_data_for_internal_boundaries&lt;</a>
+<a name="511"><span class="lineNum">     511 </span>            :         volume_dim, typename Metavariables::boundary_scheme&gt;(</a>
+<a name="512"><span class="lineNum">     512 </span>            :         make_not_null(&amp;box));</a>
+<a name="513"><span class="lineNum">     513 </span>            :   }</a>
+<a name="514"><span class="lineNum">     514 </span>            : </a>
+<a name="515"><span class="lineNum">     515 </span>            :   if constexpr (Metavariables::local_time_stepping) {</a>
+<a name="516"><span class="lineNum">     516 </span>            :     take_step&lt;typename Metavariables::step_choosers&gt;(make_not_null(&amp;box),</a>
+<a name="517"><span class="lineNum">     517 </span>            :                                                      cache);</a>
+<a name="518"><span class="lineNum">     518 </span>            :   }</a>
+<a name="519"><span class="lineNum">     519 </span>            : </a>
+<a name="520"><span class="lineNum">     520 </span>            :   send_data_for_fluxes&lt;ParallelComponent&gt;(make_not_null(&amp;cache),</a>
+<a name="521"><span class="lineNum">     521 </span>            :                                           make_not_null(&amp;box));</a>
+<a name="522"><span class="lineNum">     522 </span>            :   return {std::move(box)};</a>
+<a name="523"><span class="lineNum">     523 </span>            : }</a>
+<a name="524"><span class="lineNum">     524 </span>            : </a>
+<a name="525"><span class="lineNum">     525 </span>            : template &lt;typename Metavariables&gt;</a>
+<a name="526"><span class="lineNum">     526 </span>            : template &lt;typename DbTagsList&gt;</a>
+<a name="527"><span class="lineNum">     527 </span><span class="lineNoCov">          0 : void ComputeTimeDerivative&lt;Metavariables&gt;::</span></a>
+<a name="528"><span class="lineNum">     528 </span>            :     boundary_terms_nonconservative_products(</a>
+<a name="529"><span class="lineNum">     529 </span>            :         const gsl::not_null&lt;db::DataBox&lt;DbTagsList&gt;*&gt; box) noexcept {</a>
+<a name="530"><span class="lineNum">     530 </span>            :   using system = typename Metavariables::system;</a>
+<a name="531"><span class="lineNum">     531 </span>            :   using variables_tag = typename system::variables_tag;</a>
+<a name="532"><span class="lineNum">     532 </span>            :   using DirectionsTag =</a>
+<a name="533"><span class="lineNum">     533 </span>            :       domain::Tags::InternalDirections&lt;Metavariables::volume_dim&gt;;</a>
+<a name="534"><span class="lineNum">     534 </span>            : </a>
+<a name="535"><span class="lineNum">     535 </span>            :   using interface_normal_dot_fluxes_tag = domain::Tags::Interface&lt;</a>
+<a name="536"><span class="lineNum">     536 </span>            :       DirectionsTag, db::add_tag_prefix&lt;::Tags::NormalDotFlux, variables_tag&gt;&gt;;</a>
+<a name="537"><span class="lineNum">     537 </span>            : </a>
+<a name="538"><span class="lineNum">     538 </span>            :   using interface_compute_item_argument_tags = tmpl::transform&lt;</a>
+<a name="539"><span class="lineNum">     539 </span>            :       typename Metavariables::system::normal_dot_fluxes::argument_tags,</a>
+<a name="540"><span class="lineNum">     540 </span>            :       tmpl::bind&lt;domain::Tags::Interface, DirectionsTag, tmpl::_1&gt;&gt;;</a>
+<a name="541"><span class="lineNum">     541 </span>            : </a>
+<a name="542"><span class="lineNum">     542 </span>            :   db::mutate_apply&lt;</a>
+<a name="543"><span class="lineNum">     543 </span>            :       tmpl::list&lt;interface_normal_dot_fluxes_tag&gt;,</a>
+<a name="544"><span class="lineNum">     544 </span>            :       tmpl::push_front&lt;interface_compute_item_argument_tags, DirectionsTag&gt;&gt;(</a>
+<a name="545"><span class="lineNum">     545 </span>            :       [](const auto boundary_fluxes_ptr,</a>
+<a name="546"><span class="lineNum">     546 </span>            :          const std::unordered_set&lt;Direction&lt;Metavariables::volume_dim&gt;&gt;&amp;</a>
+<a name="547"><span class="lineNum">     547 </span>            :              internal_directions,</a>
+<a name="548"><span class="lineNum">     548 </span>            :          const auto&amp;... tensors) noexcept {</a>
+<a name="549"><span class="lineNum">     549 </span>            :         for (const auto&amp; direction : internal_directions) {</a>
+<a name="550"><span class="lineNum">     550 </span>            :           apply_flux(make_not_null(&amp;boundary_fluxes_ptr-&gt;at(direction)),</a>
+<a name="551"><span class="lineNum">     551 </span>            :                      tensors.at(direction)...);</a>
+<a name="552"><span class="lineNum">     552 </span>            :         }</a>
+<a name="553"><span class="lineNum">     553 </span>            :       },</a>
+<a name="554"><span class="lineNum">     554 </span>            :       box);</a>
+<a name="555"><span class="lineNum">     555 </span>            : }</a>
+<a name="556"><span class="lineNum">     556 </span>            : </a>
+<a name="557"><span class="lineNum">     557 </span>            : template &lt;typename Metavariables&gt;</a>
+<a name="558"><span class="lineNum">     558 </span>            : template &lt;size_t VolumeDim, typename BoundaryScheme, typename DbTagsList&gt;</a>
+<a name="559"><span class="lineNum">     559 </span><span class="lineNoCov">          0 : void ComputeTimeDerivative&lt;Metavariables&gt;::</span></a>
+<a name="560"><span class="lineNum">     560 </span>            :     fill_mortar_data_for_internal_boundaries(</a>
+<a name="561"><span class="lineNum">     561 </span>            :         const gsl::not_null&lt;db::DataBox&lt;DbTagsList&gt;*&gt; box) noexcept {</a>
+<a name="562"><span class="lineNum">     562 </span>            :   using temporal_id_tag = typename BoundaryScheme::temporal_id_tag;</a>
+<a name="563"><span class="lineNum">     563 </span>            :   using all_mortar_data_tag =</a>
+<a name="564"><span class="lineNum">     564 </span>            :       ::Tags::Mortars&lt;typename BoundaryScheme::mortar_data_tag, VolumeDim&gt;;</a>
+<a name="565"><span class="lineNum">     565 </span>            :   using boundary_data_computer =</a>
+<a name="566"><span class="lineNum">     566 </span>            :       typename BoundaryScheme::boundary_data_computer;</a>
+<a name="567"><span class="lineNum">     567 </span>            : </a>
+<a name="568"><span class="lineNum">     568 </span>            :   // Collect data on element interfaces</a>
+<a name="569"><span class="lineNum">     569 </span>            :   auto boundary_data_on_interfaces =</a>
+<a name="570"><span class="lineNum">     570 </span>            :       interface_apply&lt;domain::Tags::InternalDirections&lt;VolumeDim&gt;,</a>
+<a name="571"><span class="lineNum">     571 </span>            :                       boundary_data_computer&gt;(*box);</a>
+<a name="572"><span class="lineNum">     572 </span>            : </a>
+<a name="573"><span class="lineNum">     573 </span>            :   // Project collected data to all internal mortars and store in DataBox</a>
+<a name="574"><span class="lineNum">     574 </span>            :   const auto&amp; element = db::get&lt;domain::Tags::Element&lt;VolumeDim&gt;&gt;(*box);</a>
+<a name="575"><span class="lineNum">     575 </span>            :   const auto&amp; face_meshes =</a>
+<a name="576"><span class="lineNum">     576 </span>            :       get&lt;domain::Tags::Interface&lt;domain::Tags::InternalDirections&lt;VolumeDim&gt;,</a>
+<a name="577"><span class="lineNum">     577 </span>            :                                   domain::Tags::Mesh&lt;VolumeDim - 1&gt;&gt;&gt;(*box);</a>
+<a name="578"><span class="lineNum">     578 </span>            :   const auto&amp; mortar_meshes =</a>
+<a name="579"><span class="lineNum">     579 </span>            :       get&lt;::Tags::Mortars&lt;domain::Tags::Mesh&lt;VolumeDim - 1&gt;, VolumeDim&gt;&gt;(*box);</a>
+<a name="580"><span class="lineNum">     580 </span>            :   const auto&amp; mortar_sizes =</a>
+<a name="581"><span class="lineNum">     581 </span>            :       get&lt;::Tags::Mortars&lt;::Tags::MortarSize&lt;VolumeDim - 1&gt;, VolumeDim&gt;&gt;(*box);</a>
+<a name="582"><span class="lineNum">     582 </span>            :   const auto&amp; temporal_id = get&lt;temporal_id_tag&gt;(*box);</a>
+<a name="583"><span class="lineNum">     583 </span>            :   const auto integration_order =</a>
+<a name="584"><span class="lineNum">     584 </span>            :       db::get&lt;::Tags::HistoryEvolvedVariables&lt;&gt;&gt;(*box).integration_order();</a>
+<a name="585"><span class="lineNum">     585 </span>            :   for (const auto&amp; [direction, neighbors] : element.neighbors()) {</a>
+<a name="586"><span class="lineNum">     586 </span>            :     const auto&amp; face_mesh = face_meshes.at(direction);</a>
+<a name="587"><span class="lineNum">     587 </span>            :     for (const auto&amp; neighbor : neighbors) {</a>
+<a name="588"><span class="lineNum">     588 </span>            :       const auto mortar_id = std::make_pair(direction, neighbor);</a>
+<a name="589"><span class="lineNum">     589 </span>            :       const auto&amp; mortar_mesh = mortar_meshes.at(mortar_id);</a>
+<a name="590"><span class="lineNum">     590 </span>            :       const auto&amp; mortar_size = mortar_sizes.at(mortar_id);</a>
+<a name="591"><span class="lineNum">     591 </span>            : </a>
+<a name="592"><span class="lineNum">     592 </span>            :       // Project the data from the face to the mortar.</a>
+<a name="593"><span class="lineNum">     593 </span>            :       // Where no projection is necessary we `std::move` the data directly to</a>
+<a name="594"><span class="lineNum">     594 </span>            :       // avoid a copy. We can't move the data or modify it in-place when</a>
+<a name="595"><span class="lineNum">     595 </span>            :       // projecting, because in that case the face may touch more than one</a>
+<a name="596"><span class="lineNum">     596 </span>            :       // mortar so we need to keep the data around.</a>
+<a name="597"><span class="lineNum">     597 </span>            :       auto boundary_data_on_mortar =</a>
+<a name="598"><span class="lineNum">     598 </span>            :           ::dg::needs_projection(face_mesh, mortar_mesh, mortar_size)</a>
+<a name="599"><span class="lineNum">     599 </span>            :               ? boundary_data_on_interfaces.at(direction).project_to_mortar(</a>
+<a name="600"><span class="lineNum">     600 </span>            :                     face_mesh, mortar_mesh, mortar_size)</a>
+<a name="601"><span class="lineNum">     601 </span>            :               : std::move(boundary_data_on_interfaces.at(direction));</a>
+<a name="602"><span class="lineNum">     602 </span>            : </a>
+<a name="603"><span class="lineNum">     603 </span>            :       // Store the boundary data on this side of the mortar</a>
+<a name="604"><span class="lineNum">     604 </span>            :       db::mutate&lt;all_mortar_data_tag&gt;(</a>
+<a name="605"><span class="lineNum">     605 </span>            :           box, [&amp;mortar_id, &amp;temporal_id, &amp;boundary_data_on_mortar,</a>
+<a name="606"><span class="lineNum">     606 </span>            :                 &amp;integration_order](</a>
+<a name="607"><span class="lineNum">     607 </span>            :                    const gsl::not_null&lt;typename all_mortar_data_tag::type*&gt;</a>
+<a name="608"><span class="lineNum">     608 </span>            :                        all_mortar_data) noexcept {</a>
+<a name="609"><span class="lineNum">     609 </span>            :               auto&amp; mortar_data = all_mortar_data-&gt;at(mortar_id);</a>
+<a name="610"><span class="lineNum">     610 </span>            :               mortar_data.integration_order(integration_order);</a>
+<a name="611"><span class="lineNum">     611 </span>            :               mortar_data.local_insert(temporal_id,</a>
+<a name="612"><span class="lineNum">     612 </span>            :                                        std::move(boundary_data_on_mortar));</a>
+<a name="613"><span class="lineNum">     613 </span>            :           });</a>
+<a name="614"><span class="lineNum">     614 </span>            :     }</a>
+<a name="615"><span class="lineNum">     615 </span>            :   }</a>
+<a name="616"><span class="lineNum">     616 </span>            : }</a>
+<a name="617"><span class="lineNum">     617 </span>            : </a>
+<a name="618"><span class="lineNum">     618 </span>            : template &lt;typename Metavariables&gt;</a>
+<a name="619"><span class="lineNum">     619 </span>            : template &lt;typename ParallelComponent, typename DbTagsList&gt;</a>
+<a name="620"><span class="lineNum">     620 </span><span class="lineNoCov">          0 : void ComputeTimeDerivative&lt;Metavariables&gt;::send_data_for_fluxes(</span></a>
+<a name="621"><span class="lineNum">     621 </span>            :     const gsl::not_null&lt;Parallel::GlobalCache&lt;Metavariables&gt;*&gt; cache,</a>
+<a name="622"><span class="lineNum">     622 </span>            :     const gsl::not_null&lt;db::DataBox&lt;DbTagsList&gt;*&gt; box) noexcept {</a>
+<a name="623"><span class="lineNum">     623 </span>            :   using system = typename Metavariables::system;</a>
+<a name="624"><span class="lineNum">     624 </span>            :   constexpr size_t volume_dim = Metavariables::volume_dim;</a>
+<a name="625"><span class="lineNum">     625 </span>            :   auto&amp; receiver_proxy =</a>
+<a name="626"><span class="lineNum">     626 </span>            :       Parallel::get_parallel_component&lt;ParallelComponent&gt;(*cache);</a>
+<a name="627"><span class="lineNum">     627 </span>            :   const auto&amp; element = db::get&lt;domain::Tags::Element&lt;volume_dim&gt;&gt;(*box);</a>
+<a name="628"><span class="lineNum">     628 </span>            : </a>
+<a name="629"><span class="lineNum">     629 </span>            :   if constexpr (detail::has_boundary_correction_base_v&lt;system&gt;) {</a>
+<a name="630"><span class="lineNum">     630 </span>            :     const auto&amp; time_step_id = db::get&lt;::Tags::TimeStepId&gt;(*box);</a>
+<a name="631"><span class="lineNum">     631 </span>            :     const auto&amp; all_mortar_data =</a>
+<a name="632"><span class="lineNum">     632 </span>            :         db::get&lt;evolution::dg::Tags::MortarData&lt;volume_dim&gt;&gt;(*box);</a>
+<a name="633"><span class="lineNum">     633 </span>            :     const auto&amp; mortar_meshes =</a>
+<a name="634"><span class="lineNum">     634 </span>            :         get&lt;evolution::dg::Tags::MortarMesh&lt;volume_dim&gt;&gt;(*box);</a>
+<a name="635"><span class="lineNum">     635 </span>            : </a>
+<a name="636"><span class="lineNum">     636 </span>            :     for (const auto&amp; [direction, neighbors] : element.neighbors()) {</a>
+<a name="637"><span class="lineNum">     637 </span>            :       const auto&amp; orientation = neighbors.orientation();</a>
+<a name="638"><span class="lineNum">     638 </span>            :       const auto direction_from_neighbor = orientation(direction.opposite());</a>
+<a name="639"><span class="lineNum">     639 </span>            : </a>
+<a name="640"><span class="lineNum">     640 </span>            :       for (const auto&amp; neighbor : neighbors) {</a>
+<a name="641"><span class="lineNum">     641 </span>            :         const std::pair mortar_id{direction, neighbor};</a>
+<a name="642"><span class="lineNum">     642 </span>            : </a>
+<a name="643"><span class="lineNum">     643 </span>            :         std::pair&lt;Mesh&lt;volume_dim - 1&gt;, std::vector&lt;double&gt;&gt;</a>
+<a name="644"><span class="lineNum">     644 </span>            :             neighbor_boundary_data_on_mortar{};</a>
+<a name="645"><span class="lineNum">     645 </span>            :         ASSERT(time_step_id == all_mortar_data.at(mortar_id).time_step_id(),</a>
+<a name="646"><span class="lineNum">     646 </span>            :                &quot;The current time step id of the volume is &quot;</a>
+<a name="647"><span class="lineNum">     647 </span>            :                    &lt;&lt; time_step_id</a>
+<a name="648"><span class="lineNum">     648 </span>            :                    &lt;&lt; &quot;but the time step id on the mortar with mortar id &quot;</a>
+<a name="649"><span class="lineNum">     649 </span>            :                    &lt;&lt; mortar_id &lt;&lt; &quot; is &quot;</a>
+<a name="650"><span class="lineNum">     650 </span>            :                    &lt;&lt; all_mortar_data.at(mortar_id).time_step_id());</a>
+<a name="651"><span class="lineNum">     651 </span>            : </a>
+<a name="652"><span class="lineNum">     652 </span>            :         // Reorient the data to the neighbor orientation if necessary</a>
+<a name="653"><span class="lineNum">     653 </span>            :         if (LIKELY(orientation.is_aligned())) {</a>
+<a name="654"><span class="lineNum">     654 </span>            :           neighbor_boundary_data_on_mortar =</a>
+<a name="655"><span class="lineNum">     655 </span>            :               *all_mortar_data.at(mortar_id).local_mortar_data();</a>
+<a name="656"><span class="lineNum">     656 </span>            :         } else {</a>
+<a name="657"><span class="lineNum">     657 </span>            :           const auto&amp; slice_extents = mortar_meshes.at(mortar_id).extents();</a>
+<a name="658"><span class="lineNum">     658 </span>            :           neighbor_boundary_data_on_mortar.first =</a>
+<a name="659"><span class="lineNum">     659 </span>            :               all_mortar_data.at(mortar_id).local_mortar_data()-&gt;first;</a>
+<a name="660"><span class="lineNum">     660 </span>            :           neighbor_boundary_data_on_mortar.second = orient_variables_on_slice(</a>
+<a name="661"><span class="lineNum">     661 </span>            :               all_mortar_data.at(mortar_id).local_mortar_data()-&gt;second,</a>
+<a name="662"><span class="lineNum">     662 </span>            :               slice_extents, direction.dimension(), orientation);</a>
+<a name="663"><span class="lineNum">     663 </span>            :         }</a>
+<a name="664"><span class="lineNum">     664 </span>            : </a>
+<a name="665"><span class="lineNum">     665 </span>            :         const TimeStepId&amp; next_time_step_id = [&amp;box]() noexcept {</a>
+<a name="666"><span class="lineNum">     666 </span>            :           if (Metavariables::local_time_stepping) {</a>
+<a name="667"><span class="lineNum">     667 </span>            :             return db::get&lt;::Tags::Next&lt;::Tags::TimeStepId&gt;&gt;(*box);</a>
+<a name="668"><span class="lineNum">     668 </span>            :           } else {</a>
+<a name="669"><span class="lineNum">     669 </span>            :             return db::get&lt;::Tags::TimeStepId&gt;(*box);</a>
+<a name="670"><span class="lineNum">     670 </span>            :           }</a>
+<a name="671"><span class="lineNum">     671 </span>            :         }();</a>
+<a name="672"><span class="lineNum">     672 </span>            : </a>
+<a name="673"><span class="lineNum">     673 </span>            :         std::tuple&lt;Mesh&lt;volume_dim - 1&gt;, std::optional&lt;std::vector&lt;double&gt;&gt;,</a>
+<a name="674"><span class="lineNum">     674 </span>            :                    std::optional&lt;std::vector&lt;double&gt;&gt;, ::TimeStepId&gt;</a>
+<a name="675"><span class="lineNum">     675 </span>            :             data{neighbor_boundary_data_on_mortar.first,</a>
+<a name="676"><span class="lineNum">     676 </span>            :                  {},</a>
+<a name="677"><span class="lineNum">     677 </span>            :                  {std::move(neighbor_boundary_data_on_mortar.second)},</a>
+<a name="678"><span class="lineNum">     678 </span>            :                  next_time_step_id};</a>
+<a name="679"><span class="lineNum">     679 </span>            : </a>
+<a name="680"><span class="lineNum">     680 </span>            :         // Send mortar data (the `std::tuple` named `data`) to neighbor</a>
+<a name="681"><span class="lineNum">     681 </span>            :         Parallel::receive_data&lt;</a>
+<a name="682"><span class="lineNum">     682 </span>            :             evolution::dg::Tags::BoundaryCorrectionAndGhostCellsInbox&lt;</a>
+<a name="683"><span class="lineNum">     683 </span>            :                 volume_dim&gt;&gt;(</a>
+<a name="684"><span class="lineNum">     684 </span>            :             receiver_proxy[neighbor], time_step_id,</a>
+<a name="685"><span class="lineNum">     685 </span>            :             std::make_pair(std::pair{direction_from_neighbor, element.id()},</a>
+<a name="686"><span class="lineNum">     686 </span>            :                            data));</a>
+<a name="687"><span class="lineNum">     687 </span>            :       }</a>
+<a name="688"><span class="lineNum">     688 </span>            :     }</a>
+<a name="689"><span class="lineNum">     689 </span>            : </a>
+<a name="690"><span class="lineNum">     690 </span>            :     if constexpr (Metavariables::local_time_stepping) {</a>
+<a name="691"><span class="lineNum">     691 </span>            :       using variables_tag = typename Metavariables::system::variables_tag;</a>
+<a name="692"><span class="lineNum">     692 </span>            :       using dt_variables_tag = db::add_tag_prefix&lt;::Tags::dt, variables_tag&gt;;</a>
+<a name="693"><span class="lineNum">     693 </span>            :       // We assume isotropic quadrature, i.e. the quadrature is the same in</a>
+<a name="694"><span class="lineNum">     694 </span>            :       // all directions.</a>
+<a name="695"><span class="lineNum">     695 </span>            :       const bool using_gauss_points =</a>
+<a name="696"><span class="lineNum">     696 </span>            :           db::get&lt;domain::Tags::Mesh&lt;volume_dim&gt;&gt;(*box).quadrature() ==</a>
+<a name="697"><span class="lineNum">     697 </span>            :           make_array&lt;volume_dim&gt;(Spectral::Quadrature::Gauss);</a>
+<a name="698"><span class="lineNum">     698 </span>            : </a>
+<a name="699"><span class="lineNum">     699 </span>            :       const Scalar&lt;DataVector&gt; volume_det_inv_jacobian{};</a>
+<a name="700"><span class="lineNum">     700 </span>            :       if (using_gauss_points) {</a>
+<a name="701"><span class="lineNum">     701 </span>            :         // NOLINTNEXTLINE</a>
+<a name="702"><span class="lineNum">     702 </span>            :         const_cast&lt;DataVector&amp;&gt;(get(volume_det_inv_jacobian))</a>
+<a name="703"><span class="lineNum">     703 </span>            :             .set_data_ref(make_not_null(&amp;const_cast&lt;DataVector&amp;&gt;(  // NOLINT</a>
+<a name="704"><span class="lineNum">     704 </span>            :                 get(db::get&lt;domain::Tags::DetInvJacobian&lt;</a>
+<a name="705"><span class="lineNum">     705 </span>            :                         Frame::Logical, Frame::Inertial&gt;&gt;(*box)))));</a>
+<a name="706"><span class="lineNum">     706 </span>            :       }</a>
+<a name="707"><span class="lineNum">     707 </span>            : </a>
+<a name="708"><span class="lineNum">     708 </span>            :       // Add face normal and Jacobian determinants to the local mortar data. We</a>
+<a name="709"><span class="lineNum">     709 </span>            :       // only need the Jacobians if we are using Gauss points. Then copy over</a>
+<a name="710"><span class="lineNum">     710 </span>            :       // into the boundary history, since that's what the LTS steppers use.</a>
+<a name="711"><span class="lineNum">     711 </span>            :       //</a>
+<a name="712"><span class="lineNum">     712 </span>            :       // The boundary history coupling computation (which computes the _lifted_</a>
+<a name="713"><span class="lineNum">     713 </span>            :       // boundary correction) returns a Variables&lt;dt&lt;EvolvedVars&gt;&gt; instead of</a>
+<a name="714"><span class="lineNum">     714 </span>            :       // using the `NormalDotNumericalFlux` prefix tag. This is because the</a>
+<a name="715"><span class="lineNum">     715 </span>            :       // returned quantity is more a `dt` quantity than a</a>
+<a name="716"><span class="lineNum">     716 </span>            :       // `NormalDotNormalDotFlux` since it's been lifted to the volume.</a>
+<a name="717"><span class="lineNum">     717 </span>            :       using Key = std::pair&lt;Direction&lt;volume_dim&gt;, ElementId&lt;volume_dim&gt;&gt;;</a>
+<a name="718"><span class="lineNum">     718 </span>            :       const auto integration_order =</a>
+<a name="719"><span class="lineNum">     719 </span>            :           db::get&lt;::Tags::HistoryEvolvedVariables&lt;&gt;&gt;(*box).integration_order();</a>
+<a name="720"><span class="lineNum">     720 </span>            :       db::mutate&lt;evolution::dg::Tags::MortarData&lt;volume_dim&gt;,</a>
+<a name="721"><span class="lineNum">     721 </span>            :                  evolution::dg::Tags::MortarDataHistory&lt;</a>
+<a name="722"><span class="lineNum">     722 </span>            :                      volume_dim, typename dt_variables_tag::type&gt;&gt;(</a>
+<a name="723"><span class="lineNum">     723 </span>            :           box,</a>
+<a name="724"><span class="lineNum">     724 </span>            :           [&amp;element, integration_order, &amp;time_step_id, using_gauss_points,</a>
+<a name="725"><span class="lineNum">     725 </span>            :            &amp;volume_det_inv_jacobian](</a>
+<a name="726"><span class="lineNum">     726 </span>            :               const gsl::not_null&lt;</a>
+<a name="727"><span class="lineNum">     727 </span>            :                   std::unordered_map&lt;Key, evolution::dg::MortarData&lt;volume_dim&gt;,</a>
+<a name="728"><span class="lineNum">     728 </span>            :                                      boost::hash&lt;Key&gt;&gt;*&gt;</a>
+<a name="729"><span class="lineNum">     729 </span>            :                   mortar_data,</a>
+<a name="730"><span class="lineNum">     730 </span>            :               const gsl::not_null&lt;</a>
+<a name="731"><span class="lineNum">     731 </span>            :                   std::unordered_map&lt;Key,</a>
+<a name="732"><span class="lineNum">     732 </span>            :                                      TimeSteppers::BoundaryHistory&lt;</a>
+<a name="733"><span class="lineNum">     733 </span>            :                                          evolution::dg::MortarData&lt;volume_dim&gt;,</a>
+<a name="734"><span class="lineNum">     734 </span>            :                                          evolution::dg::MortarData&lt;volume_dim&gt;,</a>
+<a name="735"><span class="lineNum">     735 </span>            :                                          typename dt_variables_tag::type&gt;,</a>
+<a name="736"><span class="lineNum">     736 </span>            :                                      boost::hash&lt;Key&gt;&gt;*&gt;</a>
+<a name="737"><span class="lineNum">     737 </span>            :                   boundary_data_history,</a>
+<a name="738"><span class="lineNum">     738 </span>            :               const Mesh&lt;volume_dim&gt;&amp; volume_mesh,</a>
+<a name="739"><span class="lineNum">     739 </span>            :               const DirectionMap&lt;</a>
+<a name="740"><span class="lineNum">     740 </span>            :                   volume_dim,</a>
+<a name="741"><span class="lineNum">     741 </span>            :                   std::optional&lt;Variables&lt;tmpl::list&lt;</a>
+<a name="742"><span class="lineNum">     742 </span>            :                       evolution::dg::Tags::MagnitudeOfNormal,</a>
+<a name="743"><span class="lineNum">     743 </span>            :                       evolution::dg::Tags::NormalCovector&lt;volume_dim&gt;&gt;&gt;&gt;&gt;&amp;</a>
+<a name="744"><span class="lineNum">     744 </span>            :                   normal_covector_and_magnitude) noexcept {</a>
+<a name="745"><span class="lineNum">     745 </span>            :             Scalar&lt;DataVector&gt; volume_det_jacobian{};</a>
+<a name="746"><span class="lineNum">     746 </span>            :             Scalar&lt;DataVector&gt; face_det_jacobian{};</a>
+<a name="747"><span class="lineNum">     747 </span>            :             if (using_gauss_points) {</a>
+<a name="748"><span class="lineNum">     748 </span>            :               get(volume_det_jacobian) = 1.0 / get(volume_det_inv_jacobian);</a>
+<a name="749"><span class="lineNum">     749 </span>            :             }</a>
+<a name="750"><span class="lineNum">     750 </span>            :             for (const auto&amp; [direction, neighbors_in_direction] :</a>
+<a name="751"><span class="lineNum">     751 </span>            :                  element.neighbors()) {</a>
+<a name="752"><span class="lineNum">     752 </span>            :               // We can perform projections once for all neighbors in the</a>
+<a name="753"><span class="lineNum">     753 </span>            :               // direction because we care about the _face_ mesh, not the mortar</a>
+<a name="754"><span class="lineNum">     754 </span>            :               // mesh.</a>
+<a name="755"><span class="lineNum">     755 </span>            :               ASSERT(</a>
+<a name="756"><span class="lineNum">     756 </span>            :                   normal_covector_and_magnitude.at(direction).has_value(),</a>
+<a name="757"><span class="lineNum">     757 </span>            :                   &quot;The normal covector and magnitude have not been computed.&quot;);</a>
+<a name="758"><span class="lineNum">     758 </span>            :               const Scalar&lt;DataVector&gt;&amp; face_normal_magnitude =</a>
+<a name="759"><span class="lineNum">     759 </span>            :                   get&lt;evolution::dg::Tags::MagnitudeOfNormal&gt;(</a>
+<a name="760"><span class="lineNum">     760 </span>            :                       *normal_covector_and_magnitude.at(direction));</a>
+<a name="761"><span class="lineNum">     761 </span>            :               if (using_gauss_points) {</a>
+<a name="762"><span class="lineNum">     762 </span>            :                 const Matrix identity{};</a>
+<a name="763"><span class="lineNum">     763 </span>            :                 auto interpolation_matrices =</a>
+<a name="764"><span class="lineNum">     764 </span>            :                     make_array&lt;Metavariables::volume_dim&gt;(std::cref(identity));</a>
+<a name="765"><span class="lineNum">     765 </span>            :                 const std::pair&lt;Matrix, Matrix&gt;&amp; matrices =</a>
+<a name="766"><span class="lineNum">     766 </span>            :                     Spectral::boundary_interpolation_matrices(</a>
+<a name="767"><span class="lineNum">     767 </span>            :                         volume_mesh.slice_through(direction.dimension()));</a>
+<a name="768"><span class="lineNum">     768 </span>            :                 gsl::at(interpolation_matrices, direction.dimension()) =</a>
+<a name="769"><span class="lineNum">     769 </span>            :                     direction.side() == Side::Upper ? matrices.second</a>
+<a name="770"><span class="lineNum">     770 </span>            :                                                     : matrices.first;</a>
+<a name="771"><span class="lineNum">     771 </span>            :                 if (get(face_det_jacobian).size() !=</a>
+<a name="772"><span class="lineNum">     772 </span>            :                     get(face_normal_magnitude).size()) {</a>
+<a name="773"><span class="lineNum">     773 </span>            :                   get(face_det_jacobian) =</a>
+<a name="774"><span class="lineNum">     774 </span>            :                       DataVector{get(face_normal_magnitude).size()};</a>
+<a name="775"><span class="lineNum">     775 </span>            :                 }</a>
+<a name="776"><span class="lineNum">     776 </span>            :                 apply_matrices(make_not_null(&amp;get(face_det_jacobian)),</a>
+<a name="777"><span class="lineNum">     777 </span>            :                                interpolation_matrices, get(volume_det_jacobian),</a>
+<a name="778"><span class="lineNum">     778 </span>            :                                volume_mesh.extents());</a>
+<a name="779"><span class="lineNum">     779 </span>            :               }</a>
+<a name="780"><span class="lineNum">     780 </span>            : </a>
+<a name="781"><span class="lineNum">     781 </span>            :               for (const auto&amp; neighbor : neighbors_in_direction) {</a>
+<a name="782"><span class="lineNum">     782 </span>            :                 const std::pair mortar_id{direction, neighbor};</a>
+<a name="783"><span class="lineNum">     783 </span>            :                 if (using_gauss_points) {</a>
+<a name="784"><span class="lineNum">     784 </span>            :                   mortar_data-&gt;at(mortar_id).insert_local_geometric_quantities(</a>
+<a name="785"><span class="lineNum">     785 </span>            :                       volume_det_inv_jacobian, face_det_jacobian,</a>
+<a name="786"><span class="lineNum">     786 </span>            :                       face_normal_magnitude);</a>
+<a name="787"><span class="lineNum">     787 </span>            :                 } else {</a>
+<a name="788"><span class="lineNum">     788 </span>            :                   mortar_data-&gt;at(mortar_id).insert_local_face_normal_magnitude(</a>
+<a name="789"><span class="lineNum">     789 </span>            :                       face_normal_magnitude);</a>
+<a name="790"><span class="lineNum">     790 </span>            :                 }</a>
+<a name="791"><span class="lineNum">     791 </span>            :                 ASSERT(boundary_data_history-&gt;count(mortar_id) != 0,</a>
+<a name="792"><span class="lineNum">     792 </span>            :                        &quot;Could not insert the mortar data for &quot;</a>
+<a name="793"><span class="lineNum">     793 </span>            :                            &lt;&lt; mortar_id</a>
+<a name="794"><span class="lineNum">     794 </span>            :                            &lt;&lt; &quot; because the unordered map has not been &quot;</a>
+<a name="795"><span class="lineNum">     795 </span>            :                               &quot;initialized &quot;</a>
+<a name="796"><span class="lineNum">     796 </span>            :                               &quot;to have the mortar id.&quot;);</a>
+<a name="797"><span class="lineNum">     797 </span>            :                 boundary_data_history-&gt;at(mortar_id).local_insert(</a>
+<a name="798"><span class="lineNum">     798 </span>            :                     time_step_id, std::move(mortar_data-&gt;at(mortar_id)));</a>
+<a name="799"><span class="lineNum">     799 </span>            :                 boundary_data_history-&gt;at(mortar_id).integration_order(</a>
+<a name="800"><span class="lineNum">     800 </span>            :                     integration_order);</a>
+<a name="801"><span class="lineNum">     801 </span>            :                 mortar_data-&gt;at(mortar_id) =</a>
+<a name="802"><span class="lineNum">     802 </span>            :                     MortarData&lt;Metavariables::volume_dim&gt;{};</a>
+<a name="803"><span class="lineNum">     803 </span>            :               }</a>
+<a name="804"><span class="lineNum">     804 </span>            :             }</a>
+<a name="805"><span class="lineNum">     805 </span>            :           },</a>
+<a name="806"><span class="lineNum">     806 </span>            :           db::get&lt;domain::Tags::Mesh&lt;volume_dim&gt;&gt;(*box),</a>
+<a name="807"><span class="lineNum">     807 </span>            :           db::get&lt;evolution::dg::Tags::NormalCovectorAndMagnitude&lt;volume_dim&gt;&gt;(</a>
+<a name="808"><span class="lineNum">     808 </span>            :               *box));</a>
+<a name="809"><span class="lineNum">     809 </span>            :     }</a>
+<a name="810"><span class="lineNum">     810 </span>            :   } else {</a>
+<a name="811"><span class="lineNum">     811 </span>            :     using BoundaryScheme = typename Metavariables::boundary_scheme;</a>
+<a name="812"><span class="lineNum">     812 </span>            :     using temporal_id_tag = typename BoundaryScheme::temporal_id_tag;</a>
+<a name="813"><span class="lineNum">     813 </span>            :     using receive_temporal_id_tag =</a>
+<a name="814"><span class="lineNum">     814 </span>            :         typename BoundaryScheme::receive_temporal_id_tag;</a>
+<a name="815"><span class="lineNum">     815 </span>            :     using fluxes_inbox_tag = ::dg::FluxesInboxTag&lt;BoundaryScheme&gt;;</a>
+<a name="816"><span class="lineNum">     816 </span>            :     using all_mortar_data_tag =</a>
+<a name="817"><span class="lineNum">     817 </span>            :         ::Tags::Mortars&lt;typename BoundaryScheme::mortar_data_tag, volume_dim&gt;;</a>
+<a name="818"><span class="lineNum">     818 </span>            : </a>
+<a name="819"><span class="lineNum">     819 </span>            :     const auto&amp; all_mortar_data = get&lt;all_mortar_data_tag&gt;(*box);</a>
+<a name="820"><span class="lineNum">     820 </span>            :     const auto&amp; temporal_id = db::get&lt;temporal_id_tag&gt;(*box);</a>
+<a name="821"><span class="lineNum">     821 </span>            :     const auto&amp; receive_temporal_id = db::get&lt;receive_temporal_id_tag&gt;(*box);</a>
+<a name="822"><span class="lineNum">     822 </span>            :     const auto&amp; mortar_meshes = db::get&lt;</a>
+<a name="823"><span class="lineNum">     823 </span>            :         ::Tags::Mortars&lt;domain::Tags::Mesh&lt;volume_dim - 1&gt;, volume_dim&gt;&gt;(*box);</a>
+<a name="824"><span class="lineNum">     824 </span>            : </a>
+<a name="825"><span class="lineNum">     825 </span>            :     // Iterate over neighbors</a>
+<a name="826"><span class="lineNum">     826 </span>            :     for (const auto&amp; direction_and_neighbors : element.neighbors()) {</a>
+<a name="827"><span class="lineNum">     827 </span>            :       const auto&amp; direction = direction_and_neighbors.first;</a>
+<a name="828"><span class="lineNum">     828 </span>            :       const size_t dimension = direction.dimension();</a>
+<a name="829"><span class="lineNum">     829 </span>            :       const auto&amp; neighbors_in_direction = direction_and_neighbors.second;</a>
+<a name="830"><span class="lineNum">     830 </span>            :       const auto&amp; orientation = neighbors_in_direction.orientation();</a>
+<a name="831"><span class="lineNum">     831 </span>            :       const auto direction_from_neighbor = orientation(direction.opposite());</a>
+<a name="832"><span class="lineNum">     832 </span>            : </a>
+<a name="833"><span class="lineNum">     833 </span>            :       for (const auto&amp; neighbor : neighbors_in_direction) {</a>
+<a name="834"><span class="lineNum">     834 </span>            :         const ::dg::MortarId&lt;volume_dim&gt; mortar_id{direction, neighbor};</a>
+<a name="835"><span class="lineNum">     835 </span>            : </a>
+<a name="836"><span class="lineNum">     836 </span>            :         // Make a copy of the local boundary data on the mortar to send to the</a>
+<a name="837"><span class="lineNum">     837 </span>            :         // neighbor</a>
+<a name="838"><span class="lineNum">     838 </span>            :         ASSERT(all_mortar_data.find(mortar_id) != all_mortar_data.end(),</a>
+<a name="839"><span class="lineNum">     839 </span>            :                &quot;Mortar data on mortar &quot;</a>
+<a name="840"><span class="lineNum">     840 </span>            :                    &lt;&lt; mortar_id</a>
+<a name="841"><span class="lineNum">     841 </span>            :                    &lt;&lt; &quot; not available for sending. Did you forget to collect &quot;</a>
+<a name="842"><span class="lineNum">     842 </span>            :                       &quot;the data on mortars?&quot;);</a>
+<a name="843"><span class="lineNum">     843 </span>            :         auto neighbor_boundary_data_on_mortar =</a>
+<a name="844"><span class="lineNum">     844 </span>            :             all_mortar_data.at(mortar_id).local_data(temporal_id);</a>
+<a name="845"><span class="lineNum">     845 </span>            : </a>
+<a name="846"><span class="lineNum">     846 </span>            :         // Reorient the data to the neighbor orientation if necessary</a>
+<a name="847"><span class="lineNum">     847 </span>            :         if (not orientation.is_aligned()) {</a>
+<a name="848"><span class="lineNum">     848 </span>            :           neighbor_boundary_data_on_mortar.orient_on_slice(</a>
+<a name="849"><span class="lineNum">     849 </span>            :               mortar_meshes.at(mortar_id).extents(), dimension, orientation);</a>
+<a name="850"><span class="lineNum">     850 </span>            :         }</a>
+<a name="851"><span class="lineNum">     851 </span>            : </a>
+<a name="852"><span class="lineNum">     852 </span>            :         // Send mortar data (named 'neighbor_boundary_data_on_mortar') to</a>
+<a name="853"><span class="lineNum">     853 </span>            :         // neighbor</a>
+<a name="854"><span class="lineNum">     854 </span>            :         Parallel::receive_data&lt;fluxes_inbox_tag&gt;(</a>
+<a name="855"><span class="lineNum">     855 </span>            :             receiver_proxy[neighbor], temporal_id,</a>
+<a name="856"><span class="lineNum">     856 </span>            :             std::make_pair(</a>
+<a name="857"><span class="lineNum">     857 </span>            :                 ::dg::MortarId&lt;volume_dim&gt;{direction_from_neighbor,</a>
+<a name="858"><span class="lineNum">     858 </span>            :                                            element.id()},</a>
+<a name="859"><span class="lineNum">     859 </span>            :                 std::make_pair(receive_temporal_id,</a>
+<a name="860"><span class="lineNum">     860 </span>            :                                std::move(neighbor_boundary_data_on_mortar))));</a>
+<a name="861"><span class="lineNum">     861 </span>            :       }</a>
+<a name="862"><span class="lineNum">     862 </span>            :     }</a>
+<a name="863"><span class="lineNum">     863 </span>            :   }</a>
+<a name="864"><span class="lineNum">     864 </span>            : }</a>
+<a name="865"><span class="lineNum">     865 </span>            : }  // namespace evolution::dg::Actions</a>
+</pre>
+      </td>
+    </tr>
+  </table>
+  <br>
+
+  <table width="100%" border=0 cellspacing=0 cellpadding=0>
+    <tr><td class="ruler"><img src="../../../glass.png" width=3 height=3 alt=""></td></tr>
+    <tr><td class="versionInfo">Generated by: <a href="http://ltp.sourceforge.net/coverage/lcov.php" target="_parent">LCOV version 1.14</a></td></tr>
+  </table>
+  <br>
+
+</body>
+</html>

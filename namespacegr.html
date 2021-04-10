@@ -1,0 +1,473 @@
+<!-- HTML header for doxygen 1.8.10-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="SXS Collaboration">
+    <meta name="generator" content="Doxygen 1.8.17"/>
+    <style>
+        /*!
+         * IE10 viewport hack for Surface/desktop Windows 8 bug
+         * Copyright 2014-2015 Twitter, Inc.
+         * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+         */
+        @-webkit-viewport { width: device-width; }
+        @-moz-viewport    { width: device-width; }
+        @-ms-viewport     { width: device-width; }
+        @-o-viewport      { width: device-width; }
+        @viewport         { width: device-width; }
+      </style>
+  <title>SpECTRE: gr Namespace Reference</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="./MathJax.js"></script>
+  <link href="octicons.css" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="popper.min.js"></script>
+  <script type="text/javascript" src="bootstrap.min.js"></script>
+  <script type="text/javascript" src="spectre.js"></script>
+  </head>
+  <body>
+  <div id="top" class="navbar-fixed-top"><!-- do not remove this div, it is closed by doxygen! -->
+  <!-- BEGIN TITLEAREA -->
+  <div id="titlearea">
+  <script type="text/javascript">
+  var searchBox = new SearchBox("searchBox", "search",false,'Search');
+  </script>
+  <div id="main-nav">
+    <ul class="sm sm-dox" id="main-menu">
+      <li>
+      <a href="index.html">
+      SpECTRE &#160;
+        <span id="projectnumber">v2021.04.06</span>
+      </a>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-book"></i><span>Documentation</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 135px;">
+            <a href="index.html">
+            <i class="octicon octicon-book"></i><span>Introduction</span></a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="versioning_and_releases.html">
+              <i class="octicon octicon-versions"></i><span>Releases</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="installation.html">
+              <i class="octicon octicon-desktop-download"></i><span>Installation</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="tutorials.html">
+              <i class="octicon octicon-mortar-board"></i><span>User Tutorials</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="dev_guide.html">
+              <i class="octicon octicon-gist-secret"></i><span>Dev Guide</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="code_of_conduct.html">
+              <i class="octicon octicon-comment-discussion"></i><span>Code of Conduct</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="contributing_to_spectre.html">
+              <i class="octicon octicon-git-pull-request"></i><span>Contributing Guide</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-code"></i>
+              <span>Code Reference</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 130px;">
+            <a href="modules.html">
+              <i class="octicon octicon-code"></i>
+              <span>Topics</span>
+            </a>
+          </li>
+          <li style="min-width: 130px;">
+            <a href="namespaces.html">
+              <i class="octicon octicon-gist"></i>
+              <span>Namespaces</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="files.html">
+          <i class="octicon octicon-file-directory"></i><span>Files</span>
+        </a>
+      </li>
+      <li>
+        <a href="citelist.html">
+          <i class="octicon octicon-file-text"></i><span>Bibliography</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/sxs-collaboration/spectre" target="_blank">
+          <i class="octicon octicon-mark-github"></i><span>View on GitHub</span>
+        </a>
+      </li>
+      <!--The Search <li> is added by doxygen later-->
+    </ul>
+  </div><!-- main-nav -->
+  </div><!-- titlearea -->
+  <!-- window showing the filter options -->
+  <div id="MSearchSelectWindow"  style="position: fixed;"
+       onmouseover="return searchBox.OnSearchSelectShow()"
+       onmouseout="return searchBox.OnSearchSelectHide()"
+       onkeydown="return searchBox.OnSearchSelectKey(event)">
+  </div>
+  <!-- iframe showing the search results (closed by default) -->
+  <div id="MSearchResultsWindow"  style="position: fixed;">
+  <iframe src="javascript:void(0)" frameborder="0"
+          name="MSearchResults" id="MSearchResults">
+  </iframe>
+  </div>
+<!-- Generated by Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">gr Namespace Reference<div class="ingroups"><a class="el" href="group__GeneralRelativityGroup.html">General Relativity</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacegr_1_1Solutions"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegr_1_1Solutions.html">Solutions</a></td></tr>
+<tr class="memdesc:namespacegr_1_1Solutions"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classes which implement analytic solutions to Einstein's equations. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgr_1_1KerrSchildCoords.html">KerrSchildCoords</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains helper functions for transforming tensors in Kerr spacetime to Kerr-Schild coordinates.  <a href="classgr_1_1KerrSchildCoords.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a698433ad8a0cb0f0d5f58d22443b1678"><td class="memTemplParams" colspan="2"><a id="a698433ad8a0cb0f0d5f58d22443b1678"></a>
+template&lt;size_t Dim, typename DataType &gt; </td></tr>
+<tr class="memitem:a698433ad8a0cb0f0d5f58d22443b1678"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegr.html#a698433ad8a0cb0f0d5f58d22443b1678">tags_for_hydro</a> = tmpl::list&lt; <a class="el" href="structgr_1_1Tags_1_1Lapse.html">gr::Tags::Lapse</a>&lt; DataType &gt;, <a class="el" href="structgr_1_1Tags_1_1Shift.html">gr::Tags::Shift</a>&lt; Dim, <a class="el" href="structFrame_1_1Inertial.html">Frame::Inertial</a>, DataType &gt;, <a class="el" href="structgr_1_1Tags_1_1SpatialMetric.html">gr::Tags::SpatialMetric</a>&lt; Dim, <a class="el" href="structFrame_1_1Inertial.html">Frame::Inertial</a>, DataType &gt;, <a class="el" href="structgr_1_1Tags_1_1InverseSpatialMetric.html">gr::Tags::InverseSpatialMetric</a>&lt; Dim, <a class="el" href="structFrame_1_1Inertial.html">Frame::Inertial</a>, DataType &gt;, <a class="el" href="structgr_1_1Tags_1_1SqrtDetSpatialMetric.html">gr::Tags::SqrtDetSpatialMetric</a>&lt; DataType &gt;, ::<a class="el" href="structTags_1_1deriv.html">Tags::deriv</a>&lt; <a class="el" href="structgr_1_1Tags_1_1Lapse.html">gr::Tags::Lapse</a>&lt; DataType &gt;, tmpl::size_t&lt; Dim &gt;, <a class="el" href="structFrame_1_1Inertial.html">Frame::Inertial</a> &gt;, ::<a class="el" href="structTags_1_1deriv.html">Tags::deriv</a>&lt; <a class="el" href="structgr_1_1Tags_1_1Shift.html">gr::Tags::Shift</a>&lt; Dim, <a class="el" href="structFrame_1_1Inertial.html">Frame::Inertial</a>, DataType &gt;, tmpl::size_t&lt; Dim &gt;, <a class="el" href="structFrame_1_1Inertial.html">Frame::Inertial</a> &gt;, ::<a class="el" href="structTags_1_1deriv.html">Tags::deriv</a>&lt; <a class="el" href="structgr_1_1Tags_1_1SpatialMetric.html">gr::Tags::SpatialMetric</a>&lt; Dim, <a class="el" href="structFrame_1_1Inertial.html">Frame::Inertial</a>, DataType &gt;, tmpl::size_t&lt; Dim &gt;, <a class="el" href="structFrame_1_1Inertial.html">Frame::Inertial</a> &gt;, <a class="el" href="structgr_1_1Tags_1_1ExtrinsicCurvature.html">gr::Tags::ExtrinsicCurvature</a>&lt; Dim, <a class="el" href="structFrame_1_1Inertial.html">Frame::Inertial</a>, DataType &gt; &gt;</td></tr>
+<tr class="memdesc:a698433ad8a0cb0f0d5f58d22443b1678"><td class="mdescLeft">&#160;</td><td class="mdescRight">GR Tags commonly needed for the evolution of hydro systems. <br /></td></tr>
+<tr class="separator:a698433ad8a0cb0f0d5f58d22443b1678"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa80d30f355d71c864459d5a8cd0edd73"><td class="memTemplParams" colspan="2"><a id="aa80d30f355d71c864459d5a8cd0edd73"></a>
+template&lt;size_t Dim, typename DataType &gt; </td></tr>
+<tr class="memitem:aa80d30f355d71c864459d5a8cd0edd73"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegr.html#aa80d30f355d71c864459d5a8cd0edd73">analytic_solution_tags</a> = tmpl::list&lt; <a class="el" href="structgr_1_1Tags_1_1Lapse.html">gr::Tags::Lapse</a>&lt; DataType &gt;, ::<a class="el" href="structTags_1_1dt.html">Tags::dt</a>&lt; <a class="el" href="structgr_1_1Tags_1_1Lapse.html">gr::Tags::Lapse</a>&lt; DataType &gt; &gt;, ::<a class="el" href="structTags_1_1deriv.html">Tags::deriv</a>&lt; <a class="el" href="structgr_1_1Tags_1_1Lapse.html">gr::Tags::Lapse</a>&lt; DataType &gt;, tmpl::size_t&lt; Dim &gt;, <a class="el" href="structFrame_1_1Inertial.html">Frame::Inertial</a> &gt;, <a class="el" href="structgr_1_1Tags_1_1Shift.html">gr::Tags::Shift</a>&lt; Dim, <a class="el" href="structFrame_1_1Inertial.html">Frame::Inertial</a>, DataType &gt;, ::<a class="el" href="structTags_1_1dt.html">Tags::dt</a>&lt; <a class="el" href="structgr_1_1Tags_1_1Shift.html">gr::Tags::Shift</a>&lt; Dim, <a class="el" href="structFrame_1_1Inertial.html">Frame::Inertial</a>, DataType &gt; &gt;, ::<a class="el" href="structTags_1_1deriv.html">Tags::deriv</a>&lt; <a class="el" href="structgr_1_1Tags_1_1Shift.html">gr::Tags::Shift</a>&lt; Dim, <a class="el" href="structFrame_1_1Inertial.html">Frame::Inertial</a>, DataType &gt;, tmpl::size_t&lt; Dim &gt;, <a class="el" href="structFrame_1_1Inertial.html">Frame::Inertial</a> &gt;, <a class="el" href="structgr_1_1Tags_1_1SpatialMetric.html">gr::Tags::SpatialMetric</a>&lt; Dim, <a class="el" href="structFrame_1_1Inertial.html">Frame::Inertial</a>, DataType &gt;, ::<a class="el" href="structTags_1_1dt.html">Tags::dt</a>&lt; <a class="el" href="structgr_1_1Tags_1_1SpatialMetric.html">gr::Tags::SpatialMetric</a>&lt; Dim, <a class="el" href="structFrame_1_1Inertial.html">Frame::Inertial</a>, DataType &gt; &gt;, ::<a class="el" href="structTags_1_1deriv.html">Tags::deriv</a>&lt; <a class="el" href="structgr_1_1Tags_1_1SpatialMetric.html">gr::Tags::SpatialMetric</a>&lt; Dim, <a class="el" href="structFrame_1_1Inertial.html">Frame::Inertial</a>, DataType &gt;, tmpl::size_t&lt; Dim &gt;, <a class="el" href="structFrame_1_1Inertial.html">Frame::Inertial</a> &gt;, <a class="el" href="structgr_1_1Tags_1_1SqrtDetSpatialMetric.html">gr::Tags::SqrtDetSpatialMetric</a>&lt; DataType &gt;, <a class="el" href="structgr_1_1Tags_1_1ExtrinsicCurvature.html">gr::Tags::ExtrinsicCurvature</a>&lt; Dim, <a class="el" href="structFrame_1_1Inertial.html">Frame::Inertial</a>, DataType &gt;, <a class="el" href="structgr_1_1Tags_1_1InverseSpatialMetric.html">gr::Tags::InverseSpatialMetric</a>&lt; Dim, <a class="el" href="structFrame_1_1Inertial.html">Frame::Inertial</a>, DataType &gt; &gt;</td></tr>
+<tr class="memdesc:aa80d30f355d71c864459d5a8cd0edd73"><td class="mdescLeft">&#160;</td><td class="mdescRight">The tags for the variables returned by GR analytic solutions. <br /></td></tr>
+<tr class="separator:aa80d30f355d71c864459d5a8cd0edd73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga60113ab47d36c80aea57dfd6c7bd7389"><td class="memTemplParams" colspan="2">template&lt;size_t SpatialDim, typename Frame , IndexType Index, typename DataType &gt; </td></tr>
+<tr class="memitem:ga60113ab47d36c80aea57dfd6c7bd7389"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__GeneralRelativityGroup.html#ga60113ab47d36c80aea57dfd6c7bd7389">christoffel_first_kind</a> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; tnsr::abb&lt; DataType, SpatialDim, Frame, <a class="el" href="classIndex.html">Index</a> &gt; * &gt; christoffel, const tnsr::abb&lt; DataType, SpatialDim, Frame, <a class="el" href="classIndex.html">Index</a> &gt; &amp;d_metric) noexcept</td></tr>
+<tr class="memdesc:ga60113ab47d36c80aea57dfd6c7bd7389"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes Christoffel symbol of the first kind from derivative of metric.  <a href="group__GeneralRelativityGroup.html#ga60113ab47d36c80aea57dfd6c7bd7389">More...</a><br /></td></tr>
+<tr class="separator:ga60113ab47d36c80aea57dfd6c7bd7389"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a427d7c2c15b8a54d29479fe16040788d"><td class="memTemplParams" colspan="2"><a id="a427d7c2c15b8a54d29479fe16040788d"></a>
+template&lt;size_t SpatialDim, typename Frame , IndexType Index, typename DataType &gt; </td></tr>
+<tr class="memitem:a427d7c2c15b8a54d29479fe16040788d"><td class="memTemplItemLeft" align="right" valign="top">tnsr::abb&lt; DataType, SpatialDim, Frame, <a class="el" href="classIndex.html">Index</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>christoffel_first_kind</b> (const tnsr::abb&lt; DataType, SpatialDim, Frame, <a class="el" href="classIndex.html">Index</a> &gt; &amp;d_metric) noexcept</td></tr>
+<tr class="separator:a427d7c2c15b8a54d29479fe16040788d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa26169a7715df3a8a57c82716b10ecb3"><td class="memTemplParams" colspan="2">template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:gaa26169a7715df3a8a57c82716b10ecb3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__GeneralRelativityGroup.html#gaa26169a7715df3a8a57c82716b10ecb3">derivatives_of_spacetime_metric</a> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; tnsr::abb&lt; DataType, SpatialDim, Frame &gt; * &gt; spacetime_deriv_spacetime_metric, const <a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; DataType &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#ga2b741dbe71bd10a06f0d71f18782b612">lapse</a>, const <a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; DataType &gt; &amp;dt_lapse, const tnsr::i&lt; DataType, SpatialDim, Frame &gt; &amp;deriv_lapse, const tnsr::I&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gac067e03fcb04c8c6c45d9708539a56b0">shift</a>, const tnsr::I&lt; DataType, SpatialDim, Frame &gt; &amp;dt_shift, const tnsr::iJ&lt; DataType, SpatialDim, Frame &gt; &amp;deriv_shift, const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gabc0e56f42065eac8865d45559d5164ef">spatial_metric</a>, const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;dt_spatial_metric, const tnsr::ijj&lt; DataType, SpatialDim, Frame &gt; &amp;deriv_spatial_metric) noexcept</td></tr>
+<tr class="memdesc:gaa26169a7715df3a8a57c82716b10ecb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes spacetime derivative of spacetime metric from spatial metric, lapse, shift, and their space and time derivatives.  <a href="group__GeneralRelativityGroup.html#gaa26169a7715df3a8a57c82716b10ecb3">More...</a><br /></td></tr>
+<tr class="separator:gaa26169a7715df3a8a57c82716b10ecb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeee14cafb15a2cf209936797a1b96a5e"><td class="memTemplParams" colspan="2"><a id="aeee14cafb15a2cf209936797a1b96a5e"></a>
+template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:aeee14cafb15a2cf209936797a1b96a5e"><td class="memTemplItemLeft" align="right" valign="top">tnsr::abb&lt; DataType, SpatialDim, Frame &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>derivatives_of_spacetime_metric</b> (const <a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; DataType &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#ga2b741dbe71bd10a06f0d71f18782b612">lapse</a>, const <a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; DataType &gt; &amp;dt_lapse, const tnsr::i&lt; DataType, SpatialDim, Frame &gt; &amp;deriv_lapse, const tnsr::I&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gac067e03fcb04c8c6c45d9708539a56b0">shift</a>, const tnsr::I&lt; DataType, SpatialDim, Frame &gt; &amp;dt_shift, const tnsr::iJ&lt; DataType, SpatialDim, Frame &gt; &amp;deriv_shift, const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gabc0e56f42065eac8865d45559d5164ef">spatial_metric</a>, const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;dt_spatial_metric, const tnsr::ijj&lt; DataType, SpatialDim, Frame &gt; &amp;deriv_spatial_metric) noexcept</td></tr>
+<tr class="separator:aeee14cafb15a2cf209936797a1b96a5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga05e89335aa26fc95d7ba487351defe4f"><td class="memTemplParams" colspan="2">template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:ga05e89335aa26fc95d7ba487351defe4f"><td class="memTemplItemLeft" align="right" valign="top">tnsr::ii&lt; DataType, SpatialDim, Frame &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__GeneralRelativityGroup.html#ga05e89335aa26fc95d7ba487351defe4f">extrinsic_curvature</a> (const <a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; DataType &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#ga2b741dbe71bd10a06f0d71f18782b612">lapse</a>, const tnsr::I&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gac067e03fcb04c8c6c45d9708539a56b0">shift</a>, const tnsr::iJ&lt; DataType, SpatialDim, Frame &gt; &amp;deriv_shift, const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gabc0e56f42065eac8865d45559d5164ef">spatial_metric</a>, const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;dt_spatial_metric, const tnsr::ijj&lt; DataType, SpatialDim, Frame &gt; &amp;deriv_spatial_metric) noexcept</td></tr>
+<tr class="memdesc:ga05e89335aa26fc95d7ba487351defe4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes extrinsic curvature from metric and derivatives.  <a href="group__GeneralRelativityGroup.html#ga05e89335aa26fc95d7ba487351defe4f">More...</a><br /></td></tr>
+<tr class="separator:ga05e89335aa26fc95d7ba487351defe4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a6e058dfb9d8afcdc013c9dea7f1fec"><td class="memTemplParams" colspan="2"><a id="a6a6e058dfb9d8afcdc013c9dea7f1fec"></a>
+template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:a6a6e058dfb9d8afcdc013c9dea7f1fec"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>extrinsic_curvature</b> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; tnsr::ii&lt; DataType, SpatialDim, Frame &gt; * &gt; ex_curvature, const <a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; DataType &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#ga2b741dbe71bd10a06f0d71f18782b612">lapse</a>, const tnsr::I&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gac067e03fcb04c8c6c45d9708539a56b0">shift</a>, const tnsr::iJ&lt; DataType, SpatialDim, Frame &gt; &amp;deriv_shift, const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gabc0e56f42065eac8865d45559d5164ef">spatial_metric</a>, const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;dt_spatial_metric, const tnsr::ijj&lt; DataType, SpatialDim, Frame &gt; &amp;deriv_spatial_metric) noexcept</td></tr>
+<tr class="separator:a6a6e058dfb9d8afcdc013c9dea7f1fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga88dc523e0343b4f3f01769d2ce5d8421"><td class="memTemplParams" colspan="2">template&lt;size_t VolumeDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:ga88dc523e0343b4f3f01769d2ce5d8421"><td class="memTemplItemLeft" align="right" valign="top">tnsr::a&lt; DataType, VolumeDim, Frame &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__GeneralRelativityGroup.html#ga88dc523e0343b4f3f01769d2ce5d8421">interface_null_normal</a> (const tnsr::a&lt; DataType, VolumeDim, Frame &gt; &amp;<a class="el" href="namespacegr.html#a312c3dc602927387ecfbbccf85871c6a">spacetime_normal_one_form</a>, const tnsr::i&lt; DataType, VolumeDim, Frame &gt; &amp;interface_unit_normal_one_form, const double sign) noexcept</td></tr>
+<tr class="memdesc:ga88dc523e0343b4f3f01769d2ce5d8421"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute null normal one-form to the boundary of a closed region in a spatial slice of spacetime.  <a href="group__GeneralRelativityGroup.html#ga88dc523e0343b4f3f01769d2ce5d8421">More...</a><br /></td></tr>
+<tr class="separator:ga88dc523e0343b4f3f01769d2ce5d8421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b1e13be067676199190d10010178c5e"><td class="memTemplParams" colspan="2"><a id="a3b1e13be067676199190d10010178c5e"></a>
+template&lt;size_t VolumeDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:a3b1e13be067676199190d10010178c5e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>interface_null_normal</b> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; tnsr::a&lt; DataType, VolumeDim, Frame &gt; * &gt; null_one_form, const tnsr::a&lt; DataType, VolumeDim, Frame &gt; &amp;<a class="el" href="namespacegr.html#a312c3dc602927387ecfbbccf85871c6a">spacetime_normal_one_form</a>, const tnsr::i&lt; DataType, VolumeDim, Frame &gt; &amp;interface_unit_normal_one_form, const double sign) noexcept</td></tr>
+<tr class="separator:a3b1e13be067676199190d10010178c5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga52f894449d553ff210ab65ab43889d12"><td class="memTemplParams" colspan="2">template&lt;size_t VolumeDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:ga52f894449d553ff210ab65ab43889d12"><td class="memTemplItemLeft" align="right" valign="top">tnsr::A&lt; DataType, VolumeDim, Frame &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__GeneralRelativityGroup.html#ga52f894449d553ff210ab65ab43889d12">interface_null_normal</a> (const tnsr::A&lt; DataType, VolumeDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gad898b94c1b7d4462defb6362bf36d1ee">spacetime_normal_vector</a>, const tnsr::I&lt; DataType, VolumeDim, Frame &gt; &amp;interface_unit_normal_vector, const double sign) noexcept</td></tr>
+<tr class="memdesc:ga52f894449d553ff210ab65ab43889d12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute null normal vector to the boundary of a closed region in a spatial slice of spacetime.  <a href="group__GeneralRelativityGroup.html#ga52f894449d553ff210ab65ab43889d12">More...</a><br /></td></tr>
+<tr class="separator:ga52f894449d553ff210ab65ab43889d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0db6d65f6f1c52be3d0290ffcca0eadb"><td class="memTemplParams" colspan="2"><a id="a0db6d65f6f1c52be3d0290ffcca0eadb"></a>
+template&lt;size_t VolumeDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:a0db6d65f6f1c52be3d0290ffcca0eadb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>interface_null_normal</b> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; tnsr::A&lt; DataType, VolumeDim, Frame &gt; * &gt; null_vector, const tnsr::A&lt; DataType, VolumeDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gad898b94c1b7d4462defb6362bf36d1ee">spacetime_normal_vector</a>, const tnsr::I&lt; DataType, VolumeDim, Frame &gt; &amp;interface_unit_normal_vector, const double sign) noexcept</td></tr>
+<tr class="separator:a0db6d65f6f1c52be3d0290ffcca0eadb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga56d10009e0565103b963f4f5bd571e2f"><td class="memTemplParams" colspan="2">template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:ga56d10009e0565103b963f4f5bd571e2f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__GeneralRelativityGroup.html#ga56d10009e0565103b963f4f5bd571e2f">inverse_spacetime_metric</a> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; tnsr::AA&lt; DataType, SpatialDim, Frame &gt; * &gt; inverse_spacetime_metric, const <a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; DataType &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#ga2b741dbe71bd10a06f0d71f18782b612">lapse</a>, const tnsr::I&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gac067e03fcb04c8c6c45d9708539a56b0">shift</a>, const tnsr::II&lt; DataType, SpatialDim, Frame &gt; &amp;inverse_spatial_metric) noexcept</td></tr>
+<tr class="memdesc:ga56d10009e0565103b963f4f5bd571e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute inverse spacetime metric from inverse spatial metric, lapse and shift.  <a href="group__GeneralRelativityGroup.html#ga56d10009e0565103b963f4f5bd571e2f">More...</a><br /></td></tr>
+<tr class="separator:ga56d10009e0565103b963f4f5bd571e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b98e33761d2ce2448789007e4406551"><td class="memTemplParams" colspan="2"><a id="a2b98e33761d2ce2448789007e4406551"></a>
+template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:a2b98e33761d2ce2448789007e4406551"><td class="memTemplItemLeft" align="right" valign="top">tnsr::AA&lt; DataType, SpatialDim, Frame &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>inverse_spacetime_metric</b> (const <a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; DataType &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#ga2b741dbe71bd10a06f0d71f18782b612">lapse</a>, const tnsr::I&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gac067e03fcb04c8c6c45d9708539a56b0">shift</a>, const tnsr::II&lt; DataType, SpatialDim, Frame &gt; &amp;inverse_spatial_metric) noexcept</td></tr>
+<tr class="separator:a2b98e33761d2ce2448789007e4406551"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0383747df26687215d13560b3d7e50b"><td class="memItemLeft" align="right" valign="top"><a id="ae0383747df26687215d13560b3d7e50b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classgr_1_1KerrSchildCoords.html">KerrSchildCoords</a> &amp;lhs, const <a class="el" href="classgr_1_1KerrSchildCoords.html">KerrSchildCoords</a> &amp;rhs) noexcept</td></tr>
+<tr class="separator:ae0383747df26687215d13560b3d7e50b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2b741dbe71bd10a06f0d71f18782b612"><td class="memTemplParams" colspan="2">template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:ga2b741dbe71bd10a06f0d71f18782b612"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; DataType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__GeneralRelativityGroup.html#ga2b741dbe71bd10a06f0d71f18782b612">lapse</a> (const tnsr::I&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gac067e03fcb04c8c6c45d9708539a56b0">shift</a>, const tnsr::aa&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gaf691cdef10c2fdc735947e5e7190b529">spacetime_metric</a>) noexcept</td></tr>
+<tr class="memdesc:ga2b741dbe71bd10a06f0d71f18782b612"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute lapse from shift and spacetime metric.  <a href="group__GeneralRelativityGroup.html#ga2b741dbe71bd10a06f0d71f18782b612">More...</a><br /></td></tr>
+<tr class="separator:ga2b741dbe71bd10a06f0d71f18782b612"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8b1c54c2997e405cda22807bac6a666"><td class="memTemplParams" colspan="2"><a id="ab8b1c54c2997e405cda22807bac6a666"></a>
+template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:ab8b1c54c2997e405cda22807bac6a666"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>lapse</b> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; <a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; DataType &gt; * &gt; lapse, const tnsr::I&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gac067e03fcb04c8c6c45d9708539a56b0">shift</a>, const tnsr::aa&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gaf691cdef10c2fdc735947e5e7190b529">spacetime_metric</a>) noexcept</td></tr>
+<tr class="separator:ab8b1c54c2997e405cda22807bac6a666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2e7671fff6250cf62631c662b0c437f1"><td class="memTemplParams" colspan="2">template&lt;size_t VolumeDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:ga2e7671fff6250cf62631c662b0c437f1"><td class="memTemplItemLeft" align="right" valign="top">tnsr::II&lt; DataType, VolumeDim, Frame &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__GeneralRelativityGroup.html#ga2e7671fff6250cf62631c662b0c437f1">transverse_projection_operator</a> (const tnsr::II&lt; DataType, VolumeDim, Frame &gt; &amp;inverse_spatial_metric, const tnsr::I&lt; DataType, VolumeDim, Frame &gt; &amp;normal_vector) noexcept</td></tr>
+<tr class="memdesc:ga2e7671fff6250cf62631c662b0c437f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute projection operator onto an interface.  <a href="group__GeneralRelativityGroup.html#ga2e7671fff6250cf62631c662b0c437f1">More...</a><br /></td></tr>
+<tr class="separator:ga2e7671fff6250cf62631c662b0c437f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a255b71f32dc55d045dccab74af887871"><td class="memTemplParams" colspan="2"><a id="a255b71f32dc55d045dccab74af887871"></a>
+template&lt;size_t VolumeDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:a255b71f32dc55d045dccab74af887871"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>transverse_projection_operator</b> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; tnsr::II&lt; DataType, VolumeDim, Frame &gt; * &gt; projection_tensor, const tnsr::II&lt; DataType, VolumeDim, Frame &gt; &amp;inverse_spatial_metric, const tnsr::I&lt; DataType, VolumeDim, Frame &gt; &amp;normal_vector) noexcept</td></tr>
+<tr class="separator:a255b71f32dc55d045dccab74af887871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad00db5e1dbb38aa0b53710cfe22f772a"><td class="memTemplParams" colspan="2">template&lt;size_t VolumeDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:gad00db5e1dbb38aa0b53710cfe22f772a"><td class="memTemplItemLeft" align="right" valign="top">tnsr::ii&lt; DataType, VolumeDim, Frame &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__GeneralRelativityGroup.html#gad00db5e1dbb38aa0b53710cfe22f772a">transverse_projection_operator</a> (const tnsr::ii&lt; DataType, VolumeDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gabc0e56f42065eac8865d45559d5164ef">spatial_metric</a>, const tnsr::i&lt; DataType, VolumeDim, Frame &gt; &amp;normal_one_form) noexcept</td></tr>
+<tr class="memdesc:gad00db5e1dbb38aa0b53710cfe22f772a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute projection operator onto an interface.  <a href="group__GeneralRelativityGroup.html#gad00db5e1dbb38aa0b53710cfe22f772a">More...</a><br /></td></tr>
+<tr class="separator:gad00db5e1dbb38aa0b53710cfe22f772a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e88569ccd097335ab6d788a15336e3c"><td class="memTemplParams" colspan="2"><a id="a4e88569ccd097335ab6d788a15336e3c"></a>
+template&lt;size_t VolumeDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:a4e88569ccd097335ab6d788a15336e3c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>transverse_projection_operator</b> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; tnsr::ii&lt; DataType, VolumeDim, Frame &gt; * &gt; projection_tensor, const tnsr::ii&lt; DataType, VolumeDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gabc0e56f42065eac8865d45559d5164ef">spatial_metric</a>, const tnsr::i&lt; DataType, VolumeDim, Frame &gt; &amp;normal_one_form) noexcept</td></tr>
+<tr class="separator:a4e88569ccd097335ab6d788a15336e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4075f0c09fa499839b449e6df9c32c42"><td class="memTemplParams" colspan="2">template&lt;size_t VolumeDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:ga4075f0c09fa499839b449e6df9c32c42"><td class="memTemplItemLeft" align="right" valign="top">tnsr::Ij&lt; DataType, VolumeDim, Frame &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__GeneralRelativityGroup.html#ga4075f0c09fa499839b449e6df9c32c42">transverse_projection_operator</a> (const tnsr::I&lt; DataType, VolumeDim, Frame &gt; &amp;normal_vector, const tnsr::i&lt; DataType, VolumeDim, Frame &gt; &amp;normal_one_form) noexcept</td></tr>
+<tr class="memdesc:ga4075f0c09fa499839b449e6df9c32c42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute projection operator onto an interface.  <a href="group__GeneralRelativityGroup.html#ga4075f0c09fa499839b449e6df9c32c42">More...</a><br /></td></tr>
+<tr class="separator:ga4075f0c09fa499839b449e6df9c32c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c532f0bd091a6e8ab999cd7cb49ff56"><td class="memTemplParams" colspan="2"><a id="a1c532f0bd091a6e8ab999cd7cb49ff56"></a>
+template&lt;size_t VolumeDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:a1c532f0bd091a6e8ab999cd7cb49ff56"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>transverse_projection_operator</b> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; tnsr::Ij&lt; DataType, VolumeDim, Frame &gt; * &gt; projection_tensor, const tnsr::I&lt; DataType, VolumeDim, Frame &gt; &amp;normal_vector, const tnsr::i&lt; DataType, VolumeDim, Frame &gt; &amp;normal_one_form) noexcept</td></tr>
+<tr class="separator:a1c532f0bd091a6e8ab999cd7cb49ff56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga171c0b4abb825e1ae3071d35126d523b"><td class="memTemplParams" colspan="2">template&lt;size_t VolumeDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:ga171c0b4abb825e1ae3071d35126d523b"><td class="memTemplItemLeft" align="right" valign="top">tnsr::aa&lt; DataType, VolumeDim, Frame &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__GeneralRelativityGroup.html#ga171c0b4abb825e1ae3071d35126d523b">transverse_projection_operator</a> (const tnsr::aa&lt; DataType, VolumeDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gaf691cdef10c2fdc735947e5e7190b529">spacetime_metric</a>, const tnsr::a&lt; DataType, VolumeDim, Frame &gt; &amp;<a class="el" href="namespacegr.html#a312c3dc602927387ecfbbccf85871c6a">spacetime_normal_one_form</a>, const tnsr::i&lt; DataType, VolumeDim, Frame &gt; &amp;interface_unit_normal_one_form) noexcept</td></tr>
+<tr class="memdesc:ga171c0b4abb825e1ae3071d35126d523b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute spacetime projection operator onto an interface.  <a href="group__GeneralRelativityGroup.html#ga171c0b4abb825e1ae3071d35126d523b">More...</a><br /></td></tr>
+<tr class="separator:ga171c0b4abb825e1ae3071d35126d523b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14c8489da0cf2e717a495f453e325bae"><td class="memTemplParams" colspan="2"><a id="a14c8489da0cf2e717a495f453e325bae"></a>
+template&lt;size_t VolumeDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:a14c8489da0cf2e717a495f453e325bae"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>transverse_projection_operator</b> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; tnsr::aa&lt; DataType, VolumeDim, Frame &gt; * &gt; projection_tensor, const tnsr::aa&lt; DataType, VolumeDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gaf691cdef10c2fdc735947e5e7190b529">spacetime_metric</a>, const tnsr::a&lt; DataType, VolumeDim, Frame &gt; &amp;<a class="el" href="namespacegr.html#a312c3dc602927387ecfbbccf85871c6a">spacetime_normal_one_form</a>, const tnsr::i&lt; DataType, VolumeDim, Frame &gt; &amp;interface_unit_normal_one_form) noexcept</td></tr>
+<tr class="separator:a14c8489da0cf2e717a495f453e325bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1d125b0466e5988f598c0daab6b1173d"><td class="memTemplParams" colspan="2">template&lt;size_t VolumeDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:ga1d125b0466e5988f598c0daab6b1173d"><td class="memTemplItemLeft" align="right" valign="top">tnsr::AA&lt; DataType, VolumeDim, Frame &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__GeneralRelativityGroup.html#ga1d125b0466e5988f598c0daab6b1173d">transverse_projection_operator</a> (const tnsr::AA&lt; DataType, VolumeDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#ga56d10009e0565103b963f4f5bd571e2f">inverse_spacetime_metric</a>, const tnsr::A&lt; DataType, VolumeDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gad898b94c1b7d4462defb6362bf36d1ee">spacetime_normal_vector</a>, const tnsr::I&lt; DataType, VolumeDim, Frame &gt; &amp;interface_unit_normal_vector) noexcept</td></tr>
+<tr class="memdesc:ga1d125b0466e5988f598c0daab6b1173d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute spacetime projection operator onto an interface.  <a href="group__GeneralRelativityGroup.html#ga1d125b0466e5988f598c0daab6b1173d">More...</a><br /></td></tr>
+<tr class="separator:ga1d125b0466e5988f598c0daab6b1173d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2599feb795ee77f46cda54bb024641ef"><td class="memTemplParams" colspan="2"><a id="a2599feb795ee77f46cda54bb024641ef"></a>
+template&lt;size_t VolumeDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:a2599feb795ee77f46cda54bb024641ef"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>transverse_projection_operator</b> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; tnsr::AA&lt; DataType, VolumeDim, Frame &gt; * &gt; projection_tensor, const tnsr::AA&lt; DataType, VolumeDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#ga56d10009e0565103b963f4f5bd571e2f">inverse_spacetime_metric</a>, const tnsr::A&lt; DataType, VolumeDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gad898b94c1b7d4462defb6362bf36d1ee">spacetime_normal_vector</a>, const tnsr::I&lt; DataType, VolumeDim, Frame &gt; &amp;interface_unit_normal_vector) noexcept</td></tr>
+<tr class="separator:a2599feb795ee77f46cda54bb024641ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga48c0b4637610a07caacbd75fff65b91c"><td class="memTemplParams" colspan="2">template&lt;size_t VolumeDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:ga48c0b4637610a07caacbd75fff65b91c"><td class="memTemplItemLeft" align="right" valign="top">tnsr::Ab&lt; DataType, VolumeDim, Frame &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__GeneralRelativityGroup.html#ga48c0b4637610a07caacbd75fff65b91c">transverse_projection_operator</a> (const tnsr::A&lt; DataType, VolumeDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gad898b94c1b7d4462defb6362bf36d1ee">spacetime_normal_vector</a>, const tnsr::a&lt; DataType, VolumeDim, Frame &gt; &amp;<a class="el" href="namespacegr.html#a312c3dc602927387ecfbbccf85871c6a">spacetime_normal_one_form</a>, const tnsr::I&lt; DataType, VolumeDim, Frame &gt; &amp;interface_unit_normal_vector, const tnsr::i&lt; DataType, VolumeDim, Frame &gt; &amp;interface_unit_normal_one_form) noexcept</td></tr>
+<tr class="memdesc:ga48c0b4637610a07caacbd75fff65b91c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute spacetime projection operator onto an interface.  <a href="group__GeneralRelativityGroup.html#ga48c0b4637610a07caacbd75fff65b91c">More...</a><br /></td></tr>
+<tr class="separator:ga48c0b4637610a07caacbd75fff65b91c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b5be4db2bc72f7593c7e72497c8f01f"><td class="memTemplParams" colspan="2"><a id="a9b5be4db2bc72f7593c7e72497c8f01f"></a>
+template&lt;size_t VolumeDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:a9b5be4db2bc72f7593c7e72497c8f01f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>transverse_projection_operator</b> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; tnsr::Ab&lt; DataType, VolumeDim, Frame &gt; * &gt; projection_tensor, const tnsr::A&lt; DataType, VolumeDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gad898b94c1b7d4462defb6362bf36d1ee">spacetime_normal_vector</a>, const tnsr::a&lt; DataType, VolumeDim, Frame &gt; &amp;<a class="el" href="namespacegr.html#a312c3dc602927387ecfbbccf85871c6a">spacetime_normal_one_form</a>, const tnsr::I&lt; DataType, VolumeDim, Frame &gt; &amp;interface_unit_normal_vector, const tnsr::i&lt; DataType, VolumeDim, Frame &gt; &amp;interface_unit_normal_one_form) noexcept</td></tr>
+<tr class="separator:a9b5be4db2bc72f7593c7e72497c8f01f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga515632ea5c46815f8ba93faf7db7c748"><td class="memTemplParams" colspan="2">template&lt;size_t SpatialDim, typename Frame , IndexType Index, typename DataType &gt; </td></tr>
+<tr class="memitem:ga515632ea5c46815f8ba93faf7db7c748"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__GeneralRelativityGroup.html#ga515632ea5c46815f8ba93faf7db7c748">ricci_tensor</a> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; tnsr::aa&lt; DataType, SpatialDim, Frame, <a class="el" href="classIndex.html">Index</a> &gt; * &gt; result, const tnsr::Abb&lt; DataType, SpatialDim, Frame, <a class="el" href="classIndex.html">Index</a> &gt; &amp;christoffel_2nd_kind, const tnsr::aBcc&lt; DataType, SpatialDim, Frame, <a class="el" href="classIndex.html">Index</a> &gt; &amp;d_christoffel_2nd_kind) noexcept</td></tr>
+<tr class="memdesc:ga515632ea5c46815f8ba93faf7db7c748"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes Ricci tensor from the (spatial or spacetime) Christoffel symbol of the second kind and its derivative.  <a href="group__GeneralRelativityGroup.html#ga515632ea5c46815f8ba93faf7db7c748">More...</a><br /></td></tr>
+<tr class="separator:ga515632ea5c46815f8ba93faf7db7c748"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c969219a2234d2efba1f966c1d848df"><td class="memTemplParams" colspan="2"><a id="a5c969219a2234d2efba1f966c1d848df"></a>
+template&lt;size_t SpatialDim, typename Frame , IndexType Index, typename DataType &gt; </td></tr>
+<tr class="memitem:a5c969219a2234d2efba1f966c1d848df"><td class="memTemplItemLeft" align="right" valign="top">tnsr::aa&lt; DataType, SpatialDim, Frame, <a class="el" href="classIndex.html">Index</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>ricci_tensor</b> (const tnsr::Abb&lt; DataType, SpatialDim, Frame, <a class="el" href="classIndex.html">Index</a> &gt; &amp;christoffel_2nd_kind, const tnsr::aBcc&lt; DataType, SpatialDim, Frame, <a class="el" href="classIndex.html">Index</a> &gt; &amp;d_christoffel_2nd_kind) noexcept</td></tr>
+<tr class="separator:a5c969219a2234d2efba1f966c1d848df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac067e03fcb04c8c6c45d9708539a56b0"><td class="memTemplParams" colspan="2">template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:gac067e03fcb04c8c6c45d9708539a56b0"><td class="memTemplItemLeft" align="right" valign="top">tnsr::I&lt; DataType, SpatialDim, Frame &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__GeneralRelativityGroup.html#gac067e03fcb04c8c6c45d9708539a56b0">shift</a> (const tnsr::aa&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gaf691cdef10c2fdc735947e5e7190b529">spacetime_metric</a>, const tnsr::II&lt; DataType, SpatialDim, Frame &gt; &amp;inverse_spatial_metric) noexcept</td></tr>
+<tr class="memdesc:gac067e03fcb04c8c6c45d9708539a56b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute shift from spacetime metric and inverse spatial metric.  <a href="group__GeneralRelativityGroup.html#gac067e03fcb04c8c6c45d9708539a56b0">More...</a><br /></td></tr>
+<tr class="separator:gac067e03fcb04c8c6c45d9708539a56b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38624b234da12dfccef8b0353e38669c"><td class="memTemplParams" colspan="2"><a id="a38624b234da12dfccef8b0353e38669c"></a>
+template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:a38624b234da12dfccef8b0353e38669c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>shift</b> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; tnsr::I&lt; DataType, SpatialDim, Frame &gt; * &gt; shift, const tnsr::aa&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gaf691cdef10c2fdc735947e5e7190b529">spacetime_metric</a>, const tnsr::II&lt; DataType, SpatialDim, Frame &gt; &amp;inverse_spatial_metric) noexcept</td></tr>
+<tr class="separator:a38624b234da12dfccef8b0353e38669c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf691cdef10c2fdc735947e5e7190b529"><td class="memTemplParams" colspan="2">template&lt;size_t Dim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:gaf691cdef10c2fdc735947e5e7190b529"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__GeneralRelativityGroup.html#gaf691cdef10c2fdc735947e5e7190b529">spacetime_metric</a> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; tnsr::aa&lt; DataType, Dim, Frame &gt; * &gt; spacetime_metric, const <a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; DataType &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#ga2b741dbe71bd10a06f0d71f18782b612">lapse</a>, const tnsr::I&lt; DataType, Dim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gac067e03fcb04c8c6c45d9708539a56b0">shift</a>, const tnsr::ii&lt; DataType, Dim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gabc0e56f42065eac8865d45559d5164ef">spatial_metric</a>) noexcept</td></tr>
+<tr class="memdesc:gaf691cdef10c2fdc735947e5e7190b529"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the spacetime metric from the spatial metric, lapse, and shift.  <a href="group__GeneralRelativityGroup.html#gaf691cdef10c2fdc735947e5e7190b529">More...</a><br /></td></tr>
+<tr class="separator:gaf691cdef10c2fdc735947e5e7190b529"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f5325d5d6b47c568c28bee1f41d30da"><td class="memTemplParams" colspan="2"><a id="a4f5325d5d6b47c568c28bee1f41d30da"></a>
+template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:a4f5325d5d6b47c568c28bee1f41d30da"><td class="memTemplItemLeft" align="right" valign="top">tnsr::aa&lt; DataType, SpatialDim, Frame &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>spacetime_metric</b> (const <a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; DataType &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#ga2b741dbe71bd10a06f0d71f18782b612">lapse</a>, const tnsr::I&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gac067e03fcb04c8c6c45d9708539a56b0">shift</a>, const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gabc0e56f42065eac8865d45559d5164ef">spatial_metric</a>) noexcept</td></tr>
+<tr class="separator:a4f5325d5d6b47c568c28bee1f41d30da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a312c3dc602927387ecfbbccf85871c6a"><td class="memTemplParams" colspan="2">template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:a312c3dc602927387ecfbbccf85871c6a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacegr.html#a312c3dc602927387ecfbbccf85871c6a">spacetime_normal_one_form</a> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; tnsr::a&lt; DataType, SpatialDim, Frame &gt; * &gt; normal_one_form, const <a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; DataType &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#ga2b741dbe71bd10a06f0d71f18782b612">lapse</a>) noexcept</td></tr>
+<tr class="memdesc:a312c3dc602927387ecfbbccf85871c6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes spacetime normal one-form from lapse.  <a href="namespacegr.html#a312c3dc602927387ecfbbccf85871c6a">More...</a><br /></td></tr>
+<tr class="separator:a312c3dc602927387ecfbbccf85871c6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6511ba723b1dec3de704ba0f1ca504de"><td class="memTemplParams" colspan="2"><a id="a6511ba723b1dec3de704ba0f1ca504de"></a>
+template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:a6511ba723b1dec3de704ba0f1ca504de"><td class="memTemplItemLeft" align="right" valign="top">tnsr::a&lt; DataType, SpatialDim, Frame &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>spacetime_normal_one_form</b> (const <a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; DataType &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#ga2b741dbe71bd10a06f0d71f18782b612">lapse</a>) noexcept</td></tr>
+<tr class="separator:a6511ba723b1dec3de704ba0f1ca504de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad898b94c1b7d4462defb6362bf36d1ee"><td class="memTemplParams" colspan="2">template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:gad898b94c1b7d4462defb6362bf36d1ee"><td class="memTemplItemLeft" align="right" valign="top">tnsr::A&lt; DataType, SpatialDim, Frame &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__GeneralRelativityGroup.html#gad898b94c1b7d4462defb6362bf36d1ee">spacetime_normal_vector</a> (const <a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; DataType &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#ga2b741dbe71bd10a06f0d71f18782b612">lapse</a>, const tnsr::I&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gac067e03fcb04c8c6c45d9708539a56b0">shift</a>) noexcept</td></tr>
+<tr class="memdesc:gad898b94c1b7d4462defb6362bf36d1ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes spacetime normal vector from lapse and shift.  <a href="group__GeneralRelativityGroup.html#gad898b94c1b7d4462defb6362bf36d1ee">More...</a><br /></td></tr>
+<tr class="separator:gad898b94c1b7d4462defb6362bf36d1ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b73d4289920cea1afa0e71d94f77a1a"><td class="memTemplParams" colspan="2"><a id="a7b73d4289920cea1afa0e71d94f77a1a"></a>
+template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:a7b73d4289920cea1afa0e71d94f77a1a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>spacetime_normal_vector</b> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; tnsr::A&lt; DataType, SpatialDim, Frame &gt; * &gt; spacetime_normal_vector, const <a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; DataType &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#ga2b741dbe71bd10a06f0d71f18782b612">lapse</a>, const tnsr::I&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gac067e03fcb04c8c6c45d9708539a56b0">shift</a>) noexcept</td></tr>
+<tr class="separator:a7b73d4289920cea1afa0e71d94f77a1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabc0e56f42065eac8865d45559d5164ef"><td class="memTemplParams" colspan="2">template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:gabc0e56f42065eac8865d45559d5164ef"><td class="memTemplItemLeft" align="right" valign="top">tnsr::ii&lt; DataType, SpatialDim, Frame &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__GeneralRelativityGroup.html#gabc0e56f42065eac8865d45559d5164ef">spatial_metric</a> (const tnsr::aa&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gaf691cdef10c2fdc735947e5e7190b529">spacetime_metric</a>) noexcept</td></tr>
+<tr class="memdesc:gabc0e56f42065eac8865d45559d5164ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute spatial metric from spacetime metric.  <a href="group__GeneralRelativityGroup.html#gabc0e56f42065eac8865d45559d5164ef">More...</a><br /></td></tr>
+<tr class="separator:gabc0e56f42065eac8865d45559d5164ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee1d0a36daaffb34b64696651234e5c2"><td class="memTemplParams" colspan="2"><a id="aee1d0a36daaffb34b64696651234e5c2"></a>
+template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:aee1d0a36daaffb34b64696651234e5c2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>spatial_metric</b> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; tnsr::ii&lt; DataType, SpatialDim, Frame &gt; * &gt; spatial_metric, const tnsr::aa&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gaf691cdef10c2fdc735947e5e7190b529">spacetime_metric</a>) noexcept</td></tr>
+<tr class="separator:aee1d0a36daaffb34b64696651234e5c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga93422dbab4e77602a25ed63784af13b4"><td class="memTemplParams" colspan="2">template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:ga93422dbab4e77602a25ed63784af13b4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__GeneralRelativityGroup.html#ga93422dbab4e77602a25ed63784af13b4">time_derivative_of_spacetime_metric</a> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; tnsr::aa&lt; DataType, SpatialDim, Frame &gt; * &gt; dt_spacetime_metric, const <a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; DataType &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#ga2b741dbe71bd10a06f0d71f18782b612">lapse</a>, const <a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; DataType &gt; &amp;dt_lapse, const tnsr::I&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gac067e03fcb04c8c6c45d9708539a56b0">shift</a>, const tnsr::I&lt; DataType, SpatialDim, Frame &gt; &amp;dt_shift, const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gabc0e56f42065eac8865d45559d5164ef">spatial_metric</a>, const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;dt_spatial_metric) noexcept</td></tr>
+<tr class="memdesc:ga93422dbab4e77602a25ed63784af13b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the time derivative of the spacetime metric from spatial metric, lapse, shift, and their time derivatives.  <a href="group__GeneralRelativityGroup.html#ga93422dbab4e77602a25ed63784af13b4">More...</a><br /></td></tr>
+<tr class="separator:ga93422dbab4e77602a25ed63784af13b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad79e6277522c0af53bfa4cbe157231de"><td class="memTemplParams" colspan="2"><a id="ad79e6277522c0af53bfa4cbe157231de"></a>
+template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:ad79e6277522c0af53bfa4cbe157231de"><td class="memTemplItemLeft" align="right" valign="top">tnsr::aa&lt; DataType, SpatialDim, Frame &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>time_derivative_of_spacetime_metric</b> (const <a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; DataType &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#ga2b741dbe71bd10a06f0d71f18782b612">lapse</a>, const <a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; DataType &gt; &amp;dt_lapse, const tnsr::I&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gac067e03fcb04c8c6c45d9708539a56b0">shift</a>, const tnsr::I&lt; DataType, SpatialDim, Frame &gt; &amp;dt_shift, const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#gabc0e56f42065eac8865d45559d5164ef">spatial_metric</a>, const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;dt_spatial_metric) noexcept</td></tr>
+<tr class="separator:ad79e6277522c0af53bfa4cbe157231de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga70e0264535cd65764d2e96d2570029fb"><td class="memTemplParams" colspan="2">template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:ga70e0264535cd65764d2e96d2570029fb"><td class="memTemplItemLeft" align="right" valign="top">tnsr::ii&lt; DataType, SpatialDim, Frame &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__GeneralRelativityGroup.html#ga70e0264535cd65764d2e96d2570029fb">weyl_electric</a> (const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;spatial_ricci, const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#ga05e89335aa26fc95d7ba487351defe4f">extrinsic_curvature</a>, const tnsr::II&lt; DataType, SpatialDim, Frame &gt; &amp;inverse_spatial_metric) noexcept</td></tr>
+<tr class="memdesc:ga70e0264535cd65764d2e96d2570029fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the electric part of the Weyl tensor in vacuum.  <a href="group__GeneralRelativityGroup.html#ga70e0264535cd65764d2e96d2570029fb">More...</a><br /></td></tr>
+<tr class="separator:ga70e0264535cd65764d2e96d2570029fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb6e4a2e4d18d0bda7925adf1a1f14fb"><td class="memTemplParams" colspan="2"><a id="aeb6e4a2e4d18d0bda7925adf1a1f14fb"></a>
+template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:aeb6e4a2e4d18d0bda7925adf1a1f14fb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>weyl_electric</b> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; tnsr::ii&lt; DataType, SpatialDim, Frame &gt; * &gt; weyl_electric_part, const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;spatial_ricci, const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#ga05e89335aa26fc95d7ba487351defe4f">extrinsic_curvature</a>, const tnsr::II&lt; DataType, SpatialDim, Frame &gt; &amp;inverse_spatial_metric) noexcept</td></tr>
+<tr class="separator:aeb6e4a2e4d18d0bda7925adf1a1f14fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadddf477e51f49d114344f260465fd563"><td class="memTemplParams" colspan="2">template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:gadddf477e51f49d114344f260465fd563"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; DataType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__GeneralRelativityGroup.html#gadddf477e51f49d114344f260465fd563">weyl_electric_scalar</a> (const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#ga70e0264535cd65764d2e96d2570029fb">weyl_electric</a>, const tnsr::II&lt; DataType, SpatialDim, Frame &gt; &amp;inverse_spatial_metric) noexcept</td></tr>
+<tr class="memdesc:gadddf477e51f49d114344f260465fd563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the scalar \(E_{ij} E^{ij}\) from the electric part of the Weyl tensor \(E_{ij}\).  <a href="group__GeneralRelativityGroup.html#gadddf477e51f49d114344f260465fd563">More...</a><br /></td></tr>
+<tr class="separator:gadddf477e51f49d114344f260465fd563"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02e928c745d9daf5207de6f9637738c7"><td class="memTemplParams" colspan="2"><a id="a02e928c745d9daf5207de6f9637738c7"></a>
+template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:a02e928c745d9daf5207de6f9637738c7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>weyl_electric_scalar</b> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; <a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; DataType &gt; * &gt; weyl_electric_scalar_result, const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#ga70e0264535cd65764d2e96d2570029fb">weyl_electric</a>, const tnsr::II&lt; DataType, SpatialDim, Frame &gt; &amp;inverse_spatial_metric) noexcept</td></tr>
+<tr class="separator:a02e928c745d9daf5207de6f9637738c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9cca83dec93165245287e661230eb04a"><td class="memTemplParams" colspan="2">template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:ga9cca83dec93165245287e661230eb04a"><td class="memTemplItemLeft" align="right" valign="top">tnsr::ii&lt; DataType, SpatialDim, Frame &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__GeneralRelativityGroup.html#ga9cca83dec93165245287e661230eb04a">weyl_propagating</a> (const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;ricci, const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#ga05e89335aa26fc95d7ba487351defe4f">extrinsic_curvature</a>, const tnsr::II&lt; DataType, SpatialDim, Frame &gt; &amp;inverse_spatial_metric, const tnsr::ijj&lt; DataType, SpatialDim, Frame &gt; &amp;cov_deriv_extrinsic_curvature, const tnsr::I&lt; DataType, SpatialDim, Frame &gt; &amp;unit_interface_normal_vector, const tnsr::II&lt; DataType, SpatialDim, Frame &gt; &amp;projection_IJ, const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;projection_ij, const tnsr::Ij&lt; DataType, SpatialDim, Frame &gt; &amp;projection_Ij, const double sign) noexcept</td></tr>
+<tr class="memdesc:ga9cca83dec93165245287e661230eb04a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the propagating modes of the Weyl tensor.  <a href="group__GeneralRelativityGroup.html#ga9cca83dec93165245287e661230eb04a">More...</a><br /></td></tr>
+<tr class="separator:ga9cca83dec93165245287e661230eb04a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae861fea9aec5c13404bce51b07ef28ea"><td class="memTemplParams" colspan="2"><a id="ae861fea9aec5c13404bce51b07ef28ea"></a>
+template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </td></tr>
+<tr class="memitem:ae861fea9aec5c13404bce51b07ef28ea"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>weyl_propagating</b> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; tnsr::ii&lt; DataType, SpatialDim, Frame &gt; * &gt; weyl_prop_u8, const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;ricci, const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;<a class="el" href="group__GeneralRelativityGroup.html#ga05e89335aa26fc95d7ba487351defe4f">extrinsic_curvature</a>, const tnsr::II&lt; DataType, SpatialDim, Frame &gt; &amp;inverse_spatial_metric, const tnsr::ijj&lt; DataType, SpatialDim, Frame &gt; &amp;cov_deriv_extrinsic_curvature, const tnsr::I&lt; DataType, SpatialDim, Frame &gt; &amp;unit_interface_normal_vector, const tnsr::II&lt; DataType, SpatialDim, Frame &gt; &amp;projection_IJ, const tnsr::ii&lt; DataType, SpatialDim, Frame &gt; &amp;projection_ij, const tnsr::Ij&lt; DataType, SpatialDim, Frame &gt; &amp;projection_Ij, const double sign) noexcept</td></tr>
+<tr class="separator:ae861fea9aec5c13404bce51b07ef28ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Holds functions related to general relativity. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a312c3dc602927387ecfbbccf85871c6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a312c3dc602927387ecfbbccf85871c6a">&#9670;&nbsp;</a></span>spacetime_normal_one_form()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t SpatialDim, typename Frame , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gr::spacetime_normal_one_form </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; tnsr::a&lt; DataType, SpatialDim, Frame &gt; * &gt;&#160;</td>
+          <td class="paramname"><em>normal_one_form</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; DataType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lapse</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Computes spacetime normal one-form from lapse. </p>
+<h3>Details</h3>
+<p>If \(N\) is the lapse, then </p><p class="formulaDsp">
+\begin{align} n_t &amp;= - N \\ n_i &amp;= 0 \end{align}
+</p>
+<p> is computed. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.10-->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+&copy; Copyright 2017 - 2021
+<a href="https://black-holes.org">SXS Collaboration</a>,
+<a href="LICENSE.txt" target="_blank">
+<span class="hidden-xs">Distributed under the</span>
+MIT License</a>
+</small></address>
+</body>
+</html>

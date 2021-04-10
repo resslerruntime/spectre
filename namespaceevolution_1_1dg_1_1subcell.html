@@ -1,0 +1,623 @@
+<!-- HTML header for doxygen 1.8.10-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="SXS Collaboration">
+    <meta name="generator" content="Doxygen 1.8.17"/>
+    <style>
+        /*!
+         * IE10 viewport hack for Surface/desktop Windows 8 bug
+         * Copyright 2014-2015 Twitter, Inc.
+         * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+         */
+        @-webkit-viewport { width: device-width; }
+        @-moz-viewport    { width: device-width; }
+        @-ms-viewport     { width: device-width; }
+        @-o-viewport      { width: device-width; }
+        @viewport         { width: device-width; }
+      </style>
+  <title>SpECTRE: evolution::dg::subcell Namespace Reference</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="./MathJax.js"></script>
+  <link href="octicons.css" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="popper.min.js"></script>
+  <script type="text/javascript" src="bootstrap.min.js"></script>
+  <script type="text/javascript" src="spectre.js"></script>
+  </head>
+  <body>
+  <div id="top" class="navbar-fixed-top"><!-- do not remove this div, it is closed by doxygen! -->
+  <!-- BEGIN TITLEAREA -->
+  <div id="titlearea">
+  <script type="text/javascript">
+  var searchBox = new SearchBox("searchBox", "search",false,'Search');
+  </script>
+  <div id="main-nav">
+    <ul class="sm sm-dox" id="main-menu">
+      <li>
+      <a href="index.html">
+      SpECTRE &#160;
+        <span id="projectnumber">v2021.04.06</span>
+      </a>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-book"></i><span>Documentation</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 135px;">
+            <a href="index.html">
+            <i class="octicon octicon-book"></i><span>Introduction</span></a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="versioning_and_releases.html">
+              <i class="octicon octicon-versions"></i><span>Releases</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="installation.html">
+              <i class="octicon octicon-desktop-download"></i><span>Installation</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="tutorials.html">
+              <i class="octicon octicon-mortar-board"></i><span>User Tutorials</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="dev_guide.html">
+              <i class="octicon octicon-gist-secret"></i><span>Dev Guide</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="code_of_conduct.html">
+              <i class="octicon octicon-comment-discussion"></i><span>Code of Conduct</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="contributing_to_spectre.html">
+              <i class="octicon octicon-git-pull-request"></i><span>Contributing Guide</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-code"></i>
+              <span>Code Reference</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 130px;">
+            <a href="modules.html">
+              <i class="octicon octicon-code"></i>
+              <span>Topics</span>
+            </a>
+          </li>
+          <li style="min-width: 130px;">
+            <a href="namespaces.html">
+              <i class="octicon octicon-gist"></i>
+              <span>Namespaces</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="files.html">
+          <i class="octicon octicon-file-directory"></i><span>Files</span>
+        </a>
+      </li>
+      <li>
+        <a href="citelist.html">
+          <i class="octicon octicon-file-text"></i><span>Bibliography</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/sxs-collaboration/spectre" target="_blank">
+          <i class="octicon octicon-mark-github"></i><span>View on GitHub</span>
+        </a>
+      </li>
+      <!--The Search <li> is added by doxygen later-->
+    </ul>
+  </div><!-- main-nav -->
+  </div><!-- titlearea -->
+  <!-- window showing the filter options -->
+  <div id="MSearchSelectWindow"  style="position: fixed;"
+       onmouseover="return searchBox.OnSearchSelectShow()"
+       onmouseout="return searchBox.OnSearchSelectHide()"
+       onkeydown="return searchBox.OnSearchSelectKey(event)">
+  </div>
+  <!-- iframe showing the search results (closed by default) -->
+  <div id="MSearchResultsWindow"  style="position: fixed;">
+  <iframe src="javascript:void(0)" frameborder="0"
+          name="MSearchResults" id="MSearchResults">
+  </iframe>
+  </div>
+<!-- Generated by Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceevolution.html">evolution</a></li><li class="navelem"><a class="el" href="namespaceevolution_1_1dg.html">dg</a></li><li class="navelem"><a class="el" href="namespaceevolution_1_1dg_1_1subcell.html">subcell</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">evolution::dg::subcell Namespace Reference<div class="ingroups"><a class="el" href="group__DgSubcellGroup.html">DG-Subcell</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementation of a generic finite volume/conservative finite difference subcell limiter.  
+<a href="namespaceevolution_1_1dg_1_1subcell.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceevolution_1_1dg_1_1subcell_1_1fd"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceevolution_1_1dg_1_1subcell_1_1fd.html">fd</a></td></tr>
+<tr class="memdesc:namespaceevolution_1_1dg_1_1subcell_1_1fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Code specific to a conservative finite difference subcell limiter. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceevolution_1_1dg_1_1subcell_1_1fv"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceevolution_1_1dg_1_1subcell_1_1fv.html">fv</a></td></tr>
+<tr class="memdesc:namespaceevolution_1_1dg_1_1subcell_1_1fv"><td class="mdescLeft">&#160;</td><td class="mdescRight">Code specific to a finite volume subcell limiter. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceevolution_1_1dg_1_1subcell_1_1OptionTags"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceevolution_1_1dg_1_1subcell_1_1OptionTags.html">OptionTags</a></td></tr>
+<tr class="memdesc:namespaceevolution_1_1dg_1_1subcell_1_1OptionTags"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option tags for the DG-subcell solver. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceevolution_1_1dg_1_1subcell_1_1Tags"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceevolution_1_1dg_1_1subcell_1_1Tags.html">Tags</a></td></tr>
+<tr class="memdesc:namespaceevolution_1_1dg_1_1subcell_1_1Tags"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tags for the DG-subcell solver <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structevolution_1_1dg_1_1subcell_1_1NeighborData.html">NeighborData</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds neighbor data needed for the TCI and reconstruction.  <a href="structevolution_1_1dg_1_1subcell_1_1NeighborData.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classevolution_1_1dg_1_1subcell_1_1SubcellOptions.html">SubcellOptions</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds the system-agnostic subcell parameters, such as numbers controlling when to switch between DG and subcell.  <a href="classevolution_1_1dg_1_1subcell_1_1SubcellOptions.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ga97fbd926840d2508e331694db731e18a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__DgSubcellGroup.html#ga97fbd926840d2508e331694db731e18a">ActiveGrid</a> { <b>Dg</b>, 
+<b>Subcell</b>
+ }</td></tr>
+<tr class="separator:ga97fbd926840d2508e331694db731e18a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a26e984bc83a077f9406f2181d7dd45e8"><td class="memItemLeft" align="right" valign="top"><a id="a26e984bc83a077f9406f2181d7dd45e8"></a>
+<a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (<a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;os, <a class="el" href="group__DgSubcellGroup.html#ga97fbd926840d2508e331694db731e18a">ActiveGrid</a> active_grid) noexcept</td></tr>
+<tr class="separator:a26e984bc83a077f9406f2181d7dd45e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0e1de673c5d6dbf9ffcda09803ad2b3"><td class="memItemLeft" align="right" valign="top"><a id="aa0e1de673c5d6dbf9ffcda09803ad2b3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>pup</b> (PUP::er &amp;p, <a class="el" href="structevolution_1_1dg_1_1subcell_1_1NeighborData.html">NeighborData</a> &amp;nhbr_data) noexcept</td></tr>
+<tr class="separator:aa0e1de673c5d6dbf9ffcda09803ad2b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a28fb7bc1383352f244cac0784041df"><td class="memItemLeft" align="right" valign="top"><a id="a6a28fb7bc1383352f244cac0784041df"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>operator|</b> (PUP::er &amp;p, <a class="el" href="structevolution_1_1dg_1_1subcell_1_1NeighborData.html">NeighborData</a> &amp;nhbr_data) noexcept</td></tr>
+<tr class="separator:a6a28fb7bc1383352f244cac0784041df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab84df2698388796c4cffeaf88a5d79f1"><td class="memItemLeft" align="right" valign="top"><a id="ab84df2698388796c4cffeaf88a5d79f1"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="structevolution_1_1dg_1_1subcell_1_1NeighborData.html">NeighborData</a> &amp;lhs, const <a class="el" href="structevolution_1_1dg_1_1subcell_1_1NeighborData.html">NeighborData</a> &amp;rhs) noexcept</td></tr>
+<tr class="separator:ab84df2698388796c4cffeaf88a5d79f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf9ebae8fa1f9dd50429c65c241f602f"><td class="memItemLeft" align="right" valign="top"><a id="abf9ebae8fa1f9dd50429c65c241f602f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="structevolution_1_1dg_1_1subcell_1_1NeighborData.html">NeighborData</a> &amp;lhs, const <a class="el" href="structevolution_1_1dg_1_1subcell_1_1NeighborData.html">NeighborData</a> &amp;rhs) noexcept</td></tr>
+<tr class="separator:abf9ebae8fa1f9dd50429c65c241f602f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa50ca40c9b8d1d421acfd3c47e21f60c"><td class="memItemLeft" align="right" valign="top"><a id="aa50ca40c9b8d1d421acfd3c47e21f60c"></a>
+<a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (<a class="elRef" href="http://en.cppreference.com/w/cpp/io/basic_ostream.html">std::ostream</a> &amp;os, const <a class="el" href="structevolution_1_1dg_1_1subcell_1_1NeighborData.html">NeighborData</a> &amp;t) noexcept</td></tr>
+<tr class="separator:aa50ca40c9b8d1d421acfd3c47e21f60c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18830dc2b11039112adb70d5f3dc71c3"><td class="memTemplParams" colspan="2">template&lt;size_t Dim, typename SymmList , typename IndexList &gt; </td></tr>
+<tr class="memitem:a18830dc2b11039112adb70d5f3dc71c3"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceevolution_1_1dg_1_1subcell.html#a18830dc2b11039112adb70d5f3dc71c3">persson_tci</a> (const Tensor&lt; <a class="el" href="classDataVector.html">DataVector</a>, SymmList, IndexList &gt; &amp;tensor, const <a class="el" href="classMesh.html">Mesh</a>&lt; Dim &gt; &amp;dg_mesh, const double alpha, const double zero_cutoff) noexcept</td></tr>
+<tr class="memdesc:a18830dc2b11039112adb70d5f3dc71c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Troubled cell indicator using spectral falloff of <a class="el" href="citelist.html#CITEREF_Persson2006sub">[71]</a>.  <a href="namespaceevolution_1_1dg_1_1subcell.html#a18830dc2b11039112adb70d5f3dc71c3">More...</a><br /></td></tr>
+<tr class="separator:a18830dc2b11039112adb70d5f3dc71c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e8601b489936a5aeeea7dcf8fe5f84e"><td class="memTemplParams" colspan="2">template&lt;typename... EvolvedVarsTags&gt; </td></tr>
+<tr class="memitem:a2e8601b489936a5aeeea7dcf8fe5f84e"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceevolution_1_1dg_1_1subcell.html#a2e8601b489936a5aeeea7dcf8fe5f84e">rdmp_tci</a> (const Variables&lt; tmpl::list&lt; EvolvedVarsTags... &gt;&gt; &amp;active_grid_candidate_evolved_vars, const Variables&lt; tmpl::list&lt; <a class="el" href="structevolution_1_1dg_1_1subcell_1_1Tags_1_1Inactive.html">Tags::Inactive</a>&lt; EvolvedVarsTags &gt;... &gt;&gt; &amp;inactive_grid_candidate_evolved_vars, const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; double &gt; &amp;max_of_past_variables, const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; double &gt; &amp;min_of_past_variables, const double rdmp_delta0, const double rdmp_epsilon) noexcept</td></tr>
+<tr class="memdesc:a2e8601b489936a5aeeea7dcf8fe5f84e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Troubled cell indicator using a relaxed discrete maximum principle, comparing the candidate solution with the past solution in the element and its neighbors.  <a href="namespaceevolution_1_1dg_1_1subcell.html#a2e8601b489936a5aeeea7dcf8fe5f84e">More...</a><br /></td></tr>
+<tr class="separator:a2e8601b489936a5aeeea7dcf8fe5f84e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a413ff2264c0879c0b8acd7a35ade0409"><td class="memTemplParams" colspan="2"><a id="a413ff2264c0879c0b8acd7a35ade0409"></a>
+template&lt;typename... EvolvedVarsTags&gt; </td></tr>
+<tr class="memitem:a413ff2264c0879c0b8acd7a35ade0409"><td class="memTemplItemLeft" align="right" valign="top"><a class="elRef" href="http://en.cppreference.com/w/cpp/utility/pair.html">std::pair</a>&lt; <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; double &gt;, <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; double &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceevolution_1_1dg_1_1subcell.html#a413ff2264c0879c0b8acd7a35ade0409">rdmp_max_min</a> (const Variables&lt; tmpl::list&lt; EvolvedVarsTags... &gt;&gt; &amp;active_grid_evolved_vars, const Variables&lt; tmpl::list&lt; <a class="el" href="structevolution_1_1dg_1_1subcell_1_1Tags_1_1Inactive.html">Tags::Inactive</a>&lt; EvolvedVarsTags &gt;... &gt;&gt; &amp;inactive_grid_evolved_vars, const bool include_inactive_grid) noexcept</td></tr>
+<tr class="memdesc:a413ff2264c0879c0b8acd7a35ade0409"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the max and min of each component of the active and inactive variables. If <code>include_inactive_grid</code> is <code>false</code> then only the max over the <code>active_grid_evolved_vars</code> for each component is returned. <br /></td></tr>
+<tr class="separator:a413ff2264c0879c0b8acd7a35ade0409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e1abe6a77a20e0d4762ea8261212b95"><td class="memTemplParams" colspan="2">template&lt;size_t Dim, typename TagList &gt; </td></tr>
+<tr class="memitem:a7e1abe6a77a20e0d4762ea8261212b95"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classDirectionMap.html">DirectionMap</a>&lt; Dim, <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; double &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceevolution_1_1dg_1_1subcell.html#a7e1abe6a77a20e0d4762ea8261212b95">slice_data</a> (const Variables&lt; TagList &gt; &amp;volume_subcell_vars, const <a class="el" href="classIndex.html">Index</a>&lt; Dim &gt; &amp;subcell_extents, const size_t number_of_ghost_points, const <a class="el" href="classDirectionMap.html">DirectionMap</a>&lt; Dim, bool &gt; &amp;directions_to_slice) noexcept</td></tr>
+<tr class="memdesc:a7e1abe6a77a20e0d4762ea8261212b95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slice the subcell variables needed for neighbors to perform reconstruction.  <a href="namespaceevolution_1_1dg_1_1subcell.html#a7e1abe6a77a20e0d4762ea8261212b95">More...</a><br /></td></tr>
+<tr class="separator:a7e1abe6a77a20e0d4762ea8261212b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae38ca6de9d7cdb7d629f1b352a68e751"><td class="memItemLeft" align="right" valign="top"><a id="ae38ca6de9d7cdb7d629f1b352a68e751"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classevolution_1_1dg_1_1subcell_1_1SubcellOptions.html">SubcellOptions</a> &amp;lhs, const <a class="el" href="classevolution_1_1dg_1_1subcell_1_1SubcellOptions.html">SubcellOptions</a> &amp;rhs) noexcept</td></tr>
+<tr class="separator:ae38ca6de9d7cdb7d629f1b352a68e751"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fdfa500304740e5620378318a7a7050"><td class="memItemLeft" align="right" valign="top"><a id="a9fdfa500304740e5620378318a7a7050"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classevolution_1_1dg_1_1subcell_1_1SubcellOptions.html">SubcellOptions</a> &amp;lhs, const <a class="el" href="classevolution_1_1dg_1_1subcell_1_1SubcellOptions.html">SubcellOptions</a> &amp;rhs) noexcept</td></tr>
+<tr class="separator:a9fdfa500304740e5620378318a7a7050"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ee18ec4b0348ab86611b3a87fd9d00c"><td class="memTemplParams" colspan="2">template&lt;size_t Dim&gt; </td></tr>
+<tr class="memitem:a5ee18ec4b0348ab86611b3a87fd9d00c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceevolution_1_1dg_1_1subcell.html#a5ee18ec4b0348ab86611b3a87fd9d00c">tci_status</a> (<a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; <a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; <a class="el" href="classDataVector.html">DataVector</a> &gt; * &gt; status, const <a class="el" href="classMesh.html">Mesh</a>&lt; Dim &gt; &amp;dg_mesh, const <a class="el" href="classMesh.html">Mesh</a>&lt; Dim &gt; &amp;subcell_mesh, <a class="el" href="group__DgSubcellGroup.html#ga97fbd926840d2508e331694db731e18a">subcell::ActiveGrid</a> active_grid, const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/deque.html">std::deque</a>&lt; <a class="el" href="group__DgSubcellGroup.html#ga97fbd926840d2508e331694db731e18a">subcell::ActiveGrid</a> &gt; &amp;tci_history) noexcept</td></tr>
+<tr class="memdesc:a5ee18ec4b0348ab86611b3a87fd9d00c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set <code>status</code> to <code>1</code> if the cell is marked as needing subcell, otherwise set <code>status</code> to <code>0</code>. <code>status</code> has grid points on the currently active mesh.  <a href="namespaceevolution_1_1dg_1_1subcell.html#a5ee18ec4b0348ab86611b3a87fd9d00c">More...</a><br /></td></tr>
+<tr class="separator:a5ee18ec4b0348ab86611b3a87fd9d00c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ada922c584c79f277461e2a1f3f607c"><td class="memTemplParams" colspan="2"><a id="a7ada922c584c79f277461e2a1f3f607c"></a>
+template&lt;size_t Dim&gt; </td></tr>
+<tr class="memitem:a7ada922c584c79f277461e2a1f3f607c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; <a class="el" href="classDataVector.html">DataVector</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>tci_status</b> (const <a class="el" href="classMesh.html">Mesh</a>&lt; Dim &gt; &amp;dg_mesh, const <a class="el" href="classMesh.html">Mesh</a>&lt; Dim &gt; &amp;subcell_mesh, <a class="el" href="group__DgSubcellGroup.html#ga97fbd926840d2508e331694db731e18a">subcell::ActiveGrid</a> active_grid, const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/deque.html">std::deque</a>&lt; <a class="el" href="group__DgSubcellGroup.html#ga97fbd926840d2508e331694db731e18a">subcell::ActiveGrid</a> &gt; &amp;tci_history) noexcept</td></tr>
+<tr class="separator:a7ada922c584c79f277461e2a1f3f607c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6df6a077e9baef7791ab730df332f3ff"><td class="memTemplParams" colspan="2">template&lt;typename... EvolvedVarsTags&gt; </td></tr>
+<tr class="memitem:a6df6a077e9baef7791ab730df332f3ff"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceevolution_1_1dg_1_1subcell.html#a6df6a077e9baef7791ab730df332f3ff">two_mesh_rdmp_tci</a> (const Variables&lt; tmpl::list&lt; EvolvedVarsTags... &gt;&gt; &amp;dg_evolved_vars, const Variables&lt; tmpl::list&lt; <a class="el" href="structevolution_1_1dg_1_1subcell_1_1Tags_1_1Inactive.html">Tags::Inactive</a>&lt; EvolvedVarsTags &gt;... &gt;&gt; &amp;subcell_evolved_vars, const double rdmp_delta0, const double rdmp_epsilon) noexcept</td></tr>
+<tr class="memdesc:a6df6a077e9baef7791ab730df332f3ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Troubled cell indicator using a relaxed discrete maximum principle, comparing the solution on two grids at the same point in time.  <a href="namespaceevolution_1_1dg_1_1subcell.html#a6df6a077e9baef7791ab730df332f3ff">More...</a><br /></td></tr>
+<tr class="separator:a6df6a077e9baef7791ab730df332f3ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of a generic finite volume/conservative finite difference subcell limiter. </p>
+<p>Our implementation of a finite volume (FV) or finite difference (FD) subcell limiter (SCL) follows <a class="el" href="citelist.html#CITEREF_Dumbser2014a">[30]</a>. Other implementations of a subcell limiter exist, e.g. <a class="el" href="citelist.html#CITEREF_Sonntag2014">[81]</a> <a class="el" href="citelist.html#CITEREF_Casoni2012">[17]</a> <a class="el" href="citelist.html#CITEREF_Hou2007">[47]</a>. Our implementation and that of <a class="el" href="citelist.html#CITEREF_Dumbser2014a">[30]</a> are a generalization of the Multidimensional Optimal Order Detection (MOOD) algorithm <a class="el" href="citelist.html#CITEREF_CLAIN20114028">[19]</a> <a class="el" href="citelist.html#CITEREF_DIOT201243">[27]</a> <a class="el" href="citelist.html#CITEREF_Diot2013">[28]</a> <a class="el" href="citelist.html#CITEREF_Loubere2014">[60]</a>. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a18830dc2b11039112adb70d5f3dc71c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18830dc2b11039112adb70d5f3dc71c3">&#9670;&nbsp;</a></span>persson_tci()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Dim, typename SymmList , typename IndexList &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool evolution::dg::subcell::persson_tci </td>
+          <td>(</td>
+          <td class="paramtype">const Tensor&lt; <a class="el" href="classDataVector.html">DataVector</a>, SymmList, IndexList &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tensor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classMesh.html">Mesh</a>&lt; Dim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>dg_mesh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>alpha</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>zero_cutoff</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Troubled cell indicator using spectral falloff of <a class="el" href="citelist.html#CITEREF_Persson2006sub">[71]</a>. </p>
+<p>Consider a discontinuity sensing quantity \(U\), which is typically a scalar but could be a tensor of any rank. Let \(U\) have the 1d spectral decomposition (generalization to higher-dimensional tensor product bases is done dimension-by-dimension):</p>
+<p class="formulaDsp">
+\begin{align*} U(x)=\sum_{i=0}^{N}c_i P_i(x), \end{align*}
+</p>
+<p>where \(P_i(x)\) are the basis functions, in our case the Legendre polynomials, and \(c_i\) are the spectral coefficients. We then define a filtered solution \(\hat{U}\) as</p>
+<p class="formulaDsp">
+\begin{align*} \hat{U}(x)=c_N P_N(x). \end{align*}
+</p>
+<p>Note that when an exponential filter is being used to deal with aliasing, lower modes can be included in \(\hat{U}\). The main goal of \(\hat{U}\) is to measure how much power is in the highest modes, which are the modes responsible for Gibbs phenomena. We define the discontinuity indicator \(s^\Omega\) as</p>
+<p class="formulaDsp">
+\begin{align*} s^\Omega=\log_{10}\left(\frac{(\hat{U}, \hat{U})}{(U, U)}\right), \end{align*}
+</p>
+<p>where \((\cdot,\cdot)\) is an inner product, which we take to be the Euclidean \(L_2\) norm (i.e. we do not divide by the number of grid points since that cancels out anyway). A cell is troubled if \(s^\Omega &gt; -\alpha \log_{10}(N)\). Typically, \(\alpha=4\) is a good choice.</p>
+<p>The parameter <code>zero_cutoff</code> is used to avoid division and logarithms of small numbers, which can be wildly fluctuating because of roundoff errors. We do not check the TCI for tensor components when \(L_2(\hat{U}) \leq \epsilon L_2(U)\), where \(\epsilon\) is the <code>zero_cutoff</code>. If all components are skipped the TCI returns <code>false</code>, i.e. the cell is not troubled. </p>
+
+</div>
+</div>
+<a id="a2e8601b489936a5aeeea7dcf8fe5f84e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e8601b489936a5aeeea7dcf8fe5f84e">&#9670;&nbsp;</a></span>rdmp_tci()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... EvolvedVarsTags&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool evolution::dg::subcell::rdmp_tci </td>
+          <td>(</td>
+          <td class="paramtype">const Variables&lt; tmpl::list&lt; EvolvedVarsTags... &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>active_grid_candidate_evolved_vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Variables&lt; tmpl::list&lt; <a class="el" href="structevolution_1_1dg_1_1subcell_1_1Tags_1_1Inactive.html">Tags::Inactive</a>&lt; EvolvedVarsTags &gt;... &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>inactive_grid_candidate_evolved_vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>max_of_past_variables</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt; double &gt; &amp;&#160;</td>
+          <td class="paramname"><em>min_of_past_variables</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>rdmp_delta0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>rdmp_epsilon</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Troubled cell indicator using a relaxed discrete maximum principle, comparing the candidate solution with the past solution in the element and its neighbors. </p>
+<p>Let the candidate solution be denoted by \(u^\star_{\alpha}(t^{n+1})\). Then the RDMP requires that</p>
+<p class="formulaDsp">
+\begin{align*} \min_{\forall\mathcal{N}}\left(u_{\alpha}(t^n)\right) - \delta_\alpha \le u^\star_{\alpha}(t^{n+1}) \le \max_{\forall\mathcal{N}} \left(u_{\alpha}(t^n)\right) + \delta_\alpha \end{align*}
+</p>
+<p>where \(\mathcal{N}\) are either the Neumann or Voronoi neighbors and the element itself, and \(\delta_\alpha\) is a parameter defined below that relaxes the discrete maximum principle (DMP). When computing \(\max(u_\alpha)\) and \(\min(u_\alpha)\) over a DG element that is not using subcells we first project the DG solution to the subcells and then compute the maximum and minimum over <em>both</em> the DG grid and the subcell grid. However, when a DG element is using subcells we compute the maximum and minimum of \(u_\alpha(t^n)\) over the subcells only. Note that the maximum and minimum values of \(u^\star_\alpha\) are always computed over both the DG and the subcell grids, even when using the RDMP to check if the reconstructed DG solution would be admissible.</p>
+<p>The parameter \(\delta_\alpha\) is given by:</p>
+<p class="formulaDsp">
+\begin{align*} \delta_\alpha = \max\left(\delta_{0},\epsilon \left(\max_{\forall\mathcal{N}}\left(u_{\alpha}(t^n)\right) - \min_{\forall\mathcal{N}}\left(u_{\alpha}(t^n)\right)\right) \right), \end{align*}
+</p>
+<p>where we typically take \(\delta_{0}=10^{-4}\) and \(\epsilon=10^{-3}\). </p>
+
+</div>
+</div>
+<a id="a7e1abe6a77a20e0d4762ea8261212b95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e1abe6a77a20e0d4762ea8261212b95">&#9670;&nbsp;</a></span>slice_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Dim, typename TagList &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classDirectionMap.html">DirectionMap</a>&lt;Dim, <a class="elRef" href="http://en.cppreference.com/w/cpp/container/vector.html">std::vector</a>&lt;double&gt; &gt; evolution::dg::subcell::slice_data </td>
+          <td>(</td>
+          <td class="paramtype">const Variables&lt; TagList &gt; &amp;&#160;</td>
+          <td class="paramname"><em>volume_subcell_vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classIndex.html">Index</a>&lt; Dim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>subcell_extents</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>number_of_ghost_points</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classDirectionMap.html">DirectionMap</a>&lt; Dim, bool &gt; &amp;&#160;</td>
+          <td class="paramname"><em>directions_to_slice</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Slice the subcell variables needed for neighbors to perform reconstruction. </p>
+<p>Note that we slice to a grid that is against the boundary of the element but is several ghost points deep. This is in contrast to the slicing used in the DG method which is to the boundary of the element only.</p>
+<p>The <code>number_of_ghost_points</code> will depend on the number of neighboring points the reconstruction method needs that is used on the subcell. The <code>directions_to_slice</code> determines in which directions data is sliced. Generally this will be the directions in which the element has neighbors.</p>
+<p>The data always has the same ordering as the volume data (tags have the same ordering, grid points are x-varies-fastest). </p>
+
+</div>
+</div>
+<a id="a5ee18ec4b0348ab86611b3a87fd9d00c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ee18ec4b0348ab86611b3a87fd9d00c">&#9670;&nbsp;</a></span>tci_status()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t Dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void evolution::dg::subcell::tci_status </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; <a class="el" href="group__TensorGroup.html#ga06ebcb38a1f13c246e53378b9e8959ce">Scalar</a>&lt; <a class="el" href="classDataVector.html">DataVector</a> &gt; * &gt;&#160;</td>
+          <td class="paramname"><em>status</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classMesh.html">Mesh</a>&lt; Dim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>dg_mesh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classMesh.html">Mesh</a>&lt; Dim &gt; &amp;&#160;</td>
+          <td class="paramname"><em>subcell_mesh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__DgSubcellGroup.html#ga97fbd926840d2508e331694db731e18a">subcell::ActiveGrid</a>&#160;</td>
+          <td class="paramname"><em>active_grid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="elRef" href="http://en.cppreference.com/w/cpp/container/deque.html">std::deque</a>&lt; <a class="el" href="group__DgSubcellGroup.html#ga97fbd926840d2508e331694db731e18a">subcell::ActiveGrid</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tci_history</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set <code>status</code> to <code>1</code> if the cell is marked as needing subcell, otherwise set <code>status</code> to <code>0</code>. <code>status</code> has grid points on the currently active mesh. </p>
+<dl class="section note"><dt>Note</dt><dd>It is possible to encounter a <code>status</code> of <code>0</code>, indicating a smooth solution, even though the active mesh is the subcell mesh. This can occur when using a multistep time integration method like Adams Bashforth, where the FD/FV scheme is used as long as <em>any</em> of the timestepper history is flagged for FD/FV subcell evolution. An example of this would be just after a shock leaves the cell: the solution is now smooth (<code>status</code> takes value <code>0</code>), but the multistep method continues to take FD timesteps (<code>status</code> is defined on the subcell mesh) until the entire history is flagged as smooth. Thus, <code>tci_history.front()</code> (which corresponds to the most recent TCI status) is used to set the status when using multistep time integrators, while the <code>active_grid</code> is used when using other time steppers. </dd></dl>
+
+</div>
+</div>
+<a id="a6df6a077e9baef7791ab730df332f3ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6df6a077e9baef7791ab730df332f3ff">&#9670;&nbsp;</a></span>two_mesh_rdmp_tci()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... EvolvedVarsTags&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool evolution::dg::subcell::two_mesh_rdmp_tci </td>
+          <td>(</td>
+          <td class="paramtype">const Variables&lt; tmpl::list&lt; EvolvedVarsTags... &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>dg_evolved_vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Variables&lt; tmpl::list&lt; <a class="el" href="structevolution_1_1dg_1_1subcell_1_1Tags_1_1Inactive.html">Tags::Inactive</a>&lt; EvolvedVarsTags &gt;... &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>subcell_evolved_vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>rdmp_delta0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>rdmp_epsilon</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Troubled cell indicator using a relaxed discrete maximum principle, comparing the solution on two grids at the same point in time. </p>
+<p>Checks that the subcell solution \(\underline{u}\) and the DG solution \(u\) satisfy</p>
+<p class="formulaDsp">
+\begin{align*} \min(u)-\delta \le \underline{u} \le \max(u)+\delta \end{align*}
+</p>
+<p>where</p>
+<p class="formulaDsp">
+\begin{align*} \delta = \max\left[\delta_0, \epsilon(\max(u) - \min(u))\right] \end{align*}
+</p>
+<p>where \(\delta_0\) and \(\epsilon\) are constants controlling the maximum absolute and relative change allowed when projecting the DG solution to the subcell grid. We currently specify one value of \(\delta_0\) and \(\epsilon\) for all variables, but this could be generalized to choosing the allowed variation in a variable-specific manner. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.10-->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+&copy; Copyright 2017 - 2021
+<a href="https://black-holes.org">SXS Collaboration</a>,
+<a href="LICENSE.txt" target="_blank">
+<span class="hidden-xs">Distributed under the</span>
+MIT License</a>
+</small></address>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!-- HTML header for doxygen 1.8.10-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="SXS Collaboration">
+    <meta name="generator" content="Doxygen 1.8.17"/>
+    <style>
+        /*!
+         * IE10 viewport hack for Surface/desktop Windows 8 bug
+         * Copyright 2014-2015 Twitter, Inc.
+         * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+         */
+        @-webkit-viewport { width: device-width; }
+        @-moz-viewport    { width: device-width; }
+        @-ms-viewport     { width: device-width; }
+        @-o-viewport      { width: device-width; }
+        @viewport         { width: device-width; }
+      </style>
+  <title>SpECTRE: elliptic::dg::NumericalFluxes::FirstOrderInternalPenalty&lt; Dim, FluxesComputerTag, FieldTagsList, AuxiliaryFieldTagsList &gt; Struct Template Reference</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="./MathJax.js"></script>
+  <link href="octicons.css" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="popper.min.js"></script>
+  <script type="text/javascript" src="bootstrap.min.js"></script>
+  <script type="text/javascript" src="spectre.js"></script>
+  </head>
+  <body>
+  <div id="top" class="navbar-fixed-top"><!-- do not remove this div, it is closed by doxygen! -->
+  <!-- BEGIN TITLEAREA -->
+  <div id="titlearea">
+  <script type="text/javascript">
+  var searchBox = new SearchBox("searchBox", "search",false,'Search');
+  </script>
+  <div id="main-nav">
+    <ul class="sm sm-dox" id="main-menu">
+      <li>
+      <a href="index.html">
+      SpECTRE &#160;
+        <span id="projectnumber">v2021.04.06</span>
+      </a>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-book"></i><span>Documentation</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 135px;">
+            <a href="index.html">
+            <i class="octicon octicon-book"></i><span>Introduction</span></a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="versioning_and_releases.html">
+              <i class="octicon octicon-versions"></i><span>Releases</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="installation.html">
+              <i class="octicon octicon-desktop-download"></i><span>Installation</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="tutorials.html">
+              <i class="octicon octicon-mortar-board"></i><span>User Tutorials</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="dev_guide.html">
+              <i class="octicon octicon-gist-secret"></i><span>Dev Guide</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="code_of_conduct.html">
+              <i class="octicon octicon-comment-discussion"></i><span>Code of Conduct</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="contributing_to_spectre.html">
+              <i class="octicon octicon-git-pull-request"></i><span>Contributing Guide</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-code"></i>
+              <span>Code Reference</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 130px;">
+            <a href="modules.html">
+              <i class="octicon octicon-code"></i>
+              <span>Topics</span>
+            </a>
+          </li>
+          <li style="min-width: 130px;">
+            <a href="namespaces.html">
+              <i class="octicon octicon-gist"></i>
+              <span>Namespaces</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="files.html">
+          <i class="octicon octicon-file-directory"></i><span>Files</span>
+        </a>
+      </li>
+      <li>
+        <a href="citelist.html">
+          <i class="octicon octicon-file-text"></i><span>Bibliography</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/sxs-collaboration/spectre" target="_blank">
+          <i class="octicon octicon-mark-github"></i><span>View on GitHub</span>
+        </a>
+      </li>
+      <!--The Search <li> is added by doxygen later-->
+    </ul>
+  </div><!-- main-nav -->
+  </div><!-- titlearea -->
+  <!-- window showing the filter options -->
+  <div id="MSearchSelectWindow"  style="position: fixed;"
+       onmouseover="return searchBox.OnSearchSelectShow()"
+       onmouseout="return searchBox.OnSearchSelectHide()"
+       onkeydown="return searchBox.OnSearchSelectKey(event)">
+  </div>
+  <!-- iframe showing the search results (closed by default) -->
+  <div id="MSearchResultsWindow"  style="position: fixed;">
+  <iframe src="javascript:void(0)" frameborder="0"
+          name="MSearchResults" id="MSearchResults">
+  </iframe>
+  </div>
+<!-- Generated by Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceelliptic.html">elliptic</a></li><li class="navelem"><a class="el" href="namespaceelliptic_1_1dg.html">dg</a></li><li class="navelem"><a class="el" href="namespaceelliptic_1_1dg_1_1NumericalFluxes.html">NumericalFluxes</a></li><li class="navelem"><a class="el" href="structelliptic_1_1dg_1_1NumericalFluxes_1_1FirstOrderInternalPenalty.html">FirstOrderInternalPenalty</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">elliptic::dg::NumericalFluxes::FirstOrderInternalPenalty&lt; Dim, FluxesComputerTag, FieldTagsList, AuxiliaryFieldTagsList &gt; Struct Template Reference<div class="ingroups"><a class="el" href="group__DiscontinuousGalerkinGroup.html">Discontinuous Galerkin</a> &#124; <a class="el" href="group__NumericalFluxesGroup.html">Numerical Fluxes</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>The internal penalty flux for first-order elliptic equations.  
+ <a href="structelliptic_1_1dg_1_1NumericalFluxes_1_1FirstOrderInternalPenalty.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="FirstOrderInternalPenalty_8hpp_source.html">FirstOrderInternalPenalty.hpp</a>&gt;</code></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;size_t Dim, typename FluxesComputerTag, typename FieldTagsList, typename AuxiliaryFieldTagsList&gt;<br />
+struct elliptic::dg::NumericalFluxes::FirstOrderInternalPenalty&lt; Dim, FluxesComputerTag, FieldTagsList, AuxiliaryFieldTagsList &gt;</h3>
+
+<p>The internal penalty flux for first-order elliptic equations. </p>
+<h3>Details</h3>
+<p>Computes the internal penalty numerical flux (see e.g. <a class="el" href="citelist.html#CITEREF_HesthavenWarburton">[45]</a>, section 7.2) dotted with the interface unit normal.</p>
+<p>We implement here a suggested generalization of the internal penalty flux for any set of elliptic PDEs up to second order in derivatives. It is designed for fluxes (i.e. principal parts of the PDEs) that may depend on the dynamic fields, but do so at most linearly. This is the case for the velocity potential equation of binary neutron stars, for example. The linearity is only necessary to impose inhomogeneous boundary conditions as contributions to the fixed source (see <code><a class="el" href="structelliptic_1_1dg_1_1Actions_1_1ImposeInhomogeneousBoundaryConditionsOnSource.html" title="Adds boundary contributions to the sources.">elliptic::dg::Actions::ImposeInhomogeneousBoundaryConditionsOnSource</a></code>).</p>
+<p>We reduce the second-order elliptic PDEs to first-order form by introducing an <em>auxiliary</em> variable \(v\) for each <em>primal</em> variable \(u\) (i.e. for each variable whose second derivative appears in the equations). Then, the equations take the <em>flux-form</em></p>
+<p class="formulaDsp">
+\begin{align} -\partial_i F^i_A + S_A = f_A \end{align}
+</p>
+<p>where the fluxes \(F^i_A(u,v)\) and sources \(S_A(u,v)\) are indexed (with capital letters) by the variables and we have defined \(f_A(x)\) as those sources that are independent of the variables. Note that the fluxes are functions of the primal and auxiliary variables; e.g. for a <a class="el" href="namespacePoisson.html" title="Items related to solving a Poisson equation .">Poisson</a> system \(\{u,v_i\}\) on a spatial metric \(\gamma_{ij}\) they are simply \(F^i_u(v)=\sqrt{\gamma}\gamma^{ij} v_j\) and \(F^i_{v_j}(u)=u\delta^i_j\) (see <code><a class="el" href="structPoisson_1_1FirstOrderSystem.html" title="The Poisson equation formulated as a set of coupled first-order PDEs.">Poisson::FirstOrderSystem</a></code>) or for an <a class="el" href="namespaceElasticity.html" title="Items related to solving elasticity problems.">Elasticity</a> system \(\{\xi^i,S_{ij}\}\) with Young's tensor \(Y^{ijkl}\) they are \(F^i_{\xi^j}(S)=Y^{ijkl}S_{kl}\) and \(F^i_{S_{jk}}(\xi)=\delta^i_{(j}\xi_{k)}\). Since each primal flux is commonly only a function of the corresponding auxiliary variable and vice-versa, we omit the other function arguments here to lighten the notational load.</p>
+<p>We now choose the internal penalty numerical fluxes \((n_i F^i_A)^*\) as follows for each primal variable \(u\) and their corresponding auxiliary variable \(v\):</p>
+<p class="formulaDsp">
+\begin{align} (n_i F^i_u)^* &amp;= \frac{1}{2} n_i \left( F^i_u(\partial_j F^j_v(u^\mathrm{int})) + F^i_u(\partial_j F^j_v(u^\mathrm{ext})) \right) - \sigma n_i \left(F^i_u(n_j F^j_v(u^\mathrm{int})) - F^i_u( n_j F^j_v(u^\mathrm{ext}))\right) \\ (n_i F^i_v)^* &amp;= \frac{1}{2} n_i \left(F^i_v(u^\mathrm{int}) + F^i_v(u^\mathrm{ext})\right) \end{align}
+</p>
+<p>Note that we have assumed \(n^\mathrm{ext}_i=-n_i\) here, i.e. face normals don't depend on the dynamic variables (which may be discontinuous on element faces). This is the case for the problems we are expecting to solve, because those will be on fixed background metrics (e.g. a conformal metric for the XCTS system).</p>
+<p>Also note that the numerical fluxes intentionally don't depend on the auxiliary field values \(v\). This property allows us to use the numerical fluxes also for the second-order (or <em>primal</em>) DG formulation, where we remove the need for an auxiliary variable. For the first-order system we could replace the divergence in \((n_i F^i_u)^*\) with \(v\), which would result in a generalized "stabilized central flux" that is slightly less sparse than the internal penalty flux (see e.g. <a class="el" href="citelist.html#CITEREF_HesthavenWarburton">[45]</a>, section 7.2). We could also choose to ignore the fluxes in the penalty term, but preliminary tests suggest that this may hurt convergence.</p>
+<p>For a <a class="el" href="namespacePoisson.html" title="Items related to solving a Poisson equation .">Poisson</a> system (see above) this numeric flux reduces to the standard internal penalty flux (see e.g. <a class="el" href="citelist.html#CITEREF_HesthavenWarburton">[45]</a>, section 7.2, or <a class="el" href="citelist.html#CITEREF_Arnold2002">[2]</a>)</p>
+<p class="formulaDsp">
+\begin{align} (n_i F^i_u)^* &amp;= n_i v_i^* = \frac{1}{2} n_i \left(\partial_i u^\mathrm{int} + \partial_i u^\mathrm{ext}\right) - \sigma \left(u^\mathrm{int} - u^\mathrm{ext}\right) \\ (n_i F^i_{v_j})^* &amp;= n_j u^* = \frac{1}{2} n_j \left(u^\mathrm{int} + u^\mathrm{ext}\right) \end{align}
+</p>
+<p>where a sum over repeated indices is assumed, since the equation is formulated on a Euclidean geometry.</p>
+<p>This generalization of the internal penalty flux is based on unpublished work by Nils L. Fischer (<a href="#" onclick="location.href='mai'+'lto:'+'nil'+'s.'+'fis'+'ch'+'er@'+'ae'+'i.m'+'pg'+'.de'; return false;">nils.<span style="display: none;">.nosp@m.</span>fisc<span style="display: none;">.nosp@m.</span>her@a<span style="display: none;">.nosp@m.</span>ei.m<span style="display: none;">.nosp@m.</span>pg.de</a>).</p>
+<p>The penalty factor \(\sigma\) is responsible for removing zero eigenmodes and impacts the conditioning of the linear operator to be solved. It can be chosen as \(\sigma=C\frac{N_\mathrm{points}^2}{h}\) where \(N_\mathrm{points}\) is the number of collocation points (i.e. the polynomial degree plus 1), \(h\) is a measure of the element size in inertial coordinates (both measured perpendicular to the interface under consideration) and \(C\geq 1\) is a free parameter (see e.g. <a class="el" href="citelist.html#CITEREF_HesthavenWarburton">[45]</a>, section 7.2). For the element size we choose \(h=\frac{J_\mathrm{volume}}{J_\mathrm{face}}\), i.e. the ratio of Jacobi determinants from logical to inertial coordinates in the element volume and on the element face, both evaluated on the face (see <a class="el" href="citelist.html#CITEREF_Vincent2019qpd">[90]</a>). Since both \(N_\mathrm{points}\) and \(h\) can be different on either side of the element boundary we take the maximum of \(N_\mathrm{points}\) and the pointwise minimum of \(h\) across the element boundary as is done in <a class="el" href="citelist.html#CITEREF_Vincent2019qpd">[90]</a>. Note that we use the number of points \(N_\mathrm{points}\) where <a class="el" href="citelist.html#CITEREF_Vincent2019qpd">[90]</a> uses the polynomial degree \(N_\mathrm{points} - 1\) because we found unstable configurations on curved meshes when using the polynomial degree. Optimizing the penalty on curved meshes is subject to further investigation. </p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<li>src/Elliptic/DiscontinuousGalerkin/NumericalFluxes/<a class="el" href="FirstOrderInternalPenalty_8hpp_source.html">FirstOrderInternalPenalty.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.10-->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+&copy; Copyright 2017 - 2021
+<a href="https://black-holes.org">SXS Collaboration</a>,
+<a href="LICENSE.txt" target="_blank">
+<span class="hidden-xs">Distributed under the</span>
+MIT License</a>
+</small></address>
+</body>
+</html>

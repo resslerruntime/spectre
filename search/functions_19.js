@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['zero_10215',['zero',['http://en.cppreference.com/w/cpp/chrono/duration/zero.html',1,'std::chrono::duration::zero()'],['http://en.cppreference.com/w/cpp/chrono/duration_values/zero.html',1,'std::chrono::duration_values::zero()'],['http://en.cppreference.com/w/cpp/chrono/duration/zero.html',1,'std::chrono::hours::zero()'],['http://en.cppreference.com/w/cpp/chrono/duration/zero.html',1,'std::chrono::microseconds::zero()'],['http://en.cppreference.com/w/cpp/chrono/duration/zero.html',1,'std::chrono::milliseconds::zero()'],['http://en.cppreference.com/w/cpp/chrono/duration/zero.html',1,'std::chrono::minutes::zero()'],['http://en.cppreference.com/w/cpp/chrono/duration/zero.html',1,'std::chrono::nanoseconds::zero()'],['http://en.cppreference.com/w/cpp/chrono/duration/zero.html',1,'std::chrono::seconds::zero()']]],
+  ['zero_5flowest_5fmodes_10216',['zero_lowest_modes',['../namespaceSpectral_1_1filtering.html#a6937962b075f73725377c59598796ec9',1,'Spectral::filtering']]]
+];

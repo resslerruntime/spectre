@@ -1,0 +1,330 @@
+<!-- HTML header for doxygen 1.8.10-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="SXS Collaboration">
+    <meta name="generator" content="Doxygen 1.8.17"/>
+    <style>
+        /*!
+         * IE10 viewport hack for Surface/desktop Windows 8 bug
+         * Copyright 2014-2015 Twitter, Inc.
+         * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+         */
+        @-webkit-viewport { width: device-width; }
+        @-moz-viewport    { width: device-width; }
+        @-ms-viewport     { width: device-width; }
+        @-o-viewport      { width: device-width; }
+        @viewport         { width: device-width; }
+      </style>
+  <title>SpECTRE: elliptic::dg Namespace Reference</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="./MathJax.js"></script>
+  <link href="octicons.css" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="popper.min.js"></script>
+  <script type="text/javascript" src="bootstrap.min.js"></script>
+  <script type="text/javascript" src="spectre.js"></script>
+  </head>
+  <body>
+  <div id="top" class="navbar-fixed-top"><!-- do not remove this div, it is closed by doxygen! -->
+  <!-- BEGIN TITLEAREA -->
+  <div id="titlearea">
+  <script type="text/javascript">
+  var searchBox = new SearchBox("searchBox", "search",false,'Search');
+  </script>
+  <div id="main-nav">
+    <ul class="sm sm-dox" id="main-menu">
+      <li>
+      <a href="index.html">
+      SpECTRE &#160;
+        <span id="projectnumber">v2021.04.06</span>
+      </a>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-book"></i><span>Documentation</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 135px;">
+            <a href="index.html">
+            <i class="octicon octicon-book"></i><span>Introduction</span></a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="versioning_and_releases.html">
+              <i class="octicon octicon-versions"></i><span>Releases</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="installation.html">
+              <i class="octicon octicon-desktop-download"></i><span>Installation</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="tutorials.html">
+              <i class="octicon octicon-mortar-board"></i><span>User Tutorials</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="dev_guide.html">
+              <i class="octicon octicon-gist-secret"></i><span>Dev Guide</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="code_of_conduct.html">
+              <i class="octicon octicon-comment-discussion"></i><span>Code of Conduct</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="contributing_to_spectre.html">
+              <i class="octicon octicon-git-pull-request"></i><span>Contributing Guide</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-code"></i>
+              <span>Code Reference</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 130px;">
+            <a href="modules.html">
+              <i class="octicon octicon-code"></i>
+              <span>Topics</span>
+            </a>
+          </li>
+          <li style="min-width: 130px;">
+            <a href="namespaces.html">
+              <i class="octicon octicon-gist"></i>
+              <span>Namespaces</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="files.html">
+          <i class="octicon octicon-file-directory"></i><span>Files</span>
+        </a>
+      </li>
+      <li>
+        <a href="citelist.html">
+          <i class="octicon octicon-file-text"></i><span>Bibliography</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/sxs-collaboration/spectre" target="_blank">
+          <i class="octicon octicon-mark-github"></i><span>View on GitHub</span>
+        </a>
+      </li>
+      <!--The Search <li> is added by doxygen later-->
+    </ul>
+  </div><!-- main-nav -->
+  </div><!-- titlearea -->
+  <!-- window showing the filter options -->
+  <div id="MSearchSelectWindow"  style="position: fixed;"
+       onmouseover="return searchBox.OnSearchSelectShow()"
+       onmouseout="return searchBox.OnSearchSelectHide()"
+       onkeydown="return searchBox.OnSearchSelectKey(event)">
+  </div>
+  <!-- iframe showing the search results (closed by default) -->
+  <div id="MSearchResultsWindow"  style="position: fixed;">
+  <iframe src="javascript:void(0)" frameborder="0"
+          name="MSearchResults" id="MSearchResults">
+  </iframe>
+  </div>
+<!-- Generated by Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespaceelliptic.html">elliptic</a></li><li class="navelem"><a class="el" href="namespaceelliptic_1_1dg.html">dg</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">elliptic::dg Namespace Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Functionality related to discontinuous Galerkin discretizations of elliptic equations.  
+<a href="namespaceelliptic_1_1dg.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespaceelliptic_1_1dg_1_1NumericalFluxes"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceelliptic_1_1dg_1_1NumericalFluxes.html">NumericalFluxes</a></td></tr>
+<tr class="memdesc:namespaceelliptic_1_1dg_1_1NumericalFluxes"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numerical fluxes for elliptic systems. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceelliptic_1_1dg_1_1OptionTags"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceelliptic_1_1dg_1_1OptionTags.html">OptionTags</a></td></tr>
+<tr class="memdesc:namespaceelliptic_1_1dg_1_1OptionTags"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option tags related to elliptic discontinuous Galerkin schemes. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceelliptic_1_1dg_1_1Tags"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceelliptic_1_1dg_1_1Tags.html">Tags</a></td></tr>
+<tr class="memdesc:namespaceelliptic_1_1dg_1_1Tags"><td class="mdescLeft">&#160;</td><td class="mdescRight">DataBox tags related to elliptic discontinuous Galerkin schemes. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a91afa286832b27581bcfba436fbdd369"><td class="memTemplParams" colspan="2">template&lt;typename DirichletTags , typename TagsList &gt; </td></tr>
+<tr class="memitem:a91afa286832b27581bcfba436fbdd369"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceelliptic_1_1dg.html#a91afa286832b27581bcfba436fbdd369">homogeneous_dirichlet_boundary_conditions</a> (const <a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; Variables&lt; TagsList &gt; * &gt; exterior_vars, const Variables&lt; TagsList &gt; &amp;interior_vars) noexcept</td></tr>
+<tr class="memdesc:a91afa286832b27581bcfba436fbdd369"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the <code>exterior_vars</code> so that they represent homogeneous (zero) Dirichlet boundary conditions.  <a href="namespaceelliptic_1_1dg.html#a91afa286832b27581bcfba436fbdd369">More...</a><br /></td></tr>
+<tr class="separator:a91afa286832b27581bcfba436fbdd369"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af276a46d66053031526786cd0e585b35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDataVector.html">DataVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceelliptic_1_1dg.html#af276a46d66053031526786cd0e585b35">penalty</a> (const <a class="el" href="classDataVector.html">DataVector</a> &amp;element_size, size_t num_points, double penalty_parameter) noexcept</td></tr>
+<tr class="memdesc:af276a46d66053031526786cd0e585b35"><td class="mdescLeft">&#160;</td><td class="mdescRight">The penalty factor in internal penalty fluxes.  <a href="namespaceelliptic_1_1dg.html#af276a46d66053031526786cd0e585b35">More...</a><br /></td></tr>
+<tr class="separator:af276a46d66053031526786cd0e585b35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Functionality related to discontinuous Galerkin discretizations of elliptic equations. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a91afa286832b27581bcfba436fbdd369"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91afa286832b27581bcfba436fbdd369">&#9670;&nbsp;</a></span>homogeneous_dirichlet_boundary_conditions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DirichletTags , typename TagsList &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void elliptic::dg::homogeneous_dirichlet_boundary_conditions </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt; Variables&lt; TagsList &gt; * &gt;&#160;</td>
+          <td class="paramname"><em>exterior_vars</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Variables&lt; TagsList &gt; &amp;&#160;</td>
+          <td class="paramname"><em>interior_vars</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the <code>exterior_vars</code> so that they represent homogeneous (zero) Dirichlet boundary conditions. </p>
+<p>To impose homogeneous Dirichlet boundary conditions we mirror the <code>interior_vars</code> and invert their sign. Variables that are not in the <code>DirichletTags</code> list are mirrored without changing their sign, so no boundary conditions are imposed on them. </p>
+
+</div>
+</div>
+<a id="af276a46d66053031526786cd0e585b35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af276a46d66053031526786cd0e585b35">&#9670;&nbsp;</a></span>penalty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classDataVector.html">DataVector</a> elliptic::dg::penalty </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classDataVector.html">DataVector</a> &amp;&#160;</td>
+          <td class="paramname"><em>element_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>num_points</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>penalty_parameter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The penalty factor in internal penalty fluxes. </p>
+<p>The penalty factor is computed as</p>
+<p class="formulaDsp">
+\begin{equation} \sigma = C \frac{N_\text{points}^2}{h} \end{equation}
+</p>
+<p>where \(N_\text{points} = 1 + N_p\) is the number of points (or one plus the polynomial degree) and \(h\) is a measure of the element size. Both quantities are taken perpendicular to the face of the DG element that the penalty is being computed on. \(C\) is the "penalty parameter". For details see section 7.2 in <a class="el" href="citelist.html#CITEREF_HesthavenWarburton">[45]</a>. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.10-->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+&copy; Copyright 2017 - 2021
+<a href="https://black-holes.org">SXS Collaboration</a>,
+<a href="LICENSE.txt" target="_blank">
+<span class="hidden-xs">Distributed under the</span>
+MIT License</a>
+</small></address>
+</body>
+</html>

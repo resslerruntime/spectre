@@ -1,0 +1,677 @@
+<!-- HTML header for doxygen 1.8.10-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="SXS Collaboration">
+    <meta name="generator" content="Doxygen 1.8.17"/>
+    <style>
+        /*!
+         * IE10 viewport hack for Surface/desktop Windows 8 bug
+         * Copyright 2014-2015 Twitter, Inc.
+         * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+         */
+        @-webkit-viewport { width: device-width; }
+        @-moz-viewport    { width: device-width; }
+        @-ms-viewport     { width: device-width; }
+        @-o-viewport      { width: device-width; }
+        @viewport         { width: device-width; }
+      </style>
+  <title>SpECTRE: File Members</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="./MathJax.js"></script>
+  <link href="octicons.css" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="popper.min.js"></script>
+  <script type="text/javascript" src="bootstrap.min.js"></script>
+  <script type="text/javascript" src="spectre.js"></script>
+  </head>
+  <body>
+  <div id="top" class="navbar-fixed-top"><!-- do not remove this div, it is closed by doxygen! -->
+  <!-- BEGIN TITLEAREA -->
+  <div id="titlearea">
+  <script type="text/javascript">
+  var searchBox = new SearchBox("searchBox", "search",false,'Search');
+  </script>
+  <div id="main-nav">
+    <ul class="sm sm-dox" id="main-menu">
+      <li>
+      <a href="index.html">
+      SpECTRE &#160;
+        <span id="projectnumber">v2021.04.06</span>
+      </a>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-book"></i><span>Documentation</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 135px;">
+            <a href="index.html">
+            <i class="octicon octicon-book"></i><span>Introduction</span></a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="versioning_and_releases.html">
+              <i class="octicon octicon-versions"></i><span>Releases</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="installation.html">
+              <i class="octicon octicon-desktop-download"></i><span>Installation</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="tutorials.html">
+              <i class="octicon octicon-mortar-board"></i><span>User Tutorials</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="dev_guide.html">
+              <i class="octicon octicon-gist-secret"></i><span>Dev Guide</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="code_of_conduct.html">
+              <i class="octicon octicon-comment-discussion"></i><span>Code of Conduct</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="contributing_to_spectre.html">
+              <i class="octicon octicon-git-pull-request"></i><span>Contributing Guide</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-code"></i>
+              <span>Code Reference</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 130px;">
+            <a href="modules.html">
+              <i class="octicon octicon-code"></i>
+              <span>Topics</span>
+            </a>
+          </li>
+          <li style="min-width: 130px;">
+            <a href="namespaces.html">
+              <i class="octicon octicon-gist"></i>
+              <span>Namespaces</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="files.html">
+          <i class="octicon octicon-file-directory"></i><span>Files</span>
+        </a>
+      </li>
+      <li>
+        <a href="citelist.html">
+          <i class="octicon octicon-file-text"></i><span>Bibliography</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/sxs-collaboration/spectre" target="_blank">
+          <i class="octicon octicon-mark-github"></i><span>View on GitHub</span>
+        </a>
+      </li>
+      <!--The Search <li> is added by doxygen later-->
+    </ul>
+  </div><!-- main-nav -->
+  </div><!-- titlearea -->
+  <!-- window showing the filter options -->
+  <div id="MSearchSelectWindow"  style="position: fixed;"
+       onmouseover="return searchBox.OnSearchSelectShow()"
+       onmouseout="return searchBox.OnSearchSelectHide()"
+       onkeydown="return searchBox.OnSearchSelectKey(event)">
+  </div>
+  <!-- iframe showing the search results (closed by default) -->
+  <div id="MSearchResultsWindow"  style="position: fixed;">
+  <iframe src="javascript:void(0)" frameborder="0"
+          name="MSearchResults" id="MSearchResults">
+  </iframe>
+  </div>
+<!-- Generated by Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="contents">
+&#160;
+
+<h3><a id="index_a"></a>- a -</h3><ul>
+<li>abort_with_error_message()
+: <a class="el" href="group__ErrorHandlingGroup.html#ga151b9fa962e87ed72da64306cbdc8ba7">AbortWithErrorMessage.hpp</a>
+</li>
+<li>abort_with_error_message_no_trace()
+: <a class="el" href="group__ErrorHandlingGroup.html#gab659348597041e7c0a0487f3f2a03d2a">AbortWithErrorMessage.hpp</a>
+</li>
+<li>all_but_specified_element_of()
+: <a class="el" href="group__UtilitiesGroup.html#ga2be082292cf46aa7a006b44e729474e7">StdArrayHelpers.hpp</a>
+</li>
+<li>all_wedge_directions()
+: <a class="el" href="group__TestingFrameworkGroup.html#gaa226fb4e34109bf71af60e2e725ccc7c">TestMapHelpers.hpp</a>
+</li>
+<li>are_maps_equal()
+: <a class="el" href="group__TestingFrameworkGroup.html#gacadb87efe0412015568637a68c678b29">TestMapHelpers.hpp</a>
+</li>
+<li>array_equal()
+: <a class="el" href="group__ConstantExpressionsGroup.html#ga0ea880e99a7630ae00b9f5ab31f58183">ConstantExpressions.hpp</a>
+</li>
+</ul>
+
+
+<h3><a id="index_c"></a>- c -</h3><ul>
+<li>ce_abs()
+: <a class="el" href="group__ConstantExpressionsGroup.html#ga690d0500b1f38314a147b045667125c1">ConstantExpressions.hpp</a>
+</li>
+<li>ce_fabs()
+: <a class="el" href="group__ConstantExpressionsGroup.html#ga15cc16860a1195210b924d6a9029179e">ConstantExpressions.hpp</a>
+</li>
+<li>check_cmp()
+: <a class="el" href="group__TestingFrameworkGroup.html#gaeca05cc83258027c4547dfd39f399965">TestHelpers.hpp</a>
+</li>
+<li>check_if_map_is_identity()
+: <a class="el" href="group__TestingFrameworkGroup.html#ga635824a415e8933aa4f7e7a2ad1ff66a">TestMapHelpers.hpp</a>
+</li>
+<li>check_if_maps_are_equal()
+: <a class="el" href="group__TestingFrameworkGroup.html#ga96b4ff568846f3c2fffc4541052b96ec">TestMapHelpers.hpp</a>
+</li>
+<li>collapsed_index()
+: <a class="el" href="group__DataStructuresGroup.html#gac2de486a64a176604f89cbbfbb8fffc9">Index.hpp</a>
+</li>
+<li>constexpr_sum()
+: <a class="el" href="group__ConstantExpressionsGroup.html#ga930a2f8bee91aa3221aacd0871e4162e">ConstantExpressions.hpp</a>
+</li>
+<li>corners_for_biradially_layered_domains()
+: <a class="el" href="group__ComputationalDomainGroup.html#gaa76c0e8c51614f3393118e403ed35a5f">DomainHelpers.hpp</a>
+</li>
+<li>corners_for_cylindrical_layered_domains()
+: <a class="el" href="group__ComputationalDomainGroup.html#ga25fa2b3f359fdcd8fd7d15c7b0ce1dbc">DomainHelpers.hpp</a>
+</li>
+<li>corners_for_radially_layered_domains()
+: <a class="el" href="group__ComputationalDomainGroup.html#ga18526a75399d20dfb670b233fa55cff8">DomainHelpers.hpp</a>
+</li>
+<li>corners_for_rectilinear_domains()
+: <a class="el" href="group__ComputationalDomainGroup.html#ga18341ca86191b511f92daf2d8c69302c">DomainHelpers.hpp</a>
+</li>
+<li>cross_product()
+: <a class="el" href="group__TensorGroup.html#gacf423e552e0fbc1d6254d2a11b4ea6f9">CrossProduct.hpp</a>
+</li>
+<li>cstring_hash()
+: <a class="el" href="group__ConstantExpressionsGroup.html#gab925d824ee9991214c82e77ce1aebd9a">ConstantExpressions.hpp</a>
+</li>
+<li>cstring_length()
+: <a class="el" href="group__ConstantExpressionsGroup.html#ga86291f00ac1c63ccb6c8135d89416c46">ConstantExpressions.hpp</a>
+</li>
+<li>cube()
+: <a class="el" href="group__ConstantExpressionsGroup.html#ga309e8687e65972dcc37a5ff6e9902d56">ConstantExpressions.hpp</a>
+</li>
+<li>current_date_and_time()
+: <a class="el" href="group__UtilitiesGroup.html#gaa9e9df95875a2fa4b6ec2acfe7fa26ff">StdHelpers.hpp</a>
+</li>
+<li>cyl_wedge_coordinate_maps()
+: <a class="el" href="group__ComputationalDomainGroup.html#ga7646c1d656ceff2433e293b1200a8b3e">DomainHelpers.hpp</a>
+</li>
+</ul>
+
+
+<h3><a id="index_d"></a>- d -</h3><ul>
+<li>ddot_()
+: <a class="el" href="group__UtilitiesGroup.html#gaaa46a305d87ee4ae9fede9d55c373286">Blas.hpp</a>
+</li>
+<li>definite_integral()
+: <a class="el" href="group__NumericalAlgorithmsGroup.html#gaff167eee8a80045d528dc0c747c44e69">DefiniteIntegral.hpp</a>
+</li>
+<li>dereference_wrapper()
+: <a class="el" href="group__UtilitiesGroup.html#gaccb7d5132ccd60f32c504c51f9d7fb3c">DereferenceWrapper.hpp</a>
+</li>
+<li>deserialize()
+: <a class="el" href="group__ParallelGroup.html#gac24a89db65b7c7ea8a7238625adaa408">Serialize.hpp</a>
+</li>
+<li>determinant()
+: <a class="el" href="group__TensorGroup.html#ga73d129796fcc1edcdd005096933b89f5">Determinant.hpp</a>
+</li>
+<li>determinant_and_inverse()
+: <a class="el" href="group__TensorGroup.html#ga51d5abd4e1bcb2e64195dcc15e2f2e5f">DeterminantAndInverse.hpp</a>
+</li>
+<li>dgemm_()
+: <a class="el" href="group__UtilitiesGroup.html#gac932a44b57087d32ce5341314437dbbd">Blas.hpp</a>
+</li>
+<li>dgemv_()
+: <a class="el" href="group__UtilitiesGroup.html#gad4d31316e0975f0a66a60d9ac92756a8">Blas.hpp</a>
+</li>
+<li>disable_floating_point_exceptions()
+: <a class="el" href="group__ErrorHandlingGroup.html#ga15999710b74a2bb739b0273bf1bc7b7b">FloatingPointExceptions.hpp</a>
+</li>
+<li>disable_openblas_multithreading()
+: <a class="el" href="Blas_8hpp.html#a5b54f526fe76418288fdf2dd79b0828e">Blas.hpp</a>
+</li>
+<li>discrete_rotation()
+: <a class="el" href="group__ComputationalDomainGroup.html#ga8c80443a66a28ba3cd542cf5f2d223c5">DomainHelpers.hpp</a>
+</li>
+<li>divergence()
+: <a class="el" href="group__NumericalAlgorithmsGroup.html#ga1fd07ec35ea9d33316b1c9a402766b55">Divergence.hpp</a>
+</li>
+<li>dot_product()
+: <a class="el" href="group__TensorGroup.html#ga43b9cfd3c9f44120c4f6bef9bdcf3f84">DotProduct.hpp</a>
+</li>
+</ul>
+
+
+<h3><a id="index_e"></a>- e -</h3><ul>
+<li>enable_floating_point_exceptions()
+: <a class="el" href="group__ErrorHandlingGroup.html#gac5fde843ca62e1d4288f4a4e6d480aa0">FloatingPointExceptions.hpp</a>
+</li>
+<li>expand_pack()
+: <a class="el" href="group__UtilitiesGroup.html#ga45da409b9b03a4ad18e76036ab5a853c">TMPL.hpp</a>
+</li>
+</ul>
+
+
+<h3><a id="index_f"></a>- f -</h3><ul>
+<li>factorial()
+: <a class="el" href="group__ConstantExpressionsGroup.html#gac8147ed2396495e9c9a2d80508587590">ConstantExpressions.hpp</a>
+</li>
+<li>falling_factorial()
+: <a class="el" href="group__ConstantExpressionsGroup.html#ga2021fd3b36fdbf6fcbcf3340f98be1c6">ConstantExpressions.hpp</a>
+</li>
+<li>fill_with_random_values()
+: <a class="el" href="group__TestingFrameworkGroup.html#ga689b0334217eafa70595ece948ebbbf7">MakeWithRandomValues.hpp</a>
+</li>
+<li>find_generalized_eigenvalues()
+: <a class="el" href="group__NumericalAlgorithmsGroup.html#ga0e6ec7e9906d4b08c60b1e8e9d0533f5">FindGeneralizedEigenvalues.hpp</a>
+</li>
+<li>formatted_string()
+: <a class="el" href="group__UtilitiesGroup.html#ga9a7c7ee897f581360154a3676d5f7ab9">StdHelpers.hpp</a>
+</li>
+<li>frustum_coordinate_maps()
+: <a class="el" href="group__ComputationalDomainGroup.html#ga86534fcfbcabd6acc079b6fc38cdfbea">DomainHelpers.hpp</a>
+</li>
+</ul>
+
+
+<h3><a id="index_g"></a>- g -</h3><ul>
+<li>get()
+: <a class="el" href="group__DataStructuresGroup.html#gabf5aa6d8efa0b2546f7e409a25b4f7dd">Variables.hpp</a>
+</li>
+<li>get_first_argument()
+: <a class="el" href="group__UtilitiesGroup.html#gaccb2a89d7a8daca3527693c77ab04f0b">TMPL.hpp</a>
+</li>
+<li>get_nth_bit()
+: <a class="el" href="group__ConstantExpressionsGroup.html#ga6081cdd84b199ef868569b149f3e7256">ConstantExpressions.hpp</a>
+</li>
+</ul>
+
+
+<h3><a id="index_i"></a>- i -</h3><ul>
+<li>index_dim()
+: <a class="el" href="group__TensorGroup.html#gaa89f4b3bf804d2a2bfdac72509e8c60d">Tensor.hpp</a>
+</li>
+<li>indices_for_rectilinear_domains()
+: <a class="el" href="group__ComputationalDomainGroup.html#gaba91825909e9aa842eb091df693e919e">DomainHelpers.hpp</a>
+</li>
+<li>info_from_build()
+: <a class="el" href="group__LoggingGroup.html#gada33ac747e1720e8d6c7d89323663c3e">InfoFromBuild.hpp</a>
+</li>
+<li>insert_element()
+: <a class="el" href="group__UtilitiesGroup.html#gaf56b8d2cde45404481339fbafcf19e39">StdArrayHelpers.hpp</a>
+</li>
+<li>interface_logical_coordinates()
+: <a class="el" href="group__ComputationalDomainGroup.html#gac857ec0446d088d1d17cf96376ba8e3c">LogicalCoordinates.hpp</a>
+</li>
+</ul>
+
+
+<h3><a id="index_k"></a>- k -</h3><ul>
+<li>keys_of()
+: <a class="el" href="group__UtilitiesGroup.html#ga495b431a620b10beb24f1afc90b77e20">StdHelpers.hpp</a>
+</li>
+</ul>
+
+
+<h3><a id="index_l"></a>- l -</h3><ul>
+<li>lagrange_polynomial()
+: <a class="el" href="LagrangePolynomial_8hpp.html#ad20ae8f3d19a80e041c7fd7c99b93cc6">LagrangePolynomial.hpp</a>
+</li>
+<li>largest_root_between_values_within_roundoff()
+: <a class="el" href="group__NumericalAlgorithmsGroup.html#ga37bcb07aabd87b1638170ec2625383a1">QuadraticEquation.hpp</a>
+</li>
+<li>linearize()
+: <a class="el" href="group__NumericalAlgorithmsGroup.html#gaeffbf567392988f3b5e7c29b8952923d">Linearize.hpp</a>
+</li>
+<li>logical_coordinates()
+: <a class="el" href="group__ComputationalDomainGroup.html#ga6070224843ce605a36853fab86c8c2ca">LogicalCoordinates.hpp</a>
+</li>
+<li>logical_partial_derivative()
+: <a class="el" href="group__NumericalAlgorithmsGroup.html#ga9e442f4a419b53e05ba0ff98d4233305">PartialDerivatives.hpp</a>
+</li>
+<li>logical_partial_derivatives()
+: <a class="el" href="group__NumericalAlgorithmsGroup.html#ga2e59acbb52cacebae0fe19506b7fbedd">PartialDerivatives.hpp</a>
+</li>
+</ul>
+
+
+<h3><a id="index_m"></a>- m -</h3><ul>
+<li>magnitude()
+: <a class="el" href="group__UtilitiesGroup.html#ga05223223c63459beb75c170fa104ca57">StdArrayHelpers.hpp</a>
+</li>
+<li>make_array()
+: <a class="el" href="group__UtilitiesGroup.html#ga08ed7eef85864542bf2c2e212f86a533">MakeArray.hpp</a>
+</li>
+<li>make_array_from_list()
+: <a class="el" href="group__ConstantExpressionsGroup.html#gaf36b785a386a50e5127f5667a5d109a5">ConstantExpressions.hpp</a>
+</li>
+<li>make_cached_function()
+: <a class="el" href="CachedFunction_8hpp.html#a62eb75ecbc44dcb747b465b3800b3f65">CachedFunction.hpp</a>
+</li>
+<li>make_not_null()
+: <a class="el" href="Gsl_8hpp.html#a649c6961f9146205c203e45d58fd0c4c">Gsl.hpp</a>
+</li>
+<li>make_with_random_values()
+: <a class="el" href="group__TestingFrameworkGroup.html#ga7f98af1ba7b65811cf35536db6259f88">MakeWithRandomValues.hpp</a>
+</li>
+<li>make_with_value()
+: <a class="el" href="group__DataStructuresGroup.html#gaafb2f0ad21af6d51f10551d50d122032">MakeWithValue.hpp</a>
+</li>
+<li>map_array()
+: <a class="el" href="group__UtilitiesGroup.html#gaa9752049086a20f017376e22ad169e47">StdArrayHelpers.hpp</a>
+</li>
+<li>maps_for_rectilinear_domains()
+: <a class="el" href="group__ComputationalDomainGroup.html#ga2fa6f4a3bbb32cae7c59d29c519ce4a3">DomainHelpers.hpp</a>
+</li>
+<li>max_by_magnitude()
+: <a class="el" href="group__ConstantExpressionsGroup.html#ga821c3b16761006411643b7be7a58ed67">ConstantExpressions.hpp</a>
+</li>
+<li>mean_value()
+: <a class="el" href="group__NumericalAlgorithmsGroup.html#ga9f8afa3e3506040f3af8ebb067c16126">MeanValue.hpp</a>
+</li>
+<li>mean_value_on_boundary()
+: <a class="el" href="group__NumericalAlgorithmsGroup.html#gaa4fe66d962723c4ed87852f9d10994f7">MeanValue.hpp</a>
+</li>
+<li>min_by_magnitude()
+: <a class="el" href="group__ConstantExpressionsGroup.html#gae6af61fcfcea06548b5c85211be5d608">ConstantExpressions.hpp</a>
+</li>
+</ul>
+
+
+<h3><a id="index_n"></a>- n -</h3><ul>
+<li>numerical_derivative()
+: <a class="el" href="group__TestingFrameworkGroup.html#ga6a70d3bd416e878e8b9d9a783bfb60da">TestHelpers.hpp</a>
+</li>
+</ul>
+
+
+<h3><a id="index_o"></a>- o -</h3><ul>
+<li>operator!=()
+: <a class="el" href="ElementId_8hpp.html#a94c96777e85ff2ee7e039ee54c82fd20">ElementId.hpp</a>
+, <a class="el" href="SegmentId_8hpp.html#af6e5af873055d53316a889fbb1c03c57">SegmentId.hpp</a>
+</li>
+<li>operator&quot;&quot;_st()
+: <a class="el" href="group__UtilitiesGroup.html#gaf9fcbbaa07506a5df5379b64772333d9">Literals.hpp</a>
+</li>
+<li>operator*()
+: <a class="el" href="group__TensorExpressionsGroup.html#ga078bcec08b0bef602762b194bf6ecb95">Product.hpp</a>
+</li>
+<li>operator+()
+: <a class="el" href="group__TensorExpressionsGroup.html#ga598a33a002def0a8c6f3c8a8d4314a7b">AddSubtract.hpp</a>
+</li>
+<li>operator-()
+: <a class="el" href="group__TensorExpressionsGroup.html#gaa9a55c858be98e130cc580141806a2b2">AddSubtract.hpp</a>
+</li>
+<li>operator/()
+: <a class="el" href="group__TensorExpressionsGroup.html#ga56e53a2fed384bb74924894c76ee23d2">Product.hpp</a>
+</li>
+<li>operator&lt;()
+: <a class="el" href="Slab_8hpp.html#a21f5138cddba461d332dc2310bb8decc">Slab.hpp</a>
+</li>
+<li>operator&lt;&lt;()
+: <a class="el" href="group__UtilitiesGroup.html#ga12f928f2f24f35c2283fb3a3471f5e80">StlStreamDeclarations.hpp</a>
+, <a class="el" href="Direction_8hpp.html#a72805852a6cfea5d62954575f3e49d5b">Direction.hpp</a>
+, <a class="el" href="group__UtilitiesGroup.html#ga59ccc440263d8ac121421332824a6f6c">StlStreamDeclarations.hpp</a>
+, <a class="el" href="Neighbors_8hpp.html#a8d657b8479f229bbd0852be9b72cbbe4">Neighbors.hpp</a>
+, <a class="el" href="group__UtilitiesGroup.html#ga7762b3fbc4cc8153d36fdf78094d3ad7">StlStreamDeclarations.hpp</a>
+, <a class="el" href="Side_8hpp.html#a07e4acae8695b834fbaa2b238eec070d">Side.hpp</a>
+, <a class="el" href="group__UtilitiesGroup.html#ga9b79de8b7fc5ce9e82abcfb3462c9ec5">StlStreamDeclarations.hpp</a>
+, <a class="el" href="group__UtilitiesGroup.html#ga80caef68489ec044291edee80f908449">StdHelpers.hpp</a>
+, <a class="el" href="group__UtilitiesGroup.html#gae7a2ab86b466642aa383a85ead968cf5">StlStreamDeclarations.hpp</a>
+, <a class="el" href="group__UtilitiesGroup.html#gae7a2ab86b466642aa383a85ead968cf5">StdHelpers.hpp</a>
+, <a class="el" href="group__UtilitiesGroup.html#ga80caef68489ec044291edee80f908449">StlStreamDeclarations.hpp</a>
+, <a class="el" href="group__UtilitiesGroup.html#ga9b79de8b7fc5ce9e82abcfb3462c9ec5">StdHelpers.hpp</a>
+, <a class="el" href="group__UtilitiesGroup.html#ga89764c6408c1f5cd42bc200486d69242">StlStreamDeclarations.hpp</a>
+, <a class="el" href="group__UtilitiesGroup.html#ga7762b3fbc4cc8153d36fdf78094d3ad7">StdHelpers.hpp</a>
+, <a class="el" href="group__UtilitiesGroup.html#ga325c1aa4e0b973a0c2d5e06e520f9f12">StlStreamDeclarations.hpp</a>
+, <a class="el" href="group__UtilitiesGroup.html#gad9c5288383a6353698fd9630bbb0f234">StdHelpers.hpp</a>
+, <a class="el" href="group__UtilitiesGroup.html#gabc2ee6d0503fea7bcbb6de4a3460a077">StlStreamDeclarations.hpp</a>
+, <a class="el" href="group__UtilitiesGroup.html#ga325c1aa4e0b973a0c2d5e06e520f9f12">StdHelpers.hpp</a>
+, <a class="el" href="group__UtilitiesGroup.html#ga9045d540ebe626ccae39ff049e4f4c37">StlStreamDeclarations.hpp</a>
+, <a class="el" href="BlockNeighbor_8hpp.html#a0b3fdefe13d32793394969f040b353b6">BlockNeighbor.hpp</a>
+, <a class="el" href="group__UtilitiesGroup.html#gad9c5288383a6353698fd9630bbb0f234">StlStreamDeclarations.hpp</a>
+, <a class="el" href="ElementId_8hpp.html#a09fb22b00bb8a7a70e43b3647cf29823">ElementId.hpp</a>
+, <a class="el" href="SegmentId_8hpp.html#a76b316cbe756e7eb8a5c309a3835c3e2">SegmentId.hpp</a>
+</li>
+<li>operator==()
+: <a class="el" href="ElementId_8hpp.html#ae6206f3ce03b958cedcf4bc64f8dc3cc">ElementId.hpp</a>
+, <a class="el" href="SegmentId_8hpp.html#affec84fd02a1e2c1f4f2b8070a7cb05d">SegmentId.hpp</a>
+</li>
+<li>opposite()
+: <a class="el" href="Side_8hpp.html#a9298e98354e49aacdd38275dc3dceea3">Side.hpp</a>
+</li>
+</ul>
+
+
+<h3><a id="index_p"></a>- p -</h3><ul>
+<li>partial_derivatives()
+: <a class="el" href="group__NumericalAlgorithmsGroup.html#ga3aba17e357844bc9470b7cc273e0ca84">PartialDerivatives.hpp</a>
+</li>
+<li>positive_root()
+: <a class="el" href="group__NumericalAlgorithmsGroup.html#ga0c0ed15978142aa9317a20cf88dbf4f6">QuadraticEquation.hpp</a>
+</li>
+<li>pow()
+: <a class="el" href="group__ConstantExpressionsGroup.html#gadf69ca3cb47ba6b0059769286c87cdc3">ConstantExpressions.hpp</a>
+</li>
+<li>prepend()
+: <a class="el" href="group__UtilitiesGroup.html#gabddc5fbff7dc002caf6472d5c782b11b">StdArrayHelpers.hpp</a>
+</li>
+</ul>
+
+
+<h3><a id="index_r"></a>- r -</h3><ul>
+<li>raw_transpose()
+: <a class="el" href="group__NumericalAlgorithmsGroup.html#gaee4e6b93e491768020891a7761863ac0">Transpose.hpp</a>
+</li>
+<li>real_roots()
+: <a class="el" href="group__NumericalAlgorithmsGroup.html#ga652f3c9cc1107556aa8110b13a421baf">QuadraticEquation.hpp</a>
+</li>
+<li>rectilinear_domain()
+: <a class="el" href="group__ComputationalDomainGroup.html#ga800100a7e665c7fdc63549d99d14bf01">DomainHelpers.hpp</a>
+</li>
+<li>replace_at()
+: <a class="el" href="group__ConstantExpressionsGroup.html#ga67df32bbc36ce9e80f16019b14345ba8">ConstantExpressions.hpp</a>
+</li>
+</ul>
+
+
+<h3><a id="index_s"></a>- s -</h3><ul>
+<li>serialize()
+: <a class="el" href="group__ParallelGroup.html#gadf1f8ae766ee30298039e4b55dcb7c6b">Serialize.hpp</a>
+</li>
+<li>serialize_and_deserialize()
+: <a class="el" href="group__TestingFrameworkGroup.html#ga2895e57f4cacd63d2549655bb29bba7b">TestHelpers.hpp</a>
+</li>
+<li>set_identified_boundaries()
+: <a class="el" href="group__ComputationalDomainGroup.html#ga5640402fc85ec353685c6914a9750459">DomainHelpers.hpp</a>
+</li>
+<li>set_internal_boundaries()
+: <a class="el" href="group__ComputationalDomainGroup.html#ga352a96e2ad69bb9fd2d71d412a4fc8b7">DomainHelpers.hpp</a>
+</li>
+<li>smallest_root_greater_than_value_within_roundoff()
+: <a class="el" href="group__NumericalAlgorithmsGroup.html#ga55d20e426f9799521231bea8a2c73cbd">QuadraticEquation.hpp</a>
+</li>
+<li>spectre_version()
+: <a class="el" href="group__LoggingGroup.html#ga440a175ca29c1e92a7147f210a860932">InfoFromBuild.hpp</a>
+</li>
+<li>sph_wedge_coordinate_maps()
+: <a class="el" href="group__ComputationalDomainGroup.html#ga97cfbd5a2ed53f5ac5a1d46bf6afe2f9">DomainHelpers.hpp</a>
+</li>
+<li>square()
+: <a class="el" href="group__ConstantExpressionsGroup.html#gaef1fe82faee8c46e9706f252a5a00937">ConstantExpressions.hpp</a>
+</li>
+</ul>
+
+
+<h3><a id="index_t"></a>- t -</h3><ul>
+<li>test_coordinate_map_argument_types()
+: <a class="el" href="group__TestingFrameworkGroup.html#gad2b86f2fe7f836fef3a95233ae9bde7c">TestMapHelpers.hpp</a>
+</li>
+<li>test_coordinate_map_implementation()
+: <a class="el" href="group__TestingFrameworkGroup.html#gae082371a40e886deb604c05ff87cb435">TestMapHelpers.hpp</a>
+</li>
+<li>test_copy_semantics()
+: <a class="el" href="Framework_2TestHelpers_8hpp.html#a6a606665331765067f231cf230f7b1ca">TestHelpers.hpp</a>
+</li>
+<li>test_frame_velocity()
+: <a class="el" href="group__TestingFrameworkGroup.html#ga7ada2dd817f0846b4a2177419228a791">TestMapHelpers.hpp</a>
+</li>
+<li>test_inv_jacobian()
+: <a class="el" href="group__TestingFrameworkGroup.html#ga5b3f174791f6db04f4ff6279ccf13454">TestMapHelpers.hpp</a>
+</li>
+<li>test_inverse_map()
+: <a class="el" href="group__TestingFrameworkGroup.html#ga1e156c7ae26ac3d9fedf6b992a5c82e5">TestMapHelpers.hpp</a>
+</li>
+<li>test_jacobian()
+: <a class="el" href="group__TestingFrameworkGroup.html#gab0937cf96cba9ee5da456973fdcf2ac5">TestMapHelpers.hpp</a>
+</li>
+<li>test_move_semantics()
+: <a class="el" href="Framework_2TestHelpers_8hpp.html#aaddd14aaf8ff9752cb1e8f13dcba0ef3">TestHelpers.hpp</a>
+</li>
+<li>test_serialization()
+: <a class="el" href="group__TestingFrameworkGroup.html#ga4294de51e79ce048d0a76bd72f80d19a">TestHelpers.hpp</a>
+</li>
+<li>test_serialization_via_base()
+: <a class="el" href="group__TestingFrameworkGroup.html#ga9032f7d7bb3698bab71a49d1df9c2d99">TestHelpers.hpp</a>
+</li>
+<li>test_suite_for_map_on_cylinder()
+: <a class="el" href="group__TestingFrameworkGroup.html#ga5508a281766734dd9f8c2da0585aa578">TestMapHelpers.hpp</a>
+</li>
+<li>test_suite_for_map_on_sphere()
+: <a class="el" href="group__TestingFrameworkGroup.html#gaf66d8a093671dc1518a3807c4f4e43e1">TestMapHelpers.hpp</a>
+</li>
+<li>test_suite_for_map_on_unit_cube()
+: <a class="el" href="group__TestingFrameworkGroup.html#gaa54f012f3d9b6e12d67d4eb16d2a8fe2">TestMapHelpers.hpp</a>
+</li>
+<li>test_throw_exception()
+: <a class="el" href="group__TestingFrameworkGroup.html#ga809dd7c089188c1c15f847f73cf6d924">TestHelpers.hpp</a>
+</li>
+<li>test_throwing_move_semantics()
+: <a class="el" href="Framework_2TestHelpers_8hpp.html#a0ab67fecc0e23c4c9dcc733b5020d973">TestHelpers.hpp</a>
+</li>
+<li>transpose()
+: <a class="el" href="group__NumericalAlgorithmsGroup.html#ga028a18d5984e4b6934624282c8c047ec">Transpose.hpp</a>
+</li>
+<li>tuple_fold()
+: <a class="el" href="group__UtilitiesGroup.html#ga91227dc4aa14972b7b2e7070719d061b">Tuple.hpp</a>
+</li>
+<li>tuple_head()
+: <a class="el" href="group__UtilitiesGroup.html#gaaee29910f2f9d5bc27cdc77cf604bd41">TupleSlice.hpp</a>
+</li>
+<li>tuple_slice()
+: <a class="el" href="group__UtilitiesGroup.html#ga1f2550f464834199603ab935620cfb46">TupleSlice.hpp</a>
+</li>
+<li>tuple_tail()
+: <a class="el" href="group__UtilitiesGroup.html#ga4355f2be0dea656e459cab9a500c6a8e">TupleSlice.hpp</a>
+</li>
+<li>tuple_transform()
+: <a class="el" href="group__UtilitiesGroup.html#gad65147320c04e61267089a58d71a6302">Tuple.hpp</a>
+</li>
+<li>two_to_the()
+: <a class="el" href="group__ConstantExpressionsGroup.html#ga6c01ded3973bb4b9973e5381c32c0807">ConstantExpressions.hpp</a>
+</li>
+<li>type_of_current_state()
+: <a class="el" href="group__UtilitiesGroup.html#ga32e4641766bcfa0da87662aaba91037c">BoostHelpers.hpp</a>
+</li>
+</ul>
+
+
+<h3><a id="index_u"></a>- u -</h3><ul>
+<li>unit_test_build_path()
+: <a class="el" href="group__LoggingGroup.html#ga2ef2b310193341d3e17b36f87ace1c12">InfoFromBuild.hpp</a>
+</li>
+<li>unit_test_src_path()
+: <a class="el" href="group__LoggingGroup.html#ga3761ee0a09fc1e6841681d450f166ee9">InfoFromBuild.hpp</a>
+</li>
+<li>unnormalized_face_normal()
+: <a class="el" href="group__ComputationalDomainGroup.html#ga4b765bb8483842f249f114d3704985a4">FaceNormal.hpp</a>
+</li>
+<li>update_u()
+: <a class="el" href="UpdateU_8hpp.html#a56d6c72161fdafe383cb446c608a7868">UpdateU.hpp</a>
+</li>
+</ul>
+
+
+<h3><a id="index_v"></a>- v -</h3><ul>
+<li>variables_from_tagged_tuple()
+: <a class="el" href="group__DataStructuresGroup.html#ga72c56e579182a94d0f96e9a845a02bc7">Variables.hpp</a>
+</li>
+</ul>
+</div><!-- contents -->
+<!-- HTML footer for doxygen 1.8.10-->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+&copy; Copyright 2017 - 2021
+<a href="https://black-holes.org">SXS Collaboration</a>,
+<a href="LICENSE.txt" target="_blank">
+<span class="hidden-xs">Distributed under the</span>
+MIT License</a>
+</small></address>
+</body>
+</html>

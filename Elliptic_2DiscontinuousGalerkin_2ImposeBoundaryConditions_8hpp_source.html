@@ -1,0 +1,353 @@
+<!-- HTML header for doxygen 1.8.10-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=9"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="SXS Collaboration">
+    <meta name="generator" content="Doxygen 1.8.17"/>
+    <style>
+        /*!
+         * IE10 viewport hack for Surface/desktop Windows 8 bug
+         * Copyright 2014-2015 Twitter, Inc.
+         * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+         */
+        @-webkit-viewport { width: device-width; }
+        @-moz-viewport    { width: device-width; }
+        @-ms-viewport     { width: device-width; }
+        @-o-viewport      { width: device-width; }
+        @viewport         { width: device-width; }
+      </style>
+  <title>SpECTRE: src/Elliptic/DiscontinuousGalerkin/ImposeBoundaryConditions.hpp Source File</title>
+  <link href="tabs.css" rel="stylesheet" type="text/css"/>
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="dynsections.js"></script>
+  <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="./MathJax.js"></script>
+  <link href="octicons.css" rel="stylesheet">
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="doxygen.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="jquery.js"></script>
+  <script type="text/javascript" src="popper.min.js"></script>
+  <script type="text/javascript" src="bootstrap.min.js"></script>
+  <script type="text/javascript" src="spectre.js"></script>
+  </head>
+  <body>
+  <div id="top" class="navbar-fixed-top"><!-- do not remove this div, it is closed by doxygen! -->
+  <!-- BEGIN TITLEAREA -->
+  <div id="titlearea">
+  <script type="text/javascript">
+  var searchBox = new SearchBox("searchBox", "search",false,'Search');
+  </script>
+  <div id="main-nav">
+    <ul class="sm sm-dox" id="main-menu">
+      <li>
+      <a href="index.html">
+      SpECTRE &#160;
+        <span id="projectnumber">v2021.04.06</span>
+      </a>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-book"></i><span>Documentation</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 135px;">
+            <a href="index.html">
+            <i class="octicon octicon-book"></i><span>Introduction</span></a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="versioning_and_releases.html">
+              <i class="octicon octicon-versions"></i><span>Releases</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="installation.html">
+              <i class="octicon octicon-desktop-download"></i><span>Installation</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="tutorials.html">
+              <i class="octicon octicon-mortar-board"></i><span>User Tutorials</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="dev_guide.html">
+              <i class="octicon octicon-gist-secret"></i><span>Dev Guide</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="code_of_conduct.html">
+              <i class="octicon octicon-comment-discussion"></i><span>Code of Conduct</span>
+            </a>
+          </li>
+          <li style="min-width: 135px;">
+            <a href="contributing_to_spectre.html">
+              <i class="octicon octicon-git-pull-request"></i><span>Contributing Guide</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="selected">
+          <span id="selected">
+            <i class="octicon octicon-code"></i>
+              <span>Code Reference</span>
+          </span>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li style="min-width: 130px;">
+            <a href="modules.html">
+              <i class="octicon octicon-code"></i>
+              <span>Topics</span>
+            </a>
+          </li>
+          <li style="min-width: 130px;">
+            <a href="namespaces.html">
+              <i class="octicon octicon-gist"></i>
+              <span>Namespaces</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="files.html">
+          <i class="octicon octicon-file-directory"></i><span>Files</span>
+        </a>
+      </li>
+      <li>
+        <a href="citelist.html">
+          <i class="octicon octicon-file-text"></i><span>Bibliography</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/sxs-collaboration/spectre" target="_blank">
+          <i class="octicon octicon-mark-github"></i><span>View on GitHub</span>
+        </a>
+      </li>
+      <!--The Search <li> is added by doxygen later-->
+    </ul>
+  </div><!-- main-nav -->
+  </div><!-- titlearea -->
+  <!-- window showing the filter options -->
+  <div id="MSearchSelectWindow"  style="position: fixed;"
+       onmouseover="return searchBox.OnSearchSelectShow()"
+       onmouseout="return searchBox.OnSearchSelectHide()"
+       onkeydown="return searchBox.OnSearchSelectKey(event)">
+  </div>
+  <!-- iframe showing the search results (closed by default) -->
+  <div id="MSearchResultsWindow"  style="position: fixed;">
+  <iframe src="javascript:void(0)" frameborder="0"
+          name="MSearchResults" id="MSearchResults">
+  </iframe>
+  </div>
+<!-- Generated by Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_230c67cf33a57f61172880426036f42c.html">src</a></li><li class="navelem"><a class="el" href="dir_102e4bda8d511a2139aab1e5fe5a004e.html">Elliptic</a></li><li class="navelem"><a class="el" href="dir_15a4287d48fe7783b22788c1c4abad46.html">DiscontinuousGalerkin</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">ImposeBoundaryConditions.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Distributed under the MIT License.</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// See LICENSE.txt for details.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;<a class="codeRef" href="http://en.cppreference.com/w/cpp/header/algorithm.html">algorithm</a>&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;<a class="codeRef" href="http://en.cppreference.com/w/cpp/header/cstddef.html">cstddef</a>&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="codeRef" href="http://en.cppreference.com/w/cpp/header/tuple.html">tuple</a>&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="codeRef" href="http://en.cppreference.com/w/cpp/header/utility.html">utility</a>&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="DataBox_8hpp.html">DataStructures/DataBox/DataBox.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Domain_2Tags_8hpp.html">Domain/Tags.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Gsl_8hpp.html">Utilities/Gsl.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TMPL_8hpp.html">Utilities/TMPL.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;Utilities/TaggedTuple.hpp&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">/// \cond</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span><span class="keyword">namespace </span><a class="code" href="namespaceParallel.html">Parallel</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Metavariables&gt;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">struct </span>GlobalCache;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}  <span class="comment">// namespace Parallel</span><span class="comment"></span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/// \endcond</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceelliptic.html">elliptic</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacedg.html">dg</a> {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">/*!</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * \brief Set the `exterior_vars` so that they represent homogeneous (zero)</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> * Dirichlet boundary conditions.</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> * To impose homogeneous Dirichlet boundary conditions we mirror the</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> * `interior_vars` and invert their sign. Variables that are not in the</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> * `DirichletTags` list are mirrored without changing their sign, so no boundary</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> * conditions are imposed on them.</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> DirichletTags, <span class="keyword">typename</span> TagsList&gt;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="namespaceelliptic_1_1dg.html#a91afa286832b27581bcfba436fbdd369">   37</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceelliptic_1_1dg.html#a91afa286832b27581bcfba436fbdd369">homogeneous_dirichlet_boundary_conditions</a>(</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">const</span> <a class="code" href="classgsl_1_1not__null.html">gsl::not_null</a>&lt;Variables&lt;TagsList&gt;*&gt; exterior_vars,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> Variables&lt;TagsList&gt;&amp; interior_vars) noexcept {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="comment">// By default, use the variables on the external boundary for the</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="comment">// exterior</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  *exterior_vars = interior_vars;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="comment">// For those variables where we have boundary conditions, impose</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="comment">// zero Dirichlet b.c. here. The non-zero boundary conditions are</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="comment">// handled as contributions to the source in InitializeElement.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">// Imposing them here would not work because we are working with the</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="comment">// linear solver operand.</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  tmpl::for_each&lt;DirichletTags&gt;(</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      [&amp;exterior_vars](<span class="keyword">auto</span> dirichlet_tag_val) noexcept {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">using</span> dirichlet_tag = tmpl::type_from&lt;decltype(dirichlet_tag_val)&gt;;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="comment">// Use mirror principle</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">auto</span>&amp; exterior_dirichlet_field = get&lt;dirichlet_tag&gt;(*exterior_vars);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; exterior_dirichlet_field.size(); i++) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;          exterior_dirichlet_field[i] *= -1.;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      });</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">namespace </span>Actions {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">/*!</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"> * \brief Set field data on external boundaries so that they represent</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment"> * homogeneous (zero) Dirichlet boundary conditions.</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"> * This action imposes homogeneous boundary conditions on all `DirichletTags`</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment"> * \see `elliptic::dg::homogeneous_dirichlet_boundary_conditions`</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"> * \note We cannot impose inhomogeneous boundary conditions here because it</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment"> * would break linearity of the DG operator: If in the system of equations</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"> * \f$A(x)=b\f$ the DG operator \f$A\f$ had non-zero boundary contributions then</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment"> * \f$A(x=0)\neq 0\f$, which breaks linearity. Instead, inhomogeneous</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment"> * boundary conditions are handled as contributions to the source \f$b\f$</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment"> * during initialization.</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"> * With:</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment"> * - `interior&lt;Tag&gt; =</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"> *   Tags::Interface&lt;Tags::BoundaryDirectionsInterior&lt;volume_dim&gt;, Tag&gt;`</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment"> * - `exterior&lt;Tag&gt; =</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment"> *   Tags::Interface&lt;Tags::BoundaryDirectionsExterior&lt;volume_dim&gt;, Tag&gt;`</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment"> * Uses:</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment"> * - DataBox:</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"> *   - `interior&lt;VariablesTag&gt;`</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"> * DataBox changes:</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"> * - Modifies:</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"> *   - `exterior&lt;VariablesTag&gt;`</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> VariablesTag, <span class="keyword">typename</span> DirichletTags&gt;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="structelliptic_1_1dg_1_1Actions_1_1ImposeHomogeneousDirichletBoundaryConditions.html">   91</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structelliptic_1_1dg_1_1Actions_1_1ImposeHomogeneousDirichletBoundaryConditions.html">ImposeHomogeneousDirichletBoundaryConditions</a> {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> DbTags, <span class="keyword">typename</span>... InboxTags, <span class="keyword">typename</span> Metavariables,</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordtype">size_t</span> Dim, <span class="keyword">typename</span> ActionList, <span class="keyword">typename</span> ParallelComponent&gt;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keyword">static</span> <span class="keyword">auto</span> apply(db::DataBox&lt;DbTags&gt;&amp; box,</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classtuples_1_1TaggedTuple.html">tuples::TaggedTuple&lt;InboxTags...&gt;</a>&amp; <span class="comment">/*inboxes*/</span>,</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classParallel_1_1GlobalCache.html">Parallel::GlobalCache&lt;Metavariables&gt;</a>&amp; <span class="comment">/*cache*/</span>,</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                    <span class="keyword">const</span> <a class="code" href="classElementId.html">ElementId&lt;Dim&gt;</a>&amp; <span class="comment">/*array_index*/</span>,</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                    <span class="keyword">const</span> ActionList <span class="comment">/*meta*/</span>,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                    <span class="keyword">const</span> ParallelComponent* <span class="keyword">const</span> <span class="comment">/*meta*/</span>) noexcept {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// Set the data on exterior (ghost) faces to impose the boundary conditions</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="group__DataBoxGroup.html#gabd82fb36bfa1a8f987e595141cc4d44f">db::mutate</a>&lt;<a class="code" href="structdomain_1_1Tags_1_1Interface.html">domain::Tags::Interface</a>&lt;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="structdomain_1_1Tags_1_1BoundaryDirectionsExterior.html">domain::Tags::BoundaryDirectionsExterior&lt;Dim&gt;</a>, VariablesTag&gt;&gt;(</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <a class="code" href="Gsl_8hpp.html#a649c6961f9146205c203e45d58fd0c4c">make_not_null</a>(&amp;box),</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        [](<span class="keyword">const</span> <span class="keyword">auto</span> exterior_boundary_vars,</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;           <span class="keyword">const</span> <span class="keyword">auto</span>&amp; interior_vars) noexcept {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;          <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; exterior_direction_and_vars : *exterior_boundary_vars) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keyword">auto</span>&amp; direction = exterior_direction_and_vars.first;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            homogeneous_dirichlet_boundary_conditions&lt;DirichletTags&gt;(</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <a class="code" href="Gsl_8hpp.html#a649c6961f9146205c203e45d58fd0c4c">make_not_null</a>(&amp;exterior_direction_and_vars.second),</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                interior_vars.at(direction));</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;          }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        },</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <a class="code" href="group__DataStructuresGroup.html#gabf5aa6d8efa0b2546f7e409a25b4f7dd">get</a>&lt;<a class="code" href="structdomain_1_1Tags_1_1Interface.html">domain::Tags::Interface</a>&lt;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <a class="code" href="structdomain_1_1Tags_1_1BoundaryDirectionsInterior.html">domain::Tags::BoundaryDirectionsInterior&lt;Dim&gt;</a>, VariablesTag&gt;&gt;(box));</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">return</span> std::forward_as_tuple(std::move(box));</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;};</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}  <span class="comment">// namespace Actions</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}  <span class="comment">// namespace dg</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}  <span class="comment">// namespace elliptic</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="autility_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/header/utility.html">utility</a></div></div>
+<div class="ttc" id="agroup__DataStructuresGroup_html_gabf5aa6d8efa0b2546f7e409a25b4f7dd"><div class="ttname"><a href="group__DataStructuresGroup.html#gabf5aa6d8efa0b2546f7e409a25b4f7dd">get</a></div><div class="ttdeci">constexpr Tag::type &amp; get(Variables&lt; TagList &gt; &amp;v) noexcept</div><div class="ttdoc">Return Tag::type pointing into the contiguous array.</div><div class="ttdef"><b>Definition:</b> Variables.hpp:660</div></div>
+<div class="ttc" id="aclassParallel_1_1GlobalCache_html"><div class="ttname"><a href="classParallel_1_1GlobalCache.html">Parallel::GlobalCache</a></div><div class="ttdef"><b>Definition:</b> ElementReceiveInterpPoints.hpp:15</div></div>
+<div class="ttc" id="anamespaceelliptic_1_1dg_html_a91afa286832b27581bcfba436fbdd369"><div class="ttname"><a href="namespaceelliptic_1_1dg.html#a91afa286832b27581bcfba436fbdd369">elliptic::dg::homogeneous_dirichlet_boundary_conditions</a></div><div class="ttdeci">void homogeneous_dirichlet_boundary_conditions(const gsl::not_null&lt; Variables&lt; TagsList &gt; * &gt; exterior_vars, const Variables&lt; TagsList &gt; &amp;interior_vars) noexcept</div><div class="ttdoc">Set the exterior_vars so that they represent homogeneous (zero) Dirichlet boundary conditions.</div><div class="ttdef"><b>Definition:</b> ImposeBoundaryConditions.hpp:37</div></div>
+<div class="ttc" id="aDomain_2Tags_8hpp_html"><div class="ttname"><a href="Domain_2Tags_8hpp.html">Tags.hpp</a></div></div>
+<div class="ttc" id="astructdomain_1_1Tags_1_1BoundaryDirectionsExterior_html"><div class="ttname"><a href="structdomain_1_1Tags_1_1BoundaryDirectionsExterior.html">domain::Tags::BoundaryDirectionsExterior</a></div><div class="ttdef"><b>Definition:</b> Tags.hpp:324</div></div>
+<div class="ttc" id="atuple_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/header/tuple.html">tuple</a></div></div>
+<div class="ttc" id="astructdomain_1_1Tags_1_1BoundaryDirectionsInterior_html"><div class="ttname"><a href="structdomain_1_1Tags_1_1BoundaryDirectionsInterior.html">domain::Tags::BoundaryDirectionsInterior</a></div><div class="ttdef"><b>Definition:</b> Tags.hpp:297</div></div>
+<div class="ttc" id="aalgorithm_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/header/algorithm.html">algorithm</a></div></div>
+<div class="ttc" id="anamespacedg_html"><div class="ttname"><a href="namespacedg.html">dg</a></div><div class="ttdoc">Functionality related to discontinuous Galerkin schemes.</div><div class="ttdef"><b>Definition:</b> ComputeNonconservativeBoundaryFluxes.hpp:23</div></div>
+<div class="ttc" id="aclassElementId_html"><div class="ttname"><a href="classElementId.html">ElementId&lt; Dim &gt;</a></div></div>
+<div class="ttc" id="agroup__DataBoxGroup_html_gabd82fb36bfa1a8f987e595141cc4d44f"><div class="ttname"><a href="group__DataBoxGroup.html#gabd82fb36bfa1a8f987e595141cc4d44f">db::mutate</a></div><div class="ttdeci">decltype(auto) mutate(const gsl::not_null&lt; DataBox&lt; TagList &gt; * &gt; box, Invokable &amp;&amp;invokable, Args &amp;&amp;... args) noexcept</div><div class="ttdoc">Allows changing the state of one or more non-computed elements in the DataBox.</div><div class="ttdef"><b>Definition:</b> DataBox.hpp:636</div></div>
+<div class="ttc" id="aDataBox_8hpp_html"><div class="ttname"><a href="DataBox_8hpp.html">DataBox.hpp</a></div></div>
+<div class="ttc" id="acstddef_html"><div class="ttname"><a href="http://en.cppreference.com/w/cpp/header/cstddef.html">cstddef</a></div></div>
+<div class="ttc" id="aclasstuples_1_1TaggedTuple_html"><div class="ttname"><a href="classtuples_1_1TaggedTuple.html">tuples::TaggedTuple</a></div><div class="ttdoc">An associative container that is indexed by structs.</div><div class="ttdef"><b>Definition:</b> TaggedTuple.hpp:271</div></div>
+<div class="ttc" id="aGsl_8hpp_html"><div class="ttname"><a href="Gsl_8hpp.html">Gsl.hpp</a></div></div>
+<div class="ttc" id="astructdomain_1_1Tags_1_1Interface_html"><div class="ttname"><a href="structdomain_1_1Tags_1_1Interface.html">domain::Tags::Interface</a></div><div class="ttdoc">Tag which is either a SimpleTag for quantities on an interface, base tag to a compute item which acts...</div><div class="ttdef"><b>Definition:</b> Tags.hpp:366</div></div>
+<div class="ttc" id="anamespaceelliptic_html"><div class="ttname"><a href="namespaceelliptic.html">elliptic</a></div><div class="ttdoc">Functionality related to solving elliptic partial differential equations.</div><div class="ttdef"><b>Definition:</b> InitializeAnalyticSolution.hpp:29</div></div>
+<div class="ttc" id="aGsl_8hpp_html_a649c6961f9146205c203e45d58fd0c4c"><div class="ttname"><a href="Gsl_8hpp.html#a649c6961f9146205c203e45d58fd0c4c">make_not_null</a></div><div class="ttdeci">gsl::not_null&lt; T * &gt; make_not_null(T *ptr) noexcept</div><div class="ttdoc">Construct a not_null from a pointer. Often this will be done as an implicit conversion,...</div><div class="ttdef"><b>Definition:</b> Gsl.hpp:880</div></div>
+<div class="ttc" id="astructelliptic_1_1dg_1_1Actions_1_1ImposeHomogeneousDirichletBoundaryConditions_html"><div class="ttname"><a href="structelliptic_1_1dg_1_1Actions_1_1ImposeHomogeneousDirichletBoundaryConditions.html">elliptic::dg::Actions::ImposeHomogeneousDirichletBoundaryConditions</a></div><div class="ttdoc">Set field data on external boundaries so that they represent homogeneous (zero) Dirichlet boundary co...</div><div class="ttdef"><b>Definition:</b> ImposeBoundaryConditions.hpp:91</div></div>
+<div class="ttc" id="anamespaceParallel_html"><div class="ttname"><a href="namespaceParallel.html">Parallel</a></div><div class="ttdoc">Functionality for parallelization.</div><div class="ttdef"><b>Definition:</b> ElementReceiveInterpPoints.hpp:13</div></div>
+<div class="ttc" id="aTMPL_8hpp_html"><div class="ttname"><a href="TMPL_8hpp.html">TMPL.hpp</a></div></div>
+<div class="ttc" id="aclassgsl_1_1not__null_html"><div class="ttname"><a href="classgsl_1_1not__null.html">gsl::not_null</a></div><div class="ttdoc">Require a pointer to not be a nullptr</div><div class="ttdef"><b>Definition:</b> ReadSpecThirdOrderPiecewisePolynomial.hpp:13</div></div>
+<!-- HTML footer for doxygen 1.8.10-->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+&copy; Copyright 2017 - 2021
+<a href="https://black-holes.org">SXS Collaboration</a>,
+<a href="LICENSE.txt" target="_blank">
+<span class="hidden-xs">Distributed under the</span>
+MIT License</a>
+</small></address>
+</body>
+</html>
